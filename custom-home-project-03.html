@@ -6,254 +6,310 @@
 <title>Custom Home Project 03 | Cercobuilt</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-color:#222;
-background:#fff;
-line-height:1.6;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#222;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
 
 header{
 position:sticky;
 top:0;
 z-index:1000;
-background:rgba(255,255,255,.97);
-border-bottom:1px solid #eee;
+background:#fff;
+border-bottom:1px solid #e5e5e5;
 }
 
-.nav{
-max-width:1200px;
+.header-inner{
+max-width:1250px;
 margin:auto;
-padding:18px 24px;
+padding:20px 30px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 }
 
 .logo{
-font-size:22px;
+font-size:23px;
 font-weight:700;
-letter-spacing:1px;
-color:#222;
-text-decoration:none;
+letter-spacing:2px;
 }
 
 nav{
 display:flex;
 gap:28px;
+align-items:center;
 }
 
 nav a{
-text-decoration:none;
-color:#333;
 font-size:14px;
+font-weight:600;
 }
 
-.menu-button{
+.menu-toggle{
 display:none;
 font-size:28px;
 cursor:pointer;
-background:none;
-border:none;
-}
-
-.mobile-menu{
-display:none;
-background:#fff;
-border-top:1px solid #eee;
-padding:10px 24px 20px;
-}
-
-.mobile-menu.open{
-display:block;
-}
-
-.mobile-menu a{
-display:block;
-padding:12px 0;
-color:#222;
-text-decoration:none;
-border-bottom:1px solid #eee;
 }
 
 .hero{
-min-height:520px;
+height:560px;
+position:relative;
 background:
-linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
-url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
-center/cover no-repeat;
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=80")
+center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:#fff;
-padding:40px 20px;
+}
+
+.hero-content{
+padding:20px;
+}
+
+.hero-label{
+font-size:14px;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:15px;
 }
 
 .hero h1{
-font-size:clamp(42px,7vw,76px);
-font-weight:500;
-letter-spacing:-2px;
+font-size:64px;
+line-height:1.1;
+}
+
+.container{
+max-width:1250px;
+margin:auto;
+padding:0 30px;
 }
 
 .section{
-max-width:1200px;
-margin:auto;
-padding:90px 24px;
+padding:100px 0;
 }
 
 .intro{
-max-width:780px;
-margin:auto;
-text-align:center;
+max-width:800px;
+margin-bottom:60px;
 }
 
 .intro h2{
-font-size:38px;
-font-weight:500;
+font-size:42px;
 margin-bottom:20px;
+line-height:1.2;
 }
 
 .intro p{
+font-size:18px;
 color:#666;
-font-size:17px;
 }
 
 .details{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:25px;
-margin-top:60px;
+gap:20px;
+margin-bottom:70px;
 }
 
 .detail{
-background:#f5f3ef;
+background:#f5f5f3;
 padding:30px;
-text-align:center;
 }
 
-.detail h3{
-font-size:20px;
-font-weight:500;
+.detail strong{
+display:block;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:1px;
 margin-bottom:8px;
+color:#777;
 }
 
-.detail p{
-color:#666;
+.detail span{
+font-size:18px;
+font-weight:600;
 }
 
 .features{
-margin-top:70px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+margin-bottom:80px;
 }
 
-.features h2{
-font-size:34px;
-font-weight:500;
-margin-bottom:25px;
-text-align:center;
-}
-
-.features ul{
-max-width:760px;
-margin:auto;
-padding-left:22px;
-color:#555;
-}
-
-.features li{
-margin-bottom:12px;
+.feature{
+padding:28px 0;
+border-top:1px solid #ddd;
+font-size:19px;
+font-weight:600;
 }
 
 .gallery{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:25px;
-margin-top:60px;
+gap:20px;
 }
 
 .gallery img{
 width:100%;
-height:360px;
+height:420px;
 object-fit:cover;
 display:block;
 }
 
-.back{
-text-align:center;
-margin-top:65px;
-}
-
-.back a{
-color:#222;
-text-decoration:none;
+.back-link{
+display:inline-block;
+margin-top:60px;
+font-weight:600;
 border-bottom:1px solid #222;
 padding-bottom:4px;
 }
 
 .cta{
-background:#f4f2ee;
+background:#222;
+color:#fff;
 text-align:center;
-padding:90px 24px;
+padding:90px 30px;
 }
 
 .cta h2{
-font-size:40px;
-font-weight:500;
+font-size:42px;
 margin-bottom:20px;
 }
 
 .cta p{
-color:#666;
+color:#ccc;
 margin-bottom:30px;
+font-size:17px;
 }
 
 .cta a{
 display:inline-block;
-background:#222;
-color:#fff;
-text-decoration:none;
+background:#fff;
+color:#222;
 padding:14px 28px;
-font-size:14px;
+font-weight:600;
 }
 
 footer{
-background:#222;
+background:#171717;
 color:#fff;
-padding:45px 24px;
+padding:60px 30px;
 }
 
 .footer-inner{
-max-width:1200px;
+max-width:1250px;
 margin:auto;
-display:flex;
-justify-content:space-between;
-gap:30px;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:50px;
 }
 
+.footer-logo{
+font-size:22px;
+font-weight:700;
+letter-spacing:2px;
+margin-bottom:15px;
+}
+
+footer h3{
+margin-bottom:15px;
+font-size:15px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+footer p,
 footer a{
-color:#ccc;
-text-decoration:none;
-margin-left:20px;
+color:#aaa;
 font-size:14px;
 }
 
+.footer-links{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
 .copyright{
-color:#999;
+max-width:1250px;
+margin:40px auto 0;
+padding-top:25px;
+border-top:1px solid #333;
+color:#777;
 font-size:13px;
 }
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-nav{display:none}
+.header-inner{
+padding:16px 20px;
+}
 
-.menu-button{
+.logo{
+font-size:20px;
+}
+
+.menu-toggle{
 display:block;
+}
+
+nav{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:#fff;
+border-bottom:1px solid #ddd;
+flex-direction:column;
+gap:0;
+}
+
+nav.active{
+display:flex;
+}
+
+nav a{
+width:100%;
+padding:15px 20px;
+border-top:1px solid #eee;
+}
+
+.hero{
+height:460px;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.container{
+padding:0 20px;
+}
+
+.section{
+padding:70px 0;
+}
+
+.intro h2{
+font-size:34px;
+}
+
+.intro p{
+font-size:16px;
 }
 
 .details{
 grid-template-columns:1fr;
+margin-bottom:50px;
+}
+
+.features{
+grid-template-columns:1fr;
+margin-bottom:60px;
 }
 
 .gallery{
@@ -261,40 +317,20 @@ grid-template-columns:1fr;
 }
 
 .gallery img{
-height:280px;
+height:300px;
 }
 
-.footer-inner{
-flex-direction:column;
-}
-
-footer a{
-margin-left:0;
-margin-right:20px;
-}
-
-}
-
-@media(max-width:600px){
-
-.hero{
-min-height:430px;
-}
-
-.hero h1{
-font-size:46px;
-}
-
-.section{
-padding:65px 20px;
-}
-
-.intro h2{
-font-size:32px;
+.cta{
+padding:70px 20px;
 }
 
 .cta h2{
-font-size:32px;
+font-size:34px;
+}
+
+.footer-inner{
+grid-template-columns:1fr;
+gap:35px;
 }
 
 }
@@ -304,258 +340,130 @@ font-size:32px;
 <body>
 
 <header>
+<div class="header-inner">
 
-<div class="nav">
+<a href="index.html" class="logo">CERCOBUILT</a>
 
-<a href="index.html" class="logo">
-CERCOBUILT
-</a>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-<nav>
-
+<nav id="mainNav">
 <a href="index.html">Home</a>
-
-<a href="house-designs.html">
-House Designs
-</a>
-
-<a href="single-storey.html">
-Single Storey
-</a>
-
-<a href="double-storey.html">
-Double Storey
-</a>
-
-<a href="custom-homes.html">
-Custom Homes
-</a>
-
+<a href="house-designs.html">House Designs</a>
+<a href="single-storey.html">Single Storey</a>
+<a href="double-storey.html">Double Storey</a>
+<a href="custom-homes.html">Custom Homes</a>
+<a href="index.html#contact">Contact</a>
 </nav>
 
-<button
-class="menu-button"
-onclick="toggleMenu()">
-☰
-</button>
-
 </div>
-
-
-<div
-class="mobile-menu"
-id="mobileMenu">
-
-<a href="index.html">Home</a>
-
-<a href="house-designs.html">
-House Designs
-</a>
-
-<a href="single-storey.html">
-Single Storey
-</a>
-
-<a href="double-storey.html">
-Double Storey
-</a>
-
-<a href="custom-homes.html">
-Custom Homes
-</a>
-
-</div>
-
 </header>
 
-
 <section class="hero">
-
-<div>
-
-<h1>
-Custom Home Project 03
-</h1>
-
+<div class="hero-content">
+<div class="hero-label">Custom Home · Project 03</div>
+<h1>Project 03</h1>
 </div>
-
 </section>
 
-
 <section class="section">
+<div class="container">
 
 <div class="intro">
-
-<h2>
-A Home That Is Uniquely Yours
-</h2>
-
+<h2>Built around your vision.</h2>
 <p>
-A bespoke residential concept focused on
-individual expression, comfortable spaces
-and considered architectural design.
+A considered custom home concept that brings together practical planning, modern living and personalised spaces.
 </p>
-
 </div>
-
 
 <div class="details">
 
 <div class="detail">
-
-<h3>
-Home Type
-</h3>
-
-<p>
-Custom Home
-</p>
-
+<strong>Home Type</strong>
+<span>Custom Home</span>
 </div>
-
 
 <div class="detail">
-
-<h3>
-Design
-</h3>
-
-<p>
-To Be Confirmed
-</p>
-
+<strong>Design Approach</strong>
+<span>Individual Design</span>
 </div>
-
 
 <div class="detail">
-
-<h3>
-Location
-</h3>
-
-<p>
-To Be Confirmed
-</p>
-
+<strong>Planning</strong>
+<span>Personalised Layout</span>
 </div>
 
 </div>
-
 
 <div class="features">
 
-<h2>
-Design Features
-</h2>
-
-<ul>
-
-<li>
-Bespoke architectural design
-</li>
-
-<li>
-Spaces tailored to individual requirements
-</li>
-
-<li>
-Practical and flexible floor planning
-</li>
-
-<li>
-Strong connection between interior and exterior spaces
-</li>
-
-<li>
-Carefully considered materials and finishes
-</li>
-
-</ul>
+<div class="feature">Individual Floor Planning</div>
+<div class="feature">Open Living Spaces</div>
+<div class="feature">Natural Light</div>
+<div class="feature">Seamless Outdoor Connection</div>
 
 </div>
-
 
 <div class="gallery">
 
-<img
-src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-alt="Custom Home Project 03">
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80">
 
-<img
-src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
-alt="Custom Home Interior">
+<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80">
 
-</div>
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80">
 
-
-<div class="back">
-
-<a href="custom-homes.html">
-← Back to Custom Homes
-</a>
+<img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=80">
 
 </div>
 
+<a href="custom-homes.html" class="back-link">← Back to Custom Homes</a>
+
+</div>
 </section>
-
 
 <section class="cta">
-
-<h2>
-Ready to create your own home?
-</h2>
-
-<p>
-Let's start the conversation about your custom home.
-</p>
-
-<a href="index.html#contact">
-Start Your Build
-</a>
-
+<h2>Ready to create your home?</h2>
+<p>Talk to Cercobuilt about your ideas and start planning your custom home.</p>
+<a href="index.html#contact">Get in Touch</a>
 </section>
-
 
 <footer>
 
 <div class="footer-inner">
 
+<div>
+<div class="footer-logo">CERCOBUILT</div>
+<p>Thoughtfully designed homes built around modern living.</p>
+</div>
+
+<div>
+<h3>Explore</h3>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="house-designs.html">House Designs</a>
+<a href="single-storey.html">Single Storey</a>
+<a href="double-storey.html">Double Storey</a>
+<a href="custom-homes.html">Custom Homes</a>
+</div>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>hello@cercobuilt.com.au</p>
+<p>Phone: To Be Confirmed</p>
+</div>
+
+</div>
+
 <div class="copyright">
 © 2026 Cercobuilt. All rights reserved.
 </div>
 
-<div>
-
-<a href="index.html">
-Home
-</a>
-
-<a href="house-designs.html">
-House Designs
-</a>
-
-<a href="index.html#contact">
-Contact
-</a>
-
-</div>
-
-</div>
-
 </footer>
 
-
 <script>
-
 function toggleMenu(){
-
-const menu =
-document.getElementById("mobileMenu");
-
-menu.classList.toggle("open");
-
+document.getElementById("mainNav").classList.toggle("active");
 }
-
 </script>
 
 </body>
