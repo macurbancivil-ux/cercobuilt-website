@@ -1,297 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Custom Homes | Cercobuilt</title>
+  <title>Custom Homes | Cercobuilt</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #222;
-  background: #fff;
-  line-height: 1.6;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.6;
+    }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,0.96);
-  border-bottom: 1px solid #eee;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #eee;
+    }
 
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #222;
-  text-decoration: none;
-}
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #222;
+      text-decoration: none;
+    }
 
-nav {
-  display: flex;
-  gap: 28px;
-}
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
 
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-size: 15px;
-}
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
 
-.menu-button {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+    nav a:hover {
+      color: #777;
+    }
 
-.mobile-menu {
-  display: none;
-  background: white;
-  border-top: 1px solid #eee;
-  padding: 15px 24px 25px;
-}
+    .menu-button {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
 
-.mobile-menu.open {
-  display: block;
-}
+    .mobile-menu {
+      display: none;
+      background: #fff;
+      border-top: 1px solid #eee;
+      padding: 10px 24px 20px;
+    }
 
-.mobile-menu a {
-  display: block;
-  padding: 13px 0;
-  color: #222;
-  text-decoration: none;
-  border-bottom: 1px solid #eee;
-}
+    .mobile-menu.open {
+      display: block;
+    }
 
-.hero {
-  min-height: 470px;
-  background:
-    linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)),
-    url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 40px 20px;
-}
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
 
-.hero h1 {
-  font-size: 56px;
-  margin-bottom: 15px;
-}
+    .hero {
+      min-height: 520px;
 
-.hero p {
-  font-size: 19px;
-  max-width: 720px;
-  margin: auto;
-}
+      background:
+        linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
 
-.intro {
-  max-width: 900px;
-  margin: auto;
-  padding: 80px 24px 55px;
-  text-align: center;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
 
-.intro h2 {
-  font-size: 36px;
-  margin-bottom: 18px;
-}
+      color: white;
+      padding: 40px 20px;
+    }
 
-.intro p {
-  color: #666;
-  font-size: 18px;
-}
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: 500;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+    }
 
-.projects {
-  max-width: 1200px;
-  margin: auto;
-  padding: 30px 24px 100px;
-}
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+    }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 24px;
+    }
 
-.project {
-  border: 1px solid #eee;
-  background: white;
-  overflow: hidden;
-}
+    .intro {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
 
-.project-image {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  display: block;
-}
+    .intro h2 {
+      font-size: 38px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
 
-.project-content {
-  padding: 26px;
-}
+    .intro p {
+      color: #666;
+      font-size: 17px;
+    }
 
-.project-content h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+    .projects {
+      margin-top: 55px;
 
-.project-content p {
-  color: #666;
-  margin-bottom: 20px;
-}
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
 
-.project-link {
-  text-decoration: none;
-  color: #222;
-  font-weight: 600;
-}
+    .project {
+      border: 1px solid #e5e5e5;
+      background: #fff;
 
-.back {
-  display: inline-block;
-  margin-bottom: 35px;
-  color: #555;
-  text-decoration: none;
-}
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
 
-.cta {
-  background: #f4f4f4;
-  text-align: center;
-  padding: 85px 24px;
-}
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
 
-.cta h2 {
-  font-size: 38px;
-  margin-bottom: 16px;
-}
+    .project-image {
+      height: 280px;
+      overflow: hidden;
+    }
 
-.cta p {
-  color: #666;
-  margin-bottom: 25px;
-}
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-.button {
-  display: inline-block;
-  background: #222;
-  color: white;
-  padding: 15px 28px;
-  text-decoration: none;
-  font-weight: 600;
-}
+    .project-content {
+      padding: 28px;
+    }
 
-footer {
-  background: #1d1d1d;
-  color: #aaa;
-  padding: 50px 24px;
-  text-align: center;
-}
+    .project-number {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 8px;
+    }
 
-footer strong {
-  color: white;
-}
+    .project h3 {
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
 
-@media (max-width: 900px) {
+    .project p {
+      color: #666;
+      margin-bottom: 22px;
+      font-size: 15px;
+    }
 
-  nav {
-    display: none;
-  }
+    .view-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #222;
+      font-size: 14px;
+      font-weight: 600;
+      border-bottom: 1px solid #222;
+      padding-bottom: 3px;
+    }
 
-  .menu-button {
-    display: block;
-  }
+    .back {
+      text-align: center;
+      margin-top: 55px;
+    }
 
-  .hero {
-    min-height: 400px;
-  }
+    .back a {
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+      padding-bottom: 4px;
+    }
 
-  .hero h1 {
-    font-size: 42px;
-  }
+    .cta {
+      background: #f4f2ee;
+      text-align: center;
+      padding: 90px 24px;
+    }
 
-  .hero p {
-    font-size: 17px;
-  }
+    .cta h2 {
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
 
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+    .cta p {
+      color: #666;
+      margin-bottom: 30px;
+    }
 
-  .intro h2 {
-    font-size: 30px;
-  }
+    .cta a {
+      display: inline-block;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 14px;
+    }
 
-  .cta h2 {
-    font-size: 31px;
-  }
-}
-</style>
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 45px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .copyright {
+      color: #999;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image {
+        height: 300px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      footer a {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        min-height: 430px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .intro h2 {
+        font-size: 32px;
+      }
+
+      .cta h2 {
+        font-size: 32px;
+      }
+
+      .project-image {
+        height: 250px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
 <header>
 
-  <div class="header-inner">
+  <div class="nav">
 
     <a href="index.html" class="logo">
       CERCOBUILT
     </a>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="house-designs.html">House Designs</a>
-      <a href="index.html#land">House & Land</a>
-      <a href="index.html#process">Build Process</a>
-      <a href="index.html#contact">Contact</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="house-designs.html">
+        House Designs
+      </a>
+
+      <a href="single-storey.html">
+        Single Storey
+      </a>
+
+      <a href="double-storey.html">
+        Double Storey
+      </a>
+
+      <a href="custom-homes.html">
+        Custom Homes
+      </a>
+
     </nav>
 
-    <button class="menu-button" onclick="toggleMenu()">
+    <button
+      class="menu-button"
+      onclick="toggleMenu()">
+
       ☰
+
     </button>
 
   </div>
 
-  <div class="mobile-menu" id="mobileMenu">
 
-    <a href="index.html" onclick="closeMenu()">Home</a>
+  <div
+    class="mobile-menu"
+    id="mobileMenu">
 
-    <a href="house-designs.html" onclick="closeMenu()">
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="house-designs.html">
       House Designs
     </a>
 
-    <a href="index.html#land" onclick="closeMenu()">
-      House & Land
+    <a href="single-storey.html">
+      Single Storey
     </a>
 
-    <a href="index.html#process" onclick="closeMenu()">
-      Build Process
+    <a href="double-storey.html">
+      Double Storey
     </a>
 
-    <a href="index.html#contact" onclick="closeMenu()">
-      Contact
+    <a href="custom-homes.html">
+      Custom Homes
     </a>
 
   </div>
@@ -303,11 +410,13 @@ footer strong {
 
   <div>
 
-    <h1>Custom Homes</h1>
+    <h1>
+      Custom Homes
+    </h1>
 
     <p>
-      A home designed around your block, your lifestyle
-      and the way you want to live.
+      Unique homes designed around your lifestyle,
+      land and individual requirements.
     </p>
 
   </div>
@@ -315,49 +424,60 @@ footer strong {
 </section>
 
 
-<section class="intro">
+<section class="section">
 
-  <h2>Custom Home Projects</h2>
+  <div class="intro">
 
-  <p>
-    Explore our custom home projects.
-    Each project can be tailored to its site,
-    lifestyle and design requirements.
-  </p>
+    <h2>
+      Custom Home Projects
+    </h2>
 
-</section>
+    <p>
+      Explore our custom home concepts.
+      Every custom home can be developed around
+      your site, lifestyle and design requirements.
+    </p>
+
+  </div>
 
 
-<section class="projects">
-
-  <a href="house-designs.html" class="back">
-    ← Back to House Designs
-  </a>
-
-  <div class="project-grid">
+  <div class="projects">
 
 
     <!-- PROJECT 01 -->
 
     <div class="project">
 
-      <img
-        class="project-image"
-        src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
-        alt="Custom Home Project 01"
-      >
+      <div class="project-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
+          alt="Custom Home Project 01">
+
+      </div>
+
 
       <div class="project-content">
 
-        <h3>Custom Home Project 01</h3>
+        <div class="project-number">
+          Project 01
+        </div>
+
+        <h3>
+          Custom Home Project 01
+        </h3>
 
         <p>
-          A custom-designed residence created around
-          the site and the way the family lives.
+          A bespoke residential concept focused on
+          individuality, comfort and modern living.
         </p>
 
-        <a href="#project01" class="project-link">
-          View Project →
+        <a
+          href="custom-home-project-01.html"
+          class="view-link">
+
+          View Design →
+
         </a>
 
       </div>
@@ -369,23 +489,36 @@ footer strong {
 
     <div class="project">
 
-      <img
-        class="project-image"
-        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-        alt="Custom Home Project 02"
-      >
+      <div class="project-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+          alt="Custom Home Project 02">
+
+      </div>
+
 
       <div class="project-content">
 
-        <h3>Custom Home Project 02</h3>
+        <div class="project-number">
+          Project 02
+        </div>
+
+        <h3>
+          Custom Home Project 02
+        </h3>
 
         <p>
-          A contemporary custom home focused on
-          practical spaces and modern living.
+          A tailored home concept balancing
+          architectural character and practical living.
         </p>
 
-        <a href="#project02" class="project-link">
-          View Project →
+        <a
+          href="custom-home-project-02.html"
+          class="view-link">
+
+          View Design →
+
         </a>
 
       </div>
@@ -397,23 +530,36 @@ footer strong {
 
     <div class="project">
 
-      <img
-        class="project-image"
-        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
-        alt="Custom Home Project 03"
-      >
+      <div class="project-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
+          alt="Custom Home Project 03">
+
+      </div>
+
 
       <div class="project-content">
 
-        <h3>Custom Home Project 03</h3>
+        <div class="project-number">
+          Project 03
+        </div>
+
+        <h3>
+          Custom Home Project 03
+        </h3>
 
         <p>
-          A personalised home combining thoughtful
-          design with comfortable family living.
+          A distinctive custom home concept created
+          around the way you want to live.
         </p>
 
-        <a href="#project03" class="project-link">
-          View Project →
+        <a
+          href="custom-home-project-03.html"
+          class="view-link">
+
+          View Design →
+
         </a>
 
       </div>
@@ -423,22 +569,31 @@ footer strong {
 
   </div>
 
+
+  <div class="back">
+
+    <a href="house-designs.html">
+
+      ← Back to House Designs
+
+    </a>
+
+  </div>
+
 </section>
 
 
-<section class="cta" id="contact">
+<section class="cta">
 
-  <h2>Ready to Create a Custom Home?</h2>
+  <h2>
+    Ready to create your custom home?
+  </h2>
 
   <p>
-    Tell us about your block, your ideas and
-    the home you want to create.
+    Let's start the conversation about your next home.
   </p>
 
-  <a
-    href="mailto:hello@cercobuilt.com.au"
-    class="button"
-  >
+  <a href="index.html#contact">
     Start Your Build
   </a>
 
@@ -447,33 +602,43 @@ footer strong {
 
 <footer>
 
-  <p>
-    © 2026 <strong>Cercobuilt</strong>.
-    All rights reserved.
-  </p>
+  <div class="footer-inner">
+
+    <div class="copyright">
+      © 2026 Cercobuilt. All rights reserved.
+    </div>
+
+    <div>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="house-designs.html">
+        House Designs
+      </a>
+
+      <a href="index.html#contact">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
 
 </footer>
 
 
 <script>
 
-function toggleMenu() {
+  function toggleMenu() {
 
-  document
-    .getElementById("mobileMenu")
-    .classList
-    .toggle("open");
+    const menu =
+      document.getElementById("mobileMenu");
 
-}
+    menu.classList.toggle("open");
 
-function closeMenu() {
-
-  document
-    .getElementById("mobileMenu")
-    .classList
-    .remove("open");
-
-}
+  }
 
 </script>
 
