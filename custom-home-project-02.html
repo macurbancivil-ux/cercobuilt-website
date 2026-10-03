@@ -1,1 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Home Project 02 | Cercobuilt</title>
 
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+color:#222;
+background:#fff;
+line-height:1.6;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.97);
+border-bottom:1px solid #eee;
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+padding:18px 24px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+letter-spacing:1px;
+color:#222;
+text-decoration:none;
+}
+
+nav{
+display:flex;
+gap:28px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-size:14px;
+}
+
+.menu-button{
+display:none;
+font-size:28px;
+cursor:pointer;
+background:none;
+border:none;
+}
+
+.mobile-menu{
+display:none;
+background:#fff;
+border-top:1px solid #eee;
+padding:10px 24px 20px;
+}
+
+.mobile-menu.open{
+display:block;
+}
+
+.mobile-menu a{
+display:block;
+padding:12px 0;
+color:#222;
+text-decoration:none;
+border-bottom:1px solid #eee;
+}
+
+.hero{
+min-height:520px;
+background:
+linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85")
+center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
+padding:40px 20px;
+}
+
+.hero h1{
+font-size:clamp(42px,7vw,76px);
+font-weight:500;
+letter-spacing:-2px;
+}
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:90px 24px;
+}
+
+.intro{
+max-width:780px;
+margin:auto;
+text-align:center;
+}
+
+.intro h2{
+font-size:38px;
+font-weight:500;
+margin-bottom:20px;
+}
+
+.intro p{
+color:#666;
+font-size:17px;
+}
+
+.details{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+margin-top:60px;
+}
+
+.detail{
+background:#f5f3ef;
+padding:30px;
+text-align:center;
+}
+
+.detail h3{
+font-size:20px;
+font-weight:500;
+margin-bottom:8px;
+}
+
+.detail p{
+color:#666;
+}
+
+.features{
+margin-top:70px;
+}
+
+.features h2{
+font-size:34px;
+font-weight:500;
+margin-bottom:25px;
+text-align:center;
+}
+
+.features ul{
+max-width:760px;
+margin:auto;
+padding-left:22px;
+color:#555;
+}
+
+.features li{
+margin-bottom:12px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+margin-top:60px;
+}
+
+.gallery img{
+width:100%;
+height:360px;
+object-fit:cover;
+display:block;
+}
+
+.back{
+text-align:center;
+margin-top:65px;
+}
+
+.back a{
+color:#222;
+text-decoration:none;
+border-bottom:1px solid #222;
+padding-bottom:4px;
+}
+
+.cta{
+background:#f4f2ee;
+text-align:center;
+padding:90px 24px;
+}
+
+.cta h2{
+font-size:40px;
+font-weight:500;
+margin-bottom:20px;
+}
+
+.cta p{
+color:#666;
+margin-bottom:30px;
+}
+
+.cta a{
+display:inline-block;
+background:#222;
+color:#fff;
+text-decoration:none;
+padding:14px 28px;
+font-size:14px;
+}
+
+footer{
+background:#222;
+color:#fff;
+padding:45px 24px;
+}
+
+.footer-inner{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+gap:30px;
+}
+
+footer a{
+color:#ccc;
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
+}
+
+.copyright{
+color:#999;
+font-size:13px;
+}
+
+@media(max-width:900px){
+
+nav{display:none}
+
+.menu-button{
+display:block;
+}
+
+.details{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery img{
+height:280px;
+}
+
+.footer-inner{
+flex-direction:column;
+}
+
+footer a{
+margin-left:0;
+margin-right:20px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+min-height:430px;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.section{
+padding:65px 20px;
+}
+
+.intro h2{
+font-size:32px;
+}
+
+.cta h2{
+font-size:32px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<a href="index.html" class="logo">
+CERCOBUILT
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="house-designs.html">House Designs</a>
+<a href="single-storey.html">Single Storey</a>
+<a href="double-storey.html">Double Storey</a>
+<a href="custom-homes.html">Custom Homes</a>
+</nav>
+
+<button class="menu-button" onclick="toggleMenu()">☰</button>
+
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="index.html">Home</a>
+<a href="house-designs.html">House Designs</a>
+<a href="single-storey.html">Single Storey</a>
+<a href="double-storey.html">Double Storey</a>
+<a href="custom-homes.html">Custom Homes</a>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div>
+
+<h1>Custom Home Project 02</h1>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="intro">
+
+<h2>Created For Modern Living</h2>
+
+<p>
+A custom home concept shaped around
+personal lifestyle needs, architectural character
+and practical everyday living.
+</p>
+
+</div>
+
+
+<div class="details">
+
+<div class="detail">
+<h3>Home Type</h3>
+<p>Custom Home</p>
+</div>
+
+<div class="detail">
+<h3>Design</h3>
+<p>To Be Confirmed</p>
+</div>
+
+<div class="detail">
+<h3>Location</h3>
+<p>To Be Confirmed</p>
+</div>
+
+</div>
+
+
+<div class="features">
+
+<h2>Design Features</h2>
+
+<ul>
+
+<li>Individual architectural planning</li>
+
+<li>Open and flexible living spaces</li>
+
+<li>Functional connection between living areas</li>
+
+<li>Indoor and outdoor entertaining opportunities</li>
+
+<li>Finishes selected to complement the design</li>
+
+</ul>
+
+</div>
+
+
+<div class="gallery">
+
+<img
+src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+alt="Custom Home Project 02">
+
+<img
+src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+alt="Custom Home Interior">
+
+</div>
+
+
+<div class="back">
+
+<a href="custom-homes.html">
+← Back to Custom Homes
+</a>
+
+</div>
+
+</section>
+
+
+<section class="cta">
+
+<h2>Ready to create your own home?</h2>
+
+<p>
+Let's start the conversation about your custom home.
+</p>
+
+<a href="index.html#contact">
+Start Your Build
+</a>
+
+</section>
+
+
+<footer>
+
+<div class="footer-inner">
+
+<div class="copyright">
+© 2026 Cercobuilt. All rights reserved.
+</div>
+
+<div>
+
+<a href="index.html">Home</a>
+
+<a href="house-designs.html">
+House Designs
+</a>
+
+<a href="index.html#contact">
+Contact
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+const menu =
+document.getElementById("mobileMenu");
+
+menu.classList.toggle("open");
+
+}
+
+</script>
+
+</body>
+</html>
