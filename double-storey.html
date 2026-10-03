@@ -1,1 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Double Storey Homes | Cercobuilt</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #222;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+
+.menu-button {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background: white;
+  border-top: 1px solid #eee;
+  padding: 15px 24px 25px;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 13px 0;
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.hero {
+  min-height: 470px;
+  background:
+    linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 19px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.intro {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 24px 55px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 36px;
+  margin-bottom: 18px;
+}
+
+.intro p {
+  color: #666;
+  font-size: 18px;
+}
+
+.projects {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 24px 100px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.project {
+  border: 1px solid #eee;
+  background: white;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-content {
+  padding: 26px;
+}
+
+.project-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.project-link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 35px;
+  color: #555;
+  text-decoration: none;
+}
+
+.cta {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 85px 24px;
+}
+
+.cta h2 {
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.cta p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.button {
+  display: inline-block;
+  background: #222;
+  color: white;
+  padding: 15px 28px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer {
+  background: #1d1d1d;
+  color: #aaa;
+  padding: 50px 24px;
+  text-align: center;
+}
+
+footer strong {
+  color: white;
+}
+
+@media (max-width: 900px) {
+
+  nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro h2 {
+    font-size: 30px;
+  }
+
+  .cta h2 {
+    font-size: 31px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="header-inner">
+
+    <a href="index.html" class="logo">
+      CERCOBUILT
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="house-designs.html">House Designs</a>
+      <a href="index.html#land">House & Land</a>
+      <a href="index.html#process">Build Process</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <button class="menu-button" onclick="toggleMenu()">
+      ☰
+    </button>
+
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html" onclick="closeMenu()">Home</a>
+
+    <a href="house-designs.html" onclick="closeMenu()">
+      House Designs
+    </a>
+
+    <a href="index.html#land" onclick="closeMenu()">
+      House & Land
+    </a>
+
+    <a href="index.html#process" onclick="closeMenu()">
+      Build Process
+    </a>
+
+    <a href="index.html#contact" onclick="closeMenu()">
+      Contact
+    </a>
+
+  </div>
+
+</header>
+
+
+<section class="hero">
+
+  <div>
+
+    <h1>Double Storey</h1>
+
+    <p>
+      Two levels of thoughtfully designed living,
+      created for space, comfort and modern family life.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="intro">
+
+  <h2>Double Storey Projects</h2>
+
+  <p>
+    Explore our Double Storey home projects.
+    Select a project below to view more information,
+    images and design details.
+  </p>
+
+</section>
+
+
+<section class="projects">
+
+  <a href="house-designs.html" class="back">
+    ← Back to House Designs
+  </a>
+
+  <div class="project-grid">
+
+
+    <!-- PROJECT 01 -->
+
+    <div class="project">
+
+      <img
+        class="project-image"
+        src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
+        alt="Double Storey Project 01"
+      >
+
+      <div class="project-content">
+
+        <h3>Double Storey Project 01</h3>
+
+        <p>
+          A contemporary double storey home designed
+          around spacious family living.
+        </p>
+
+        <a href="#project01" class="project-link">
+          View Project →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROJECT 02 -->
+
+    <div class="project">
+
+      <img
+        class="project-image"
+        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+        alt="Double Storey Project 02"
+      >
+
+      <div class="project-content">
+
+        <h3>Double Storey Project 02</h3>
+
+        <p>
+          A modern family residence with flexible
+          spaces across two levels.
+        </p>
+
+        <a href="#project02" class="project-link">
+          View Project →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROJECT 03 -->
+
+    <div class="project">
+
+      <img
+        class="project-image"
+        src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
+        alt="Double Storey Project 03"
+      >
+
+      <div class="project-content">
+
+        <h3>Double Storey Project 03</h3>
+
+        <p>
+          A carefully considered home combining
+          contemporary design and practical living.
+        </p>
+
+        <a href="#project03" class="project-link">
+          View Project →
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<section class="cta" id="contact">
+
+  <h2>Interested in a Double Storey Home?</h2>
+
+  <p>
+    Talk to us about your block, lifestyle and
+    ideas for your new home.
+  </p>
+
+  <a
+    href="mailto:hello@cercobuilt.com.au"
+    class="button"
+  >
+    Start Your Build
+  </a>
+
+</section>
+
+
+<footer>
+
+  <p>
+    © 2026 <strong>Cercobuilt</strong>.
+    All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+  document
+    .getElementById("mobileMenu")
+    .classList
+    .toggle("open");
+
+}
+
+function closeMenu() {
+
+  document
+    .getElementById("mobileMenu")
+    .classList
+    .remove("open");
+
+}
+
+</script>
+
+</body>
+</html>
