@@ -1,510 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Cercobuilt | Homes Made for Living</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      background: #fff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.98);
-      border-bottom: 1px solid #e8e8e8;
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-
-    nav a {
-      font-size: 14px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    nav a:hover {
-      color: #777;
-    }
-
-    .menu-button {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: #222;
-    }
-
-    .mobile-menu {
-      display: none;
-      background: white;
-      border-top: 1px solid #eee;
-    }
-
-    .mobile-menu a {
-      display: block;
-      padding: 16px 24px;
-      border-bottom: 1px solid #eee;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .mobile-menu.open {
-      display: block;
-    }
-
-    .hero {
-      min-height: 680px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)),
-        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
-        center/cover;
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      width: 100%;
-      margin: auto;
-      padding: 100px 24px;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 13px;
-      margin-bottom: 18px;
-      opacity: 0.9;
-    }
-
-    h1 {
-      font-size: clamp(48px, 7vw, 82px);
-      line-height: 1.02;
-      max-width: 850px;
-      margin-bottom: 26px;
-    }
-
-    .hero p {
-      max-width: 680px;
-      font-size: 20px;
-      color: #f2f2f2;
-      margin-bottom: 35px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 26px;
-      background: #222;
-      color: white;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .button:hover {
-      background: #444;
-    }
-
-    .button-light {
-      display: inline-block;
-      padding: 15px 26px;
-      background: white;
-      color: #222;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 90px 24px;
-    }
-
-    .intro {
-      max-width: 780px;
-    }
-
-    .intro h2 {
-      font-size: 46px;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .intro p {
-      font-size: 18px;
-      color: #666;
-    }
-
-    .designs {
-      background: #f5f3ef;
-    }
-
-    .designs-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 90px 24px;
-    }
-
-    .section-heading {
-      margin-bottom: 45px;
-    }
-
-    .section-heading h2 {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    .section-heading p {
-      color: #666;
-      font-size: 17px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .card {
-      background: white;
-      overflow: hidden;
-      border: 1px solid #e6e6e6;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.09);
-    }
-
-    .card-image {
-      height: 260px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-content {
-      padding: 28px;
-    }
-
-    .card-content h3 {
-      font-size: 25px;
-      margin-bottom: 12px;
-    }
-
-    .card-content p {
-      color: #666;
-      font-size: 15px;
-      margin-bottom: 20px;
-    }
-
-    .card-link {
-      display: inline-block;
-      font-weight: 700;
-      font-size: 14px;
-      border-bottom: 1px solid #222;
-      padding-bottom: 4px;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 500px;
-    }
-
-    .split-image {
-      background:
-        url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85")
-        center/cover;
-    }
-
-    .split-content {
-      background: #202020;
-      color: white;
-      padding: 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .split-content h2 {
-      font-size: 44px;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .split-content p {
-      color: #ccc;
-      font-size: 17px;
-      margin-bottom: 30px;
-      max-width: 520px;
-    }
-
-    .why {
-      background: white;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 45px;
-      margin-top: 50px;
-    }
-
-    .why-item {
-      border-top: 1px solid #222;
-      padding-top: 25px;
-    }
-
-    .why-item h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .why-item p {
-      color: #666;
-      font-size: 16px;
-    }
-
-    .process {
-      background: #f5f3ef;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-      margin-top: 50px;
-    }
-
-    .process-item {
-      border-top: 1px solid #222;
-      padding-top: 22px;
-    }
-
-    .number {
-      font-size: 13px;
-      letter-spacing: 2px;
-      color: #777;
-      margin-bottom: 15px;
-    }
-
-    .process-item h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .process-item p {
-      color: #666;
-      font-size: 15px;
-    }
-
-    .cta {
-      background: #222;
-      color: white;
-      text-align: center;
-    }
-
-    .cta-inner {
-      max-width: 850px;
-      margin: auto;
-      padding: 95px 24px;
-    }
-
-    .cta h2 {
-      font-size: 48px;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .cta p {
-      color: #ccc;
-      font-size: 17px;
-      margin-bottom: 30px;
-    }
-
-    footer {
-      background: #111;
-      color: #aaa;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 50px 24px;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .footer-logo {
-      color: white;
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 25px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 850px) {
-
-      nav {
-        display: none;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .hero {
-        min-height: 600px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .split {
-        grid-template-columns: 1fr;
-      }
-
-      .split-image {
-        min-height: 350px;
-      }
-
-      .split-content {
-        padding: 60px 24px;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .process-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .intro h2,
-      .section-heading h2 {
-        font-size: 36px;
-      }
-
-      .cta h2 {
-        font-size: 38px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-      }
-
-      .footer-links {
-        flex-wrap: wrap;
-      }
-    }
-
-    @media (max-width: 550px) {
-
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 48px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .buttons {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cercobuilt | Homes Made for Living</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #222;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: #777;
+}
+
+.menu-button {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background: white;
+  border-top: 1px solid #eee;
+  padding: 15px 24px 25px;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 13px 0;
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: white;
+
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 22px;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 720px;
+  margin: auto auto 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 28px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button-dark {
+  background: #222;
+  color: white;
+}
+
+.button-light {
+  background: white;
+  color: #222;
+}
+
+
+/* INTRO */
+
+.intro {
+  max-width: 900px;
+  margin: auto;
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 18px;
+  color: #666;
+}
+
+
+/* HOUSE DESIGNS */
+
+.designs {
+  background: #f6f6f6;
+  padding: 100px 24px;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-heading h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.section-heading p {
+  color: #666;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.card-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 28px;
+}
+
+.card h3 {
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+}
+
+
+/* HOUSE & LAND */
+
+.land {
+  padding: 100px 24px;
+}
+
+.land-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.land-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.land-content h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.land-content p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+
+/* WHY CERCOBUILT */
+
+.why {
+  background: #f6f6f6;
+  padding: 100px 24px;
+}
+
+.why-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.why-item {
+  text-align: center;
+}
+
+.why-item h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.why-item p {
+  color: #666;
+}
+
+
+/* PROCESS */
+
+.process {
+  padding: 100px 24px;
+}
+
+.process-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.process-item {
+  text-align: center;
+}
+
+.process-number {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.process-item h3 {
+  margin-bottom: 10px;
+}
+
+.process-item p {
+  color: #666;
+}
+
+
+/* CTA */
+
+.cta {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 100px 24px;
+}
+
+.cta h2 {
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.cta p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.cta .button {
+  background: white;
+  color: #222;
+}
+
+
+/* FOOTER */
+
+footer {
+  background: #151515;
+  color: #999;
+  padding: 55px 24px;
+  text-align: center;
+}
+
+footer strong {
+  color: white;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .design-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .land-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .land-image {
+    height: 350px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .intro h2,
+  .section-heading h2,
+  .land-content h2 {
+    font-size: 32px;
+  }
+
+  .cta h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+}
+</style>
 </head>
 
 <body>
 
+
 <header>
 
-  <div class="nav">
+  <div class="header-inner">
 
     <a href="index.html" class="logo">
       CERCOBUILT
     </a>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="house-designs.html">House Designs</a>
-      <a href="#land">House & Land</a>
-      <a href="#process">Build Process</a>
-      <a href="#contact">Contact</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="house-designs.html">
+        House Designs
+      </a>
+
+      <a href="#land">
+        House & Land
+      </a>
+
+      <a href="#process">
+        Build Process
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </nav>
 
-    <button
-      class="menu-button"
-      onclick="toggleMenu()"
-      aria-label="Open menu">
+    <button class="menu-button" onclick="toggleMenu()">
       ☰
     </button>
 
   </div>
+
 
   <div class="mobile-menu" id="mobileMenu">
 
@@ -533,30 +506,34 @@
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
   <div class="hero-content">
 
-    <div class="eyebrow">
-      Melbourne & Victoria
-    </div>
-
     <h1>
-      Homes made for living.
+      Homes Made for Living.
     </h1>
 
     <p>
-      Thoughtfully designed homes, quality construction and a
-      building experience centred around you.
+      Thoughtfully designed homes, quality construction
+      and a building experience centred around you.
     </p>
 
-    <div class="buttons">
+    <div class="hero-buttons">
 
-      <a href="house-designs.html" class="button-light">
+      <a
+        href="house-designs.html"
+        class="button button-light"
+      >
         Explore House Designs
       </a>
 
-      <a href="#contact" class="button">
+      <a
+        href="#contact"
+        class="button button-dark"
+      >
         Start Your Build
       </a>
 
@@ -567,60 +544,55 @@
 </section>
 
 
-<section class="section">
+<!-- INTRO -->
 
-  <div class="intro">
+<section class="intro">
 
-    <div class="eyebrow">
-      Your Home
-    </div>
+  <h2>
+    Your Home Should Work for the Way You Live.
+  </h2>
 
-    <h2>
-      Your home should work for the way you live.
-    </h2>
-
-    <p>
-      At Cercobuilt, we believe a great home starts with understanding
-      the people who will live in it. From the first idea to the day
-      you move in, our approach is centred around thoughtful design,
-      clear communication and creating a home you'll love.
-    </p>
-
-  </div>
+  <p>
+    We believe building a home should be a clear,
+    considered and personal experience.
+    From the first idea to the final handover,
+    every detail matters.
+  </p>
 
 </section>
 
 
-<section class="designs" id="designs">
+<!-- HOUSE DESIGNS -->
 
-  <div class="designs-inner">
+<section class="designs">
+
+  <div class="section-inner">
 
     <div class="section-heading">
 
-      <div class="eyebrow">
-        Our Designs
-      </div>
-
       <h2>
-        Find your starting point.
+        House Designs
       </h2>
 
       <p>
-        Explore our house design directions and discover a home
-        that suits the way you want to live.
+        Explore homes designed for different lifestyles.
       </p>
 
     </div>
 
 
-    <div class="cards">
+    <div class="design-grid">
 
-      <article class="card">
 
-        <div
+      <!-- SINGLE STOREY -->
+
+      <div class="card">
+
+        <img
           class="card-image"
-          style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85');">
-        </div>
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+          alt="Single Storey Home"
+        >
 
         <div class="card-content">
 
@@ -629,25 +601,31 @@
           </h3>
 
           <p>
-            Comfortable layouts designed for practical,
-            easy everyday living.
+            Comfortable single-level living
+            with flexible spaces for everyday life.
           </p>
 
-          <a href="house-designs.html" class="card-link">
-            Explore Designs →
+          <a
+            href="single-storey.html"
+            class="card-link"
+          >
+            View Design →
           </a>
 
         </div>
 
-      </article>
+      </div>
 
 
-      <article class="card">
+      <!-- DOUBLE STOREY -->
 
-        <div
+      <div class="card">
+
+        <img
           class="card-image"
-          style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85');">
-        </div>
+          src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+          alt="Double Storey Home"
+        >
 
         <div class="card-content">
 
@@ -656,25 +634,31 @@
           </h3>
 
           <p>
-            Create more space with thoughtful separation
-            between living and private areas.
+            More space across two levels,
+            designed for modern family living.
           </p>
 
-          <a href="house-designs.html" class="card-link">
-            Explore Designs →
+          <a
+            href="double-storey.html"
+            class="card-link"
+          >
+            View Design →
           </a>
 
         </div>
 
-      </article>
+      </div>
 
 
-      <article class="card">
+      <!-- CUSTOM HOMES -->
 
-        <div
+      <div class="card">
+
+        <img
           class="card-image"
-          style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85');">
-        </div>
+          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+          alt="Custom Home"
+        >
 
         <div class="card-content">
 
@@ -683,17 +667,21 @@
           </h3>
 
           <p>
-            Start with your ideas and create a home
-            shaped around your lifestyle.
+            A home designed around your block,
+            lifestyle and vision.
           </p>
 
-          <a href="house-designs.html" class="card-link">
-            Explore Designs →
+          <a
+            href="custom-homes.html"
+            class="card-link"
+          >
+            View Design →
           </a>
 
         </div>
 
-      </article>
+      </div>
+
 
     </div>
 
@@ -702,30 +690,39 @@
 </section>
 
 
-<section id="land">
+<!-- HOUSE & LAND -->
 
-  <div class="split">
+<section class="land" id="land">
 
-    <div class="split-image"></div>
+  <div class="land-grid">
 
-    <div class="split-content">
+    <img
+      class="land-image"
+      src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
+      alt="New Home"
+    >
 
-      <div class="eyebrow">
-        House & Land
-      </div>
+    <div class="land-content">
 
       <h2>
-        Your home. Your land. Your next chapter.
+        House & Land
       </h2>
 
       <p>
-        Looking for the right block and the right home together?
-        Explore house and land opportunities designed to make
-        the journey simpler.
+        Discover opportunities to build a new home
+        on carefully considered land packages.
       </p>
 
-      <a href="#contact" class="button-light">
-        Enquire About House & Land
+      <p>
+        We can help you understand the possibilities
+        and create a home that works for the site.
+      </p>
+
+      <a
+        href="#contact"
+        class="button button-dark"
+      >
+        Enquire Now
       </a>
 
     </div>
@@ -735,16 +732,14 @@
 </section>
 
 
-<section class="section why">
+<!-- WHY -->
+
+<section class="why">
 
   <div class="section-heading">
 
-    <div class="eyebrow">
-      Why Cercobuilt
-    </div>
-
     <h2>
-      Built around you.
+      Why Cercobuilt?
     </h2>
 
   </div>
@@ -759,8 +754,8 @@
       </h3>
 
       <p>
-        Thoughtful spaces designed around modern lifestyles,
-        functionality and the way you want to live.
+        Thoughtful layouts designed around
+        real everyday living.
       </p>
 
     </div>
@@ -773,8 +768,8 @@
       </h3>
 
       <p>
-        A considered approach to materials, construction
-        and the details that make a house feel like home.
+        A considered approach to materials,
+        details and construction.
       </p>
 
     </div>
@@ -787,8 +782,8 @@
       </h3>
 
       <p>
-        Clear communication and a straightforward building
-        journey from your first conversation to completion.
+        A straightforward building experience
+        with communication at every stage.
       </p>
 
     </div>
@@ -797,186 +792,156 @@
 
 </section>
 
+
+<!-- PROCESS -->
 
 <section class="process" id="process">
 
-  <div class="section">
-
-    <div class="section-heading">
-
-      <div class="eyebrow">
-        Build Process
-      </div>
-
-      <h2>
-        From idea to home.
-      </h2>
-
-      <p>
-        A simple process designed to keep your build moving forward.
-      </p>
-
-    </div>
-
-
-    <div class="process-grid">
-
-      <div class="process-item">
-
-        <div class="number">
-          01
-        </div>
-
-        <h3>
-          Discover
-        </h3>
-
-        <p>
-          Talk to us about your ideas, land and lifestyle.
-        </p>
-
-      </div>
-
-
-      <div class="process-item">
-
-        <div class="number">
-          02
-        </div>
-
-        <h3>
-          Design
-        </h3>
-
-        <p>
-          Shape your home around the way you want to live.
-        </p>
-
-      </div>
-
-
-      <div class="process-item">
-
-        <div class="number">
-          03
-        </div>
-
-        <h3>
-          Build
-        </h3>
-
-        <p>
-          Move through construction with clear communication.
-        </p>
-
-      </div>
-
-
-      <div class="process-item">
-
-        <div class="number">
-          04
-        </div>
-
-        <h3>
-          Move In
-        </h3>
-
-        <p>
-          Step into a home created for your next chapter.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="cta" id="contact">
-
-  <div class="cta-inner">
-
-    <div class="eyebrow">
-      Start Your Journey
-    </div>
+  <div class="section-heading">
 
     <h2>
-      Ready to build your next chapter?
+      Our Build Process
     </h2>
 
     <p>
-      Tell us about your plans and let's start a conversation.
+      From your first idea to moving into your new home.
     </p>
 
-    <a
-      href="mailto:hello@cercobuilt.com.au"
-      class="button-light">
-      Start a Conversation
-    </a>
+  </div>
+
+
+  <div class="process-grid">
+
+    <div class="process-item">
+
+      <div class="process-number">
+        01
+      </div>
+
+      <h3>
+        Discover
+      </h3>
+
+      <p>
+        Understand your ideas,
+        lifestyle and goals.
+      </p>
+
+    </div>
+
+
+    <div class="process-item">
+
+      <div class="process-number">
+        02
+      </div>
+
+      <h3>
+        Design
+      </h3>
+
+      <p>
+        Develop a home that suits
+        your block and lifestyle.
+      </p>
+
+    </div>
+
+
+    <div class="process-item">
+
+      <div class="process-number">
+        03
+      </div>
+
+      <h3>
+        Build
+      </h3>
+
+      <p>
+        Bring the design to life
+        through construction.
+      </p>
+
+    </div>
+
+
+    <div class="process-item">
+
+      <div class="process-number">
+        04
+      </div>
+
+      <h3>
+        Move In
+      </h3>
+
+      <p>
+        Enjoy your new home
+        and your next chapter.
+      </p>
+
+    </div>
 
   </div>
 
 </section>
 
 
+<!-- CONTACT -->
+
+<section class="cta" id="contact">
+
+  <h2>
+    Ready to Build Your Next Chapter?
+  </h2>
+
+  <p>
+    Let's talk about your ideas and
+    your plans for a new home.
+  </p>
+
+  <a
+    href="mailto:hello@cercobuilt.com.au"
+    class="button"
+  >
+    Start Your Build
+  </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
 <footer>
 
-  <div class="footer-inner">
-
-    <div>
-
-      <div class="footer-logo">
-        CERCOBUILT
-      </div>
-
-      <p>
-        Homes made for living.
-      </p>
-
-    </div>
-
-
-    <div class="footer-links">
-
-      <a href="house-designs.html">
-        House Designs
-      </a>
-
-      <a href="#land">
-        House & Land
-      </a>
-
-      <a href="#process">
-        Build Process
-      </a>
-
-      <a href="#contact">
-        Contact
-      </a>
-
-    </div>
-
-  </div>
+  <p>
+    © 2026 <strong>Cercobuilt</strong>.
+    All rights reserved.
+  </p>
 
 </footer>
 
 
 <script>
 
-  function toggleMenu() {
-    document
-      .getElementById("mobileMenu")
-      .classList.toggle("open");
-  }
+function toggleMenu() {
 
-  function closeMenu() {
-    document
-      .getElementById("mobileMenu")
-      .classList.remove("open");
-  }
+  document
+    .getElementById("mobileMenu")
+    .classList
+    .toggle("open");
+
+}
+
+function closeMenu() {
+
+  document
+    .getElementById("mobileMenu")
+    .classList
+    .remove("open");
+
+}
 
 </script>
 
