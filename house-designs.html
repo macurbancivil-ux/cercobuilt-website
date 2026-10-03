@@ -56,10 +56,6 @@ nav a {
   font-size: 15px;
 }
 
-nav a:hover {
-  color: #777;
-}
-
 .menu-button {
   display: none;
   font-size: 28px;
@@ -256,9 +252,12 @@ footer strong {
 <body>
 
 <header>
+
   <div class="header-inner">
 
-    <a href="index.html" class="logo">CERCOBUILT</a>
+    <a href="index.html" class="logo">
+      CERCOBUILT
+    </a>
 
     <nav>
       <a href="index.html">Home</a>
@@ -268,37 +267,63 @@ footer strong {
       <a href="index.html#contact">Contact</a>
     </nav>
 
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <button class="menu-button" onclick="toggleMenu()">
+      ☰
+    </button>
 
   </div>
 
   <div class="mobile-menu" id="mobileMenu">
+
     <a href="index.html" onclick="closeMenu()">Home</a>
-    <a href="house-designs.html" onclick="closeMenu()">House Designs</a>
-    <a href="index.html#land" onclick="closeMenu()">House & Land</a>
-    <a href="index.html#process" onclick="closeMenu()">Build Process</a>
-    <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+
+    <a href="house-designs.html" onclick="closeMenu()">
+      House Designs
+    </a>
+
+    <a href="index.html#land" onclick="closeMenu()">
+      House & Land
+    </a>
+
+    <a href="index.html#process" onclick="closeMenu()">
+      Build Process
+    </a>
+
+    <a href="index.html#contact" onclick="closeMenu()">
+      Contact
+    </a>
+
   </div>
+
 </header>
 
 
 <section class="hero">
+
   <div>
+
     <h1>House Designs</h1>
+
     <p>
       Thoughtfully designed homes for modern Australian living.
-      Explore a range of home styles and find the design that suits you.
+      Explore our home designs and discover a style that suits you.
     </p>
+
   </div>
+
 </section>
 
 
 <section class="intro">
-  <h2>Designed Around the Way You Live</h2>
+
+  <h2>Find Your Home Design</h2>
+
   <p>
-    From practical family homes to contemporary designs,
-    our house designs are created with everyday living in mind.
+    Explore our collection of home designs,
+    created with practical layouts, contemporary living
+    and flexible design in mind.
   </p>
+
 </section>
 
 
@@ -306,36 +331,47 @@ footer strong {
 
   <div class="design-grid">
 
-    <!-- Single Storey -->
+
+    <!-- SINGLE STOREY -->
+
     <div class="card">
+
       <img
         class="card-image"
         src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-        alt="Single Storey Home">
+        alt="Single Storey Home"
+      >
 
       <div class="card-content">
+
         <h3>Single Storey</h3>
 
         <p>
-          Comfortable single-level living with flexible spaces
-          designed for modern families.
+          Comfortable single-level living with flexible
+          spaces designed for modern families.
         </p>
 
         <a href="single-storey.html" class="card-link">
           View Design →
         </a>
+
       </div>
+
     </div>
 
 
-    <!-- Double Storey -->
+    <!-- DOUBLE STOREY -->
+
     <div class="card">
+
       <img
         class="card-image"
         src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-        alt="Double Storey Home">
+        alt="Double Storey Home"
+      >
 
       <div class="card-content">
+
         <h3>Double Storey</h3>
 
         <p>
@@ -343,87 +379,27 @@ footer strong {
           for growing families and modern lifestyles.
         </p>
 
-        <a href="#contact" class="card-link">
+        <a href="double-storey.html" class="card-link">
           View Design →
         </a>
+
       </div>
+
     </div>
 
 
-    <!-- Family Homes -->
+    <!-- CUSTOM HOMES -->
+
     <div class="card">
+
       <img
         class="card-image"
         src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
-        alt="Family Home">
+        alt="Custom Home"
+      >
 
       <div class="card-content">
-        <h3>Family Homes</h3>
 
-        <p>
-          Practical layouts with spaces designed around
-          family life, comfort and connection.
-        </p>
-
-        <a href="#contact" class="card-link">
-          View Design →
-        </a>
-      </div>
-    </div>
-
-
-    <!-- Modern Living -->
-    <div class="card">
-      <img
-        class="card-image"
-        src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
-        alt="Modern Home">
-
-      <div class="card-content">
-        <h3>Modern Living</h3>
-
-        <p>
-          Contemporary designs combining clean lines,
-          open spaces and timeless materials.
-        </p>
-
-        <a href="#contact" class="card-link">
-          View Design →
-        </a>
-      </div>
-    </div>
-
-
-    <!-- Family Living -->
-    <div class="card">
-      <img
-        class="card-image"
-        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
-        alt="Family Living Home">
-
-      <div class="card-content">
-        <h3>Family Living</h3>
-
-        <p>
-          Spacious living areas and thoughtful layouts
-          created for everyday family life.
-        </p>
-
-        <a href="#contact" class="card-link">
-          View Design →
-        </a>
-      </div>
-    </div>
-
-
-    <!-- Custom Homes -->
-    <div class="card">
-      <img
-        class="card-image"
-        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-        alt="Custom Home">
-
-      <div class="card-content">
         <h3>Custom Homes</h3>
 
         <p>
@@ -431,11 +407,14 @@ footer strong {
           your lifestyle and your vision.
         </p>
 
-        <a href="#contact" class="card-link">
-          Start Your Design →
+        <a href="custom-homes.html" class="card-link">
+          View Design →
         </a>
+
       </div>
+
     </div>
+
 
   </div>
 
@@ -451,7 +430,10 @@ footer strong {
     that works for the way you live.
   </p>
 
-  <a href="mailto:hello@cercobuilt.com.au" class="button">
+  <a
+    href="mailto:hello@cercobuilt.com.au"
+    class="button"
+  >
     Start Your Build
   </a>
 
@@ -459,20 +441,35 @@ footer strong {
 
 
 <footer>
+
   <p>
-    © 2026 <strong>Cercobuilt</strong>. All rights reserved.
+    © 2026 <strong>Cercobuilt</strong>.
+    All rights reserved.
   </p>
+
 </footer>
 
 
 <script>
+
 function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("open");
+
+  document
+    .getElementById("mobileMenu")
+    .classList
+    .toggle("open");
+
 }
 
 function closeMenu() {
-  document.getElementById("mobileMenu").classList.remove("open");
+
+  document
+    .getElementById("mobileMenu")
+    .classList
+    .remove("open");
+
 }
+
 </script>
 
 </body>
