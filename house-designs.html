@@ -1,1 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Designs | Cercobuilt</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    nav a:hover {
+      color: #777;
+    }
+
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 80px 24px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 76px);
+      line-height: 1.05;
+      max-width: 800px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 20px;
+      color: #f2f2f2;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 24px;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      margin-bottom: 48px;
+    }
+
+    .section-intro h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .section-intro p {
+      color: #666;
+      font-size: 17px;
+    }
+
+    .design-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e7e7e7;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.09);
+    }
+
+    .card-image {
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-content {
+      padding: 28px;
+    }
+
+    .card-content h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .card-content p {
+      color: #666;
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+
+    .card-link {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 14px;
+      border-bottom: 1px solid #222;
+      padding-bottom: 4px;
+    }
+
+    .feature {
+      background: #f5f3ef;
+    }
+
+    .feature-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .feature-image {
+      min-height: 480px;
+      background:
+        url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    }
+
+    .feature-text h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+
+    .feature-text p {
+      color: #666;
+      margin-bottom: 28px;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #222;
+      color: white;
+      padding: 15px 26px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .button:hover {
+      background: #444;
+    }
+
+    .cta {
+      background: #202020;
+      color: white;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 850px;
+      margin: auto;
+      padding: 90px 24px;
+    }
+
+    .cta h2 {
+      font-size: 46px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #ccc;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .button-light {
+      display: inline-block;
+      background: white;
+      color: #222;
+      padding: 15px 28px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 45px 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      color: white;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+      }
+
+      .design-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .feature-image {
+        min-height: 350px;
+      }
+
+      .section-intro h2,
+      .feature-text h2 {
+        font-size: 34px;
+      }
+
+      .cta h2 {
+        font-size: 36px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">CERCOBUILT</a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="house-designs.html">House Designs</a>
+      <a href="index.html#land">House & Land</a>
+      <a href="index.html#process">Build Process</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Cercobuilt House Designs</div>
+
+    <h1>Find a home that fits your life.</h1>
+
+    <p>
+      Explore thoughtfully designed homes created around the way
+      modern Australian families live.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="section-intro">
+    <h2>Explore our house designs.</h2>
+
+    <p>
+      From practical single-storey homes to spacious family living,
+      discover a range of design directions to help shape your next home.
+    </p>
+  </div>
+
+  <div class="design-grid">
+
+    <article class="card">
+      <div
+        class="card-image"
+        style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85');">
+      </div>
+
+      <div class="card-content">
+        <h3>Single Storey</h3>
+
+        <p>
+          Comfortable, practical layouts designed for easy everyday living.
+        </p>
+
+        <a href="#enquire" class="card-link">Explore Design →</a>
+      </div>
+    </article>
+
+
+    <article class="card">
+      <div
+        class="card-image"
+        style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85');">
+      </div>
+
+      <div class="card-content">
+        <h3>Double Storey</h3>
+
+        <p>
+          Create more space with thoughtful separation between living and private areas.
+        </p>
+
+        <a href="#enquire" class="card-link">Explore Design →</a>
+      </div>
+    </article>
+
+
+    <article class="card">
+      <div
+        class="card-image"
+        style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85');">
+      </div>
+
+      <div class="card-content">
+        <h3>Family Homes</h3>
+
+        <p>
+          Flexible spaces designed to support growing families and busy lifestyles.
+        </p>
+
+        <a href="#enquire" class="card-link">Explore Design →</a>
+      </div>
+    </article>
+
+
+    <article class="card">
+      <div
+        class="card-image"
+        style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85');">
+      </div>
+
+      <div class="card-content">
+        <h3>Modern Living</h3>
+
+        <p>
+          Clean architectural lines and contemporary spaces for modern living.
+        </p>
+
+        <a href="#enquire" class="card-link">Explore Design →</a>
+      </div>
+    </article>
+
+
+    <article class="card">
+      <div
+        class="card-image"
+        style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=85');">
+      </div>
+
+      <div class="card-content">
+        <h3>Family Living</h3>
+
+        <p>
+          Generous living areas with a focus on comfort, connection and functionality.
+        </p>
+
+        <a href="#enquire" class="card-link">Explore Design →</a>
+      </div>
+    </article>
+
+
+    <article class="card">
+      <div
+        class="card-image"
+        style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85');">
+      </div>
+
+      <div class="card-content">
+        <h3>Custom Homes</h3>
+
+        <p>
+          Start with your ideas and create a home shaped around your lifestyle.
+        </p>
+
+        <a href="#enquire" class="card-link">Explore Design →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<section class="feature">
+
+  <div class="feature-inner">
+
+    <div class="feature-image"></div>
+
+    <div class="feature-text">
+
+      <div class="eyebrow">Designed around you</div>
+
+      <h2>Don't see exactly what you're looking for?</h2>
+
+      <p>
+        Every family is different. If an existing design isn't quite right,
+        we can work with your ideas to create a home that feels like yours.
+      </p>
+
+      <a href="#enquire" class="button">
+        Start Your Build
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="cta" id="enquire">
+
+  <div class="cta-inner">
+
+    <h2>Let's create your next home.</h2>
+
+    <p>
+      Tell us what you're looking for and start a conversation with Cercobuilt.
+    </p>
+
+    <a href="mailto:hello@cercobuilt.com.au" class="button-light">
+      Enquire Now
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      <div class="footer-logo">CERCOBUILT</div>
+      <p>Homes made for living.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="house-designs.html">House Designs</a>
+      <a href="mailto:hello@cercobuilt.com.au">Contact</a>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
