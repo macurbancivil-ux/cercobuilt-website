@@ -7,466 +7,696 @@
 <title>House Designs | Cercobuilt</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #222;
-  background: #fff;
-  line-height: 1.6;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#222;
+    background:#fff;
+    line-height:1.6;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,0.96);
-  border-bottom: 1px solid #eee;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+img{
+    width:100%;
+    display:block;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #222;
-  text-decoration: none;
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    border-bottom:1px solid #eee;
 }
 
-nav {
-  display: flex;
-  gap: 28px;
+.header-inner{
+    max-width:1250px;
+    margin:auto;
+    padding:20px 30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-size: 15px;
+.logo{
+    font-size:23px;
+    font-weight:700;
+    letter-spacing:2px;
 }
 
-.menu-button {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
+nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
 }
 
-.mobile-menu {
-  display: none;
-  background: white;
-  border-top: 1px solid #eee;
-  padding: 15px 24px 25px;
+nav a{
+    font-size:14px;
+    font-weight:500;
+    transition:opacity .2s;
 }
 
-.mobile-menu.open {
-  display: block;
+nav a:hover{
+    opacity:.55;
 }
 
-.mobile-menu a {
-  display: block;
-  padding: 13px 0;
-  color: #222;
-  text-decoration: none;
-  border-bottom: 1px solid #eee;
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
 }
 
-.hero {
-  min-height: 520px;
-  background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 40px 20px;
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:560px;
+    background:
+        linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.28)),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+    display:flex;
+    align-items:center;
 }
 
-.hero h1 {
-  font-size: 58px;
-  margin-bottom: 18px;
+.hero-content{
+    width:100%;
+    max-width:1250px;
+    margin:auto;
+    padding:80px 30px;
+    color:#fff;
 }
 
-.hero p {
-  font-size: 20px;
-  max-width: 700px;
-  margin: auto;
+.hero h1{
+    font-size:64px;
+    line-height:1.05;
+    font-weight:600;
+    margin-bottom:20px;
 }
 
-.intro {
-  max-width: 900px;
-  margin: auto;
-  padding: 90px 24px 60px;
-  text-align: center;
+.hero p{
+    max-width:650px;
+    font-size:19px;
+    line-height:1.7;
 }
 
-.intro h2 {
-  font-size: 38px;
-  margin-bottom: 20px;
+/* =========================
+   GENERAL
+========================= */
+
+.container{
+    max-width:1250px;
+    margin:auto;
+    padding:0 30px;
 }
 
-.intro p {
-  font-size: 18px;
-  color: #666;
+.section{
+    padding:100px 0;
 }
 
-.designs {
-  max-width: 1200px;
-  margin: auto;
-  padding: 30px 24px 100px;
+.section-title{
+    font-size:42px;
+    line-height:1.2;
+    font-weight:500;
+    margin-bottom:20px;
 }
 
-.design-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+.section-intro{
+    max-width:720px;
+    font-size:18px;
+    color:#666;
 }
 
-.card {
-  background: #fff;
-  border: 1px solid #eee;
-  overflow: hidden;
-  transition: transform 0.25s ease;
+/* =========================
+   DESIGN CARDS
+========================= */
+
+.design-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:55px;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.design-card{
+    background:#f5f5f3;
+    overflow:hidden;
+    transition:transform .2s;
 }
 
-.card-image {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  display: block;
+.design-card:hover{
+    transform:translateY(-4px);
 }
 
-.card-content {
-  padding: 28px;
+.design-card img{
+    height:360px;
+    object-fit:cover;
 }
 
-.card h3 {
-  font-size: 25px;
-  margin-bottom: 12px;
+.design-card-content{
+    padding:30px;
 }
 
-.card p {
-  color: #666;
-  margin-bottom: 22px;
+.design-card h2{
+    font-size:27px;
+    font-weight:500;
+    margin-bottom:12px;
 }
 
-.card-link {
-  display: inline-block;
-  text-decoration: none;
-  color: #222;
-  font-weight: 600;
+.design-card p{
+    color:#666;
+    margin-bottom:22px;
 }
 
-.cta {
-  background: #f4f4f4;
-  text-align: center;
-  padding: 90px 24px;
+.text-link{
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.5px;
 }
 
-.cta h2 {
-  font-size: 40px;
-  margin-bottom: 18px;
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    max-width:800px;
 }
 
-.cta p {
-  color: #666;
-  margin-bottom: 28px;
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    background:#222;
+    color:#fff;
+    text-align:center;
 }
 
-.button {
-  display: inline-block;
-  background: #222;
-  color: white;
-  padding: 15px 28px;
-  text-decoration: none;
-  font-weight: 600;
+.cta .section-title{
+    max-width:700px;
+    margin:0 auto 25px;
 }
 
-footer {
-  background: #1d1d1d;
-  color: #aaa;
-  padding: 50px 24px;
-  text-align: center;
+.cta p{
+    color:#ccc;
+    max-width:600px;
+    margin:0 auto 30px;
 }
 
-footer strong {
-  color: white;
+.btn{
+    display:inline-block;
+    padding:15px 28px;
+    font-size:14px;
+    font-weight:600;
+    border:1px solid #fff;
 }
 
-@media (max-width: 900px) {
+.btn-light{
+    background:#fff;
+    color:#222;
+}
 
-  nav {
-    display: none;
-  }
+/* =========================
+   FOOTER
+========================= */
 
-  .menu-button {
-    display: block;
-  }
+footer{
+    background:#171717;
+    color:#fff;
+    padding:65px 0 30px;
+}
 
-  .hero {
-    min-height: 430px;
-  }
+.footer-grid{
+    max-width:1250px;
+    margin:auto;
+    padding:0 30px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
 
-  .hero h1 {
-    font-size: 42px;
-  }
+.footer-logo{
+    font-size:23px;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
 
-  .hero p {
-    font-size: 17px;
-  }
+.footer-about{
+    color:#aaa;
+    max-width:400px;
+}
 
-  .design-grid {
-    grid-template-columns: 1fr;
-  }
+.footer-title{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:18px;
+}
 
-  .intro h2 {
-    font-size: 32px;
-  }
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
 
-  .cta h2 {
-    font-size: 32px;
-  }
+.footer-links a{
+    color:#aaa;
+    font-size:14px;
+}
+
+.footer-bottom{
+    max-width:1250px;
+    margin:50px auto 0;
+    padding:20px 30px 0;
+    border-top:1px solid #333;
+    color:#777;
+    font-size:13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .header-inner{
+        padding:17px 20px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:#fff;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0;
+        border-bottom:1px solid #eee;
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    nav a{
+        width:100%;
+        padding:16px 20px;
+        border-top:1px solid #eee;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+    .hero-content{
+        padding:60px 20px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .container{
+        padding:0 20px;
+    }
+
+    .section{
+        padding:70px 0;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    .design-grid{
+        grid-template-columns:1fr;
+    }
+
+    .design-card img{
+        height:300px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+        padding:0 20px;
+    }
+
+    .footer-bottom{
+        padding:20px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
+    <div class="header-inner">
 
-  <div class="header-inner">
+        <a href="index.html" class="logo">
+            CERCOBUILT
+        </a>
 
-    <a href="index.html" class="logo">
-      CERCOBUILT
-    </a>
+        <div class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="house-designs.html">House Designs</a>
-      <a href="index.html#land">House & Land</a>
-      <a href="index.html#process">Build Process</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+        <nav id="mainNav">
 
-    <button class="menu-button" onclick="toggleMenu()">
-      ☰
-    </button>
+            <a href="index.html">
+                Home
+            </a>
 
-  </div>
+            <a href="house-designs.html">
+                House Designs
+            </a>
 
-  <div class="mobile-menu" id="mobileMenu">
+            <a href="single-storey.html">
+                Single Storey
+            </a>
 
-    <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="double-storey.html">
+                Double Storey
+            </a>
 
-    <a href="house-designs.html" onclick="closeMenu()">
-      House Designs
-    </a>
+            <a href="custom-homes.html">
+                Custom Homes
+            </a>
 
-    <a href="index.html#land" onclick="closeMenu()">
-      House & Land
-    </a>
+            <a href="index.html#contact">
+                Contact
+            </a>
 
-    <a href="index.html#process" onclick="closeMenu()">
-      Build Process
-    </a>
+        </nav>
 
-    <a href="index.html#contact" onclick="closeMenu()">
-      Contact
-    </a>
-
-  </div>
-
+    </div>
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
-  <div>
+    <div class="hero-content">
 
-    <h1>House Designs</h1>
-
-    <p>
-      Thoughtfully designed homes for modern Australian living.
-      Explore our home designs and discover a style that suits you.
-    </p>
-
-  </div>
-
-</section>
-
-
-<section class="intro">
-
-  <h2>Find Your Home Design</h2>
-
-  <p>
-    Explore our collection of home designs,
-    created with practical layouts, contemporary living
-    and flexible design in mind.
-  </p>
-
-</section>
-
-
-<section class="designs">
-
-  <div class="design-grid">
-
-
-    <!-- SINGLE STOREY -->
-
-    <div class="card">
-
-      <img
-        class="card-image"
-        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-        alt="Single Storey Home"
-      >
-
-      <div class="card-content">
-
-        <h3>Single Storey</h3>
+        <h1>
+            House Designs
+        </h1>
 
         <p>
-          Comfortable single-level living with flexible
-          spaces designed for modern families.
+            Explore our home design categories and discover
+            a style that suits the way you want to live.
         </p>
-
-        <a href="single-storey.html" class="card-link">
-          View Design →
-        </a>
-
-      </div>
 
     </div>
 
+</section>
 
-    <!-- DOUBLE STOREY -->
 
-    <div class="card">
+<!-- INTRO -->
 
-      <img
-        class="card-image"
-        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-        alt="Double Storey Home"
-      >
+<section class="section">
 
-      <div class="card-content">
+    <div class="container">
 
-        <h3>Double Storey</h3>
+        <div class="intro">
 
-        <p>
-          Create more space with a two-level home designed
-          for growing families and modern lifestyles.
-        </p>
+            <h2 class="section-title">
+                Find the right place<br>
+                to start your build.
+            </h2>
 
-        <a href="double-storey.html" class="card-link">
-          View Design →
-        </a>
+            <p class="section-intro">
+                Whether you're looking for a practical single-storey
+                home, a spacious double-storey design or something
+                completely unique, explore our three design categories.
+            </p>
 
-      </div>
+        </div>
 
     </div>
-
-
-    <!-- CUSTOM HOMES -->
-
-    <div class="card">
-
-      <img
-        class="card-image"
-        src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
-        alt="Custom Home"
-      >
-
-      <div class="card-content">
-
-        <h3>Custom Homes</h3>
-
-        <p>
-          A home designed around your block,
-          your lifestyle and your vision.
-        </p>
-
-        <a href="custom-homes.html" class="card-link">
-          View Design →
-        </a>
-
-      </div>
-
-    </div>
-
-
-  </div>
 
 </section>
 
 
-<section class="cta" id="contact">
+<!-- HOUSE DESIGNS -->
 
-  <h2>Ready to Build Your Home?</h2>
+<section class="section">
 
-  <p>
-    Let's talk about your ideas and create a home
-    that works for the way you live.
-  </p>
+    <div class="container">
 
-  <a
-    href="mailto:hello@cercobuilt.com.au"
-    class="button"
-  >
-    Start Your Build
-  </a>
+        <h2 class="section-title">
+            Explore Our Designs
+        </h2>
+
+        <p class="section-intro">
+            Browse projects within each category.
+        </p>
+
+
+        <div class="design-grid">
+
+            <!-- SINGLE STOREY -->
+
+            <a href="single-storey.html" class="design-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85"
+                    alt="Single Storey Home"
+                >
+
+                <div class="design-card-content">
+
+                    <h2>
+                        Single Storey
+                    </h2>
+
+                    <p>
+                        Comfortable, practical homes designed
+                        for effortless everyday living.
+                    </p>
+
+                    <span class="text-link">
+                        VIEW PROJECTS →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- DOUBLE STOREY -->
+
+            <a href="double-storey.html" class="design-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1400&q=85"
+                    alt="Double Storey Home"
+                >
+
+                <div class="design-card-content">
+
+                    <h2>
+                        Double Storey
+                    </h2>
+
+                    <p>
+                        Flexible two-level designs with space
+                        for modern family living.
+                    </p>
+
+                    <span class="text-link">
+                        VIEW PROJECTS →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- CUSTOM HOMES -->
+
+            <a href="custom-homes.html" class="design-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85"
+                    alt="Custom Home"
+                >
+
+                <div class="design-card-content">
+
+                    <h2>
+                        Custom Homes
+                    </h2>
+
+                    <p>
+                        A home shaped around your land,
+                        lifestyle and individual vision.
+                    </p>
+
+                    <span class="text-link">
+                        VIEW PROJECTS →
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
+
+<!-- CTA -->
+
+<section class="section cta">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Ready to build your next chapter?
+        </h2>
+
+        <p>
+            Explore our designs or get in touch
+            to discuss your project.
+        </p>
+
+        <a href="index.html#contact" class="btn btn-light">
+            Start Your Build
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-  <p>
-    © 2026 <strong>Cercobuilt</strong>.
-    All rights reserved.
-  </p>
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                CERCOBUILT
+            </div>
+
+            <p class="footer-about">
+                Thoughtfully designed homes,
+                quality construction and a
+                building experience centred around you.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-title">
+                EXPLORE
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="house-designs.html">
+                    House Designs
+                </a>
+
+                <a href="single-storey.html">
+                    Single Storey
+                </a>
+
+                <a href="double-storey.html">
+                    Double Storey
+                </a>
+
+                <a href="custom-homes.html">
+                    Custom Homes
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-title">
+                CONTACT
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html#contact">
+                    Start Your Build
+                </a>
+
+                <a href="mailto:hello@cercobuilt.com.au">
+                    Email Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Cercobuilt. All rights reserved.
+
+    </div>
 
 </footer>
 
 
 <script>
 
-function toggleMenu() {
+function toggleMenu(){
 
-  document
-    .getElementById("mobileMenu")
-    .classList
-    .toggle("open");
-
-}
-
-function closeMenu() {
-
-  document
-    .getElementById("mobileMenu")
-    .classList
-    .remove("open");
+    document
+        .getElementById("mainNav")
+        .classList.toggle("active");
 
 }
 
