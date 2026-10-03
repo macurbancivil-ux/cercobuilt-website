@@ -1,405 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>House Designs | Cercobuilt</title>
-  <meta name="description" content="Explore Cercobuilt house designs, including single storey, double storey and custom home concepts.">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #202020;
-      background: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      height: 78px;
-      padding: 0 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #ffffff;
-      border-bottom: 1px solid #eeeeee;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-
-    nav a {
-      font-size: 14px;
-      font-weight: 600;
-      color: #333333;
-    }
-
-    nav a:hover {
-      color: #777777;
-    }
-
-    /* 手机菜单按钮 */
-    .menu-button {
-      display: none;
-      border: none;
-      background: transparent;
-      font-size: 30px;
-      line-height: 1;
-      cursor: pointer;
-      color: #222222;
-      padding: 8px;
-    }
-
-    /* 手机下拉菜单 */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 78px;
-      left: 0;
-      right: 0;
-      background: #ffffff;
-      border-bottom: 1px solid #eeeeee;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
-      z-index: 999;
-    }
-
-    .mobile-menu.open {
-      display: block;
-    }
-
-    .mobile-menu a {
-      display: block;
-      padding: 18px 6%;
-      border-bottom: 1px solid #eeeeee;
-      font-size: 16px;
-      font-weight: 600;
-      color: #222222;
-    }
-
-    .mobile-menu a:last-child {
-      border-bottom: none;
-    }
-
-    .hero {
-      min-height: 500px;
-      padding: 100px 6%;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
-        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 720px;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 6vw, 70px);
-      line-height: 1.05;
-      margin-bottom: 24px;
-    }
-
-    .hero p {
-      font-size: 19px;
-      max-width: 620px;
-      margin-bottom: 32px;
-      color: #f1f1f1;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 25px;
-      background: #202020;
-      color: white;
-      font-weight: 700;
-      border-radius: 2px;
-    }
-
-    .button-light {
-      background: white;
-      color: #202020;
-    }
-
-    .intro {
-      padding: 90px 6% 60px;
-      text-align: center;
-    }
-
-    .intro h2 {
-      font-size: 40px;
-      margin-bottom: 18px;
-    }
-
-    .intro p {
-      max-width: 700px;
-      margin: auto;
-      color: #666666;
-      font-size: 17px;
-    }
-
-    .designs {
-      padding: 20px 6% 100px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      max-width: 1400px;
-      margin: auto;
-    }
-
-    .card {
-      background: #ffffff;
-      border: 1px solid #e8e8e8;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    }
-
-    .card-image {
-      height: 250px;
-      overflow: hidden;
-    }
-
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .card:hover img {
-      transform: scale(1.04);
-    }
-
-    .card-content {
-      padding: 28px;
-    }
-
-    .card-content h3 {
-      font-size: 25px;
-      margin-bottom: 10px;
-    }
-
-    .card-content p {
-      color: #666666;
-      margin-bottom: 20px;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 15px 0;
-      border-top: 1px solid #eeeeee;
-      border-bottom: 1px solid #eeeeee;
-      margin-bottom: 22px;
-    }
-
-    .feature {
-      font-size: 13px;
-      font-weight: 600;
-      color: #444444;
-      background: #f5f5f5;
-      padding: 7px 10px;
-    }
-
-    .card-link {
-      display: inline-block;
-      font-weight: 700;
-      font-size: 14px;
-      border-bottom: 1px solid #222222;
-      padding-bottom: 3px;
-    }
-
-    .statement {
-      background: #f4f3f0;
-      padding: 90px 6%;
-      text-align: center;
-    }
-
-    .statement h2 {
-      font-size: 38px;
-      max-width: 800px;
-      margin: 0 auto 18px;
-    }
-
-    .statement p {
-      max-width: 680px;
-      margin: auto;
-      color: #666666;
-    }
-
-    .cta {
-      margin: 80px 6%;
-      padding: 75px 8%;
-      background:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 42px;
-      margin-bottom: 18px;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      color: #eeeeee;
-    }
-
-    footer {
-      padding: 45px 6%;
-      background: #171717;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    footer p {
-      color: #aaaaaa;
-      font-size: 14px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 25px;
-      font-size: 14px;
-    }
-
-    /* 平板和手机 */
-    @media (max-width: 900px) {
-      nav {
-        display: none;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .designs {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* 手机 */
-    @media (max-width: 650px) {
-      header {
-        height: 70px;
-      }
-
-      .mobile-menu {
-        top: 70px;
-      }
-
-      .logo {
-        font-size: 22px;
-      }
-
-      .hero {
-        min-height: 520px;
-        padding: 80px 6%;
-      }
-
-      .hero h1 {
-        font-size: 44px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .intro {
-        padding: 65px 6% 40px;
-      }
-
-      .intro h2 {
-        font-size: 32px;
-      }
-
-      .designs {
-        grid-template-columns: 1fr;
-        padding-bottom: 70px;
-      }
-
-      .card-image {
-        height: 240px;
-      }
-
-      .statement {
-        padding: 70px 6%;
-      }
-
-      .statement h2 {
-        font-size: 31px;
-      }
-
-      .cta {
-        margin: 50px 6%;
-        padding: 60px 7%;
-      }
-
-      .cta h2 {
-        font-size: 32px;
-      }
-
-      footer {
-        flex-direction: column;
-      }
-
-      .footer-links {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>House Designs | Cercobuilt</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #222;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: #777;
+}
+
+.menu-button {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background: white;
+  border-top: 1px solid #eee;
+  padding: 15px 24px 25px;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 13px 0;
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.hero {
+  min-height: 520px;
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 58px;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.intro {
+  max-width: 900px;
+  margin: auto;
+  padding: 90px 24px 60px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 18px;
+  color: #666;
+}
+
+.designs {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 24px 100px;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 28px;
+}
+
+.card h3 {
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 22px;
+}
+
+.card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+}
+
+.cta {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 90px 24px;
+}
+
+.cta h2 {
+  font-size: 40px;
+  margin-bottom: 18px;
+}
+
+.cta p {
+  color: #666;
+  margin-bottom: 28px;
+}
+
+.button {
+  display: inline-block;
+  background: #222;
+  color: white;
+  padding: 15px 28px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer {
+  background: #1d1d1d;
+  color: #aaa;
+  padding: 50px 24px;
+  text-align: center;
+}
+
+footer strong {
+  color: white;
+}
+
+@media (max-width: 900px) {
+
+  nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .hero {
+    min-height: 430px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .design-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro h2 {
+    font-size: 32px;
+  }
+
+  .cta h2 {
+    font-size: 32px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
+<header>
+  <div class="header-inner">
+
     <a href="index.html" class="logo">CERCOBUILT</a>
 
     <nav>
@@ -410,13 +268,9 @@
       <a href="index.html#contact">Contact</a>
     </nav>
 
-    <button
-      class="menu-button"
-      onclick="toggleMenu()"
-      aria-label="Open menu">
-      ☰
-    </button>
-  </header>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+  </div>
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" onclick="closeMenu()">Home</a>
@@ -425,250 +279,201 @@
     <a href="index.html#process" onclick="closeMenu()">Build Process</a>
     <a href="index.html#contact" onclick="closeMenu()">Contact</a>
   </div>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="eyebrow">Cercobuilt House Designs</div>
 
-      <h1>Find a home that fits your life.</h1>
-
-      <p>
-        Explore considered home designs created for modern Australian living,
-        with flexible layouts and spaces designed around the way you live.
-      </p>
-
-      <a href="#designs" class="button button-light">
-        Explore Designs
-      </a>
-    </div>
-  </section>
-
-  <section class="intro">
-    <h2>Designed for the way you live.</h2>
-
+<section class="hero">
+  <div>
+    <h1>House Designs</h1>
     <p>
-      From practical family homes to contemporary double-storey designs,
-      our collection provides a starting point for creating a home that feels
-      truly yours.
+      Thoughtfully designed homes for modern Australian living.
+      Explore a range of home styles and find the design that suits you.
     </p>
-  </section>
+  </div>
+</section>
 
-  <section class="designs" id="designs">
 
-    <article class="card">
-      <div class="card-image">
-        <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-          alt="Single storey home">
-      </div>
+<section class="intro">
+  <h2>Designed Around the Way You Live</h2>
+  <p>
+    From practical family homes to contemporary designs,
+    our house designs are created with everyday living in mind.
+  </p>
+</section>
+
+
+<section class="designs">
+
+  <div class="design-grid">
+
+    <!-- Single Storey -->
+    <div class="card">
+      <img
+        class="card-image"
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+        alt="Single Storey Home">
 
       <div class="card-content">
         <h3>Single Storey</h3>
 
         <p>
-          Practical and comfortable homes designed for easy everyday living.
+          Comfortable single-level living with flexible spaces
+          designed for modern families.
         </p>
 
-        <div class="features">
-          <span class="feature">Flexible Layout</span>
-          <span class="feature">Family Living</span>
-          <span class="feature">Single Level</span>
-        </div>
-
-        <a href="#contact" class="card-link">
+        <a href="single-storey.html" class="card-link">
           View Design →
         </a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="card-image">
-        <img
-          src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
-          alt="Double storey home">
-      </div>
+
+    <!-- Double Storey -->
+    <div class="card">
+      <img
+        class="card-image"
+        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+        alt="Double Storey Home">
 
       <div class="card-content">
         <h3>Double Storey</h3>
 
         <p>
-          Modern two-level living with space for growing families and guests.
+          Create more space with a two-level home designed
+          for growing families and modern lifestyles.
         </p>
-
-        <div class="features">
-          <span class="feature">Two Levels</span>
-          <span class="feature">Family Living</span>
-          <span class="feature">Modern Design</span>
-        </div>
 
         <a href="#contact" class="card-link">
           View Design →
         </a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="card-image">
-        <img
-          src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
-          alt="Family home">
-      </div>
+
+    <!-- Family Homes -->
+    <div class="card">
+      <img
+        class="card-image"
+        src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+        alt="Family Home">
 
       <div class="card-content">
         <h3>Family Homes</h3>
 
         <p>
-          Generous living spaces designed around busy family life.
+          Practical layouts with spaces designed around
+          family life, comfort and connection.
         </p>
-
-        <div class="features">
-          <span class="feature">Open Plan</span>
-          <span class="feature">Family Focused</span>
-          <span class="feature">Flexible</span>
-        </div>
 
         <a href="#contact" class="card-link">
           View Design →
         </a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="card-image">
-        <img
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-          alt="Modern home interior">
-      </div>
+
+    <!-- Modern Living -->
+    <div class="card">
+      <img
+        class="card-image"
+        src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
+        alt="Modern Home">
 
       <div class="card-content">
         <h3>Modern Living</h3>
 
         <p>
-          Contemporary spaces combining clean design with everyday comfort.
+          Contemporary designs combining clean lines,
+          open spaces and timeless materials.
         </p>
-
-        <div class="features">
-          <span class="feature">Contemporary</span>
-          <span class="feature">Open Plan</span>
-          <span class="feature">Modern Living</span>
-        </div>
 
         <a href="#contact" class="card-link">
           View Design →
         </a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="card-image">
-        <img
-          src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-          alt="Family living home">
-      </div>
+
+    <!-- Family Living -->
+    <div class="card">
+      <img
+        class="card-image"
+        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+        alt="Family Living Home">
 
       <div class="card-content">
         <h3>Family Living</h3>
 
         <p>
-          Thoughtful layouts that bring bedrooms, living areas and outdoor
-          spaces together.
+          Spacious living areas and thoughtful layouts
+          created for everyday family life.
         </p>
-
-        <div class="features">
-          <span class="feature">Family Friendly</span>
-          <span class="feature">Indoor / Outdoor</span>
-          <span class="feature">Flexible</span>
-        </div>
 
         <a href="#contact" class="card-link">
           View Design →
         </a>
       </div>
-    </article>
+    </div>
 
-    <article class="card">
-      <div class="card-image">
-        <img
-          src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
-          alt="Custom designed home">
-      </div>
+
+    <!-- Custom Homes -->
+    <div class="card">
+      <img
+        class="card-image"
+        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+        alt="Custom Home">
 
       <div class="card-content">
         <h3>Custom Homes</h3>
 
         <p>
-          A more personal approach for homeowners who want a home designed
-          around their own ideas.
+          A home designed around your block,
+          your lifestyle and your vision.
         </p>
-
-        <div class="features">
-          <span class="feature">Custom Design</span>
-          <span class="feature">Personalised</span>
-          <span class="feature">Your Vision</span>
-        </div>
 
         <a href="#contact" class="card-link">
           Start Your Design →
         </a>
       </div>
-    </article>
-
-  </section>
-
-  <section class="statement">
-    <h2>
-      Your home should feel like it was designed specifically for you.
-    </h2>
-
-    <p>
-      Choose a starting point, then work with our team to shape the spaces,
-      finishes and details around your lifestyle.
-    </p>
-  </section>
-
-  <section class="cta" id="contact">
-
-    <h2>Let's create your next home.</h2>
-
-    <p>
-      Ready to talk about your ideas? Start a conversation with Cercobuilt
-      about your next home.
-    </p>
-
-    <a href="mailto:hello@cercobuilt.com.au" class="button button-light">
-      Enquire Now
-    </a>
-
-  </section>
-
-  <footer>
-
-    <div>
-      <strong>CERCOBUILT</strong>
-
-      <p>
-        Homes made for living.
-      </p>
     </div>
 
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="house-designs.html">House Designs</a>
-      <a href="index.html#process">Build Process</a>
-      <a href="mailto:hello@cercobuilt.com.au">Contact</a>
-    </div>
+  </div>
 
-  </footer>
+</section>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("mobileMenu").classList.toggle("open");
-    }
 
-    function closeMenu() {
-      document.getElementById("mobileMenu").classList.remove("open");
-    }
-  </script>
+<section class="cta" id="contact">
+
+  <h2>Ready to Build Your Home?</h2>
+
+  <p>
+    Let's talk about your ideas and create a home
+    that works for the way you live.
+  </p>
+
+  <a href="mailto:hello@cercobuilt.com.au" class="button">
+    Start Your Build
+  </a>
+
+</section>
+
+
+<footer>
+  <p>
+    © 2026 <strong>Cercobuilt</strong>. All rights reserved.
+  </p>
+</footer>
+
+
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("open");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("open");
+}
+</script>
 
 </body>
 </html>
