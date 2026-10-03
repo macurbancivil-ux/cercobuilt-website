@@ -1,1 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double Storey Project 02 | Cercobuilt</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #222;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .menu-button {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 28px;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 10px 24px 20px;
+      border-top: 1px solid #eee;
+      background: #fff;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    .hero {
+      min-height: 560px;
+      background:
+        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
+        url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 24px;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 38px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      color: #666;
+    }
+
+    .details {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .detail {
+      background: #f5f4f1;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .detail span {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .detail strong {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .features {
+      margin-top: 70px;
+    }
+
+    .features h2 {
+      font-size: 34px;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .features ul {
+      padding-left: 20px;
+      color: #555;
+    }
+
+    .gallery {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 65px;
+    }
+
+    .back a {
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+      padding-bottom: 4px;
+    }
+
+    .cta {
+      padding: 90px 24px;
+      background: #f4f2ee;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 45px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .copyright {
+      color: #999;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      footer a {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 450px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .intro h2 {
+        font-size: 32px;
+      }
+
+      .gallery img {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="index.html" class="logo">CERCOBUILT</a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="house-designs.html">House Designs</a>
+      <a href="single-storey.html">Single Storey</a>
+      <a href="double-storey.html">Double Storey</a>
+      <a href="custom-homes.html">Custom Homes</a>
+    </nav>
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="house-designs.html">House Designs</a>
+    <a href="single-storey.html">Single Storey</a>
+    <a href="double-storey.html">Double Storey</a>
+    <a href="custom-homes.html">Custom Homes</a>
+  </div>
+</header>
+
+
+<section class="hero">
+  <div>
+    <h1>Project 02</h1>
+    <p>Double Storey Home</p>
+  </div>
+</section>
+
+
+<section class="section">
+
+  <div class="intro">
+    <h2>Double Storey Project 02</h2>
+
+    <p>
+      A modern two-level home concept focused on
+      spacious living, natural light and practical design.
+    </p>
+  </div>
+
+
+  <div class="details">
+
+    <div class="detail">
+      <span>Home Type</span>
+      <strong>Double Storey</strong>
+    </div>
+
+    <div class="detail">
+      <span>Design</span>
+      <strong>Modern</strong>
+    </div>
+
+    <div class="detail">
+      <span>Details</span>
+      <strong>To Be Confirmed</strong>
+    </div>
+
+  </div>
+
+
+  <div class="features">
+
+    <h2>Design Features</h2>
+
+    <ul>
+      <li>Open-plan kitchen and living</li>
+      <li>Spacious dining area</li>
+      <li>Separate bedroom zones</li>
+      <li>Contemporary facade</li>
+      <li>Flexible family living spaces</li>
+    </ul>
+
+  </div>
+
+
+  <div class="gallery">
+
+    <img
+      src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
+      alt="Double Storey Project 02">
+
+    <img
+      src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+      alt="Double Storey Project 02 interior">
+
+  </div>
+
+
+  <div class="back">
+    <a href="double-storey.html">
+      ← Back to Double Storey Projects
+    </a>
+  </div>
+
+</section>
+
+
+<section class="cta">
+
+  <h2>Ready to build your home?</h2>
+
+  <p>
+    Let's start the conversation about your next home.
+  </p>
+
+  <a href="index.html#contact">
+    Start Your Build
+  </a>
+
+</section>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="copyright">
+      © 2026 Cercobuilt. All rights reserved.
+    </div>
+
+    <div>
+      <a href="index.html">Home</a>
+      <a href="house-designs.html">House Designs</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("open");
+  }
+</script>
+
+</body>
+</html>
