@@ -1,350 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Single Storey Homes | Cercobuilt</title>
-
-<style>
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #222;
-  background: #fff;
-  line-height: 1.6;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,0.97);
-  border-bottom: 1px solid #eee;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #222;
-  text-decoration: none;
-}
-
-nav {
-  display: flex;
-  gap: 28px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-size: 15px;
-}
-
-.menu-button {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.mobile-menu {
-  display: none;
-  background: white;
-  border-top: 1px solid #eee;
-  padding: 15px 24px 25px;
-}
-
-.mobile-menu.open {
-  display: block;
-}
-
-.mobile-menu a {
-  display: block;
-  padding: 13px 0;
-  color: #222;
-  text-decoration: none;
-  border-bottom: 1px solid #eee;
-}
-
-
-/* HERO */
-
-.hero {
-  min-height: 520px;
-
-  background:
-    linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)),
-    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90")
-    center/cover;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-  color: white;
-
-  padding: 40px 20px;
-}
-
-.hero-content {
-  max-width: 800px;
-}
-
-.hero h1 {
-  font-size: 58px;
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
-
-.hero p {
-  font-size: 19px;
-}
-
-
-/* INTRO */
-
-.intro {
-  max-width: 850px;
-  margin: auto;
-  padding: 90px 24px 70px;
-  text-align: center;
-}
-
-.intro h2 {
-  font-size: 38px;
-  margin-bottom: 18px;
-}
-
-.intro p {
-  font-size: 18px;
-  color: #666;
-}
-
-
-/* PROJECTS */
-
-.projects {
-  background: #f6f6f6;
-  padding: 80px 24px 100px;
-}
-
-.section-inner {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.section-heading h2 {
-  font-size: 40px;
-  margin-bottom: 12px;
-}
-
-.section-heading p {
-  color: #666;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.project-card {
-  background: white;
-  overflow: hidden;
-  border: 1px solid #e8e8e8;
-}
-
-.project-card img {
-  width: 100%;
-  height: 270px;
-  object-fit: cover;
-  display: block;
-}
-
-.project-content {
-  padding: 28px;
-}
-
-.project-number {
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #888;
-  margin-bottom: 8px;
-}
-
-.project-content h3 {
-  font-size: 25px;
-  margin-bottom: 12px;
-}
-
-.project-content p {
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.project-link {
-  display: inline-block;
-  text-decoration: none;
-  color: #222;
-  font-weight: 600;
-}
-
-
-/* BACK */
-
-.back-section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 55px 24px;
-}
-
-.back-link {
-  color: #222;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-
-/* CTA */
-
-.cta {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 90px 24px;
-}
-
-.cta h2 {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-.cta p {
-  color: #ccc;
-  margin-bottom: 28px;
-}
-
-.button {
-  display: inline-block;
-  padding: 15px 28px;
-  background: white;
-  color: #222;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-
-/* FOOTER */
-
-footer {
-  background: #151515;
-  color: #999;
-  text-align: center;
-  padding: 50px 24px;
-}
-
-footer strong {
-  color: white;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 900px) {
-
-  nav {
-    display: none;
-  }
-
-  .menu-button {
-    display: block;
-  }
-
-  .hero {
-    min-height: 450px;
-  }
-
-  .hero h1 {
-    font-size: 44px;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .intro h2,
-  .section-heading h2 {
-    font-size: 32px;
-  }
-
-  .cta h2 {
-    font-size: 32px;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Single Storey Homes | Cercobuilt</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #222;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #777;
+    }
+
+    .menu-button {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .mobile-menu {
+      display: none;
+      background: #fff;
+      border-top: 1px solid #eee;
+      padding: 10px 24px 20px;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    .hero {
+      min-height: 520px;
+      background:
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: 500;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 24px;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 38px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      color: #666;
+      font-size: 17px;
+    }
+
+    .projects {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .project {
+      border: 1px solid #e5e5e5;
+      background: #fff;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .project-image {
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-content {
+      padding: 28px;
+    }
+
+    .project-number {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .project h3 {
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: #666;
+      margin-bottom: 22px;
+      font-size: 15px;
+    }
+
+    .view-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #222;
+      font-size: 14px;
+      font-weight: 600;
+      border-bottom: 1px solid #222;
+      padding-bottom: 3px;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 55px;
+    }
+
+    .back a {
+      color: #222;
+      text-decoration: none;
+      border-bottom: 1px solid #222;
+      padding-bottom: 4px;
+    }
+
+    .cta {
+      background: #f4f2ee;
+      text-align: center;
+      padding: 90px 24px;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 45px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .copyright {
+      color: #999;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image {
+        height: 300px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      footer a {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 430px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .intro h2 {
+        font-size: 32px;
+      }
+
+      .cta h2 {
+        font-size: 32px;
+      }
+
+      .project-image {
+        height: 250px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-
 <header>
-
-  <div class="header-inner">
+  <div class="nav">
 
     <a href="index.html" class="logo">
       CERCOBUILT
     </a>
 
     <nav>
-
-      <a href="index.html">
-        Home
-      </a>
-
-      <a href="house-designs.html">
-        House Designs
-      </a>
-
-      <a href="single-storey.html">
-        Single Storey
-      </a>
-
-      <a href="double-storey.html">
-        Double Storey
-      </a>
-
-      <a href="custom-homes.html">
-        Custom Homes
-      </a>
-
+      <a href="index.html">Home</a>
+      <a href="house-designs.html">House Designs</a>
+      <a href="single-storey.html">Single Storey</a>
+      <a href="double-storey.html">Double Storey</a>
+      <a href="custom-homes.html">Custom Homes</a>
     </nav>
 
     <button class="menu-button" onclick="toggleMenu()">
@@ -353,278 +345,222 @@ footer strong {
 
   </div>
 
-
   <div class="mobile-menu" id="mobileMenu">
-
-    <a href="index.html" onclick="closeMenu()">
-      Home
-    </a>
-
-    <a href="house-designs.html" onclick="closeMenu()">
-      House Designs
-    </a>
-
-    <a href="single-storey.html" onclick="closeMenu()">
-      Single Storey
-    </a>
-
-    <a href="double-storey.html" onclick="closeMenu()">
-      Double Storey
-    </a>
-
-    <a href="custom-homes.html" onclick="closeMenu()">
-      Custom Homes
-    </a>
-
+    <a href="index.html">Home</a>
+    <a href="house-designs.html">House Designs</a>
+    <a href="single-storey.html">Single Storey</a>
+    <a href="double-storey.html">Double Storey</a>
+    <a href="custom-homes.html">Custom Homes</a>
   </div>
-
 </header>
 
 
-<!-- HERO -->
-
 <section class="hero">
 
-  <div class="hero-content">
-
-    <h1>
-      Single Storey
-    </h1>
+  <div>
+    <h1>Single Storey</h1>
 
     <p>
-      Thoughtfully designed single-level homes
-      created for comfortable everyday living.
+      Thoughtfully designed single storey homes
+      created around the way you live.
+    </p>
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="intro">
+
+    <h2>Single Storey Projects</h2>
+
+    <p>
+      Explore our single storey home projects.
+      Each design can be developed and tailored
+      to suit your lifestyle, block and requirements.
     </p>
 
   </div>
 
-</section>
+
+  <div class="projects">
 
 
-<!-- INTRO -->
+    <!-- PROJECT 01 -->
 
-<section class="intro">
+    <div class="project">
 
-  <h2>
-    Single Storey Projects
-  </h2>
+      <div class="project-image">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+          alt="Single Storey Project 01">
+      </div>
 
-  <p>
-    Explore our collection of single storey home designs,
-    with practical layouts and considered spaces designed
-    around the way you live.
-  </p>
+      <div class="project-content">
 
-</section>
+        <div class="project-number">
+          Project 01
+        </div>
 
+        <h3>
+          Single Storey Project 01
+        </h3>
 
-<!-- PROJECTS -->
+        <p>
+          A contemporary single storey home concept
+          focused on practical living and comfortable spaces.
+        </p>
 
-<section class="projects">
+        <a
+          href="single-storey-project-01.html"
+          class="view-link">
+          View Design →
+        </a>
 
-  <div class="section-inner">
-
-    <div class="section-heading">
-
-      <h2>
-        Explore Our Projects
-      </h2>
-
-      <p>
-        Discover individual homes and design concepts.
-      </p>
+      </div>
 
     </div>
 
 
-    <div class="project-grid">
+    <!-- PROJECT 02 -->
 
+    <div class="project">
 
-      <!-- PROJECT 01 -->
-
-      <div class="project-card">
-
+      <div class="project-image">
         <img
-          src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
-          alt="Single Storey Project 01"
-        >
-
-        <div class="project-content">
-
-          <div class="project-number">
-            Project 01
-          </div>
-
-          <h3>
-            Single Storey Project 01
-          </h3>
-
-          <p>
-            A single-level home concept focused on
-            practical living and natural light.
-          </p>
-
-          <a
-            href="#project01"
-            class="project-link"
-          >
-            View Project →
-          </a>
-
-        </div>
-
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+          alt="Single Storey Project 02">
       </div>
 
+      <div class="project-content">
 
-      <!-- PROJECT 02 -->
-
-      <div class="project-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
-          alt="Single Storey Project 02"
-        >
-
-        <div class="project-content">
-
-          <div class="project-number">
-            Project 02
-          </div>
-
-          <h3>
-            Single Storey Project 02
-          </h3>
-
-          <p>
-            A contemporary single-level design
-            with flexible living spaces.
-          </p>
-
-          <a
-            href="#project02"
-            class="project-link"
-          >
-            View Project →
-          </a>
-
+        <div class="project-number">
+          Project 02
         </div>
 
-      </div>
+        <h3>
+          Single Storey Project 02
+        </h3>
 
+        <p>
+          A modern home concept designed with
+          open living areas and a relaxed residential feel.
+        </p>
 
-      <!-- PROJECT 03 -->
-
-      <div class="project-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85"
-          alt="Single Storey Project 03"
-        >
-
-        <div class="project-content">
-
-          <div class="project-number">
-            Project 03
-          </div>
-
-          <h3>
-            Single Storey Project 03
-          </h3>
-
-          <p>
-            A carefully considered home designed
-            around comfortable everyday living.
-          </p>
-
-          <a
-            href="#project03"
-            class="project-link"
-          >
-            View Project →
-          </a>
-
-        </div>
+        <a
+          href="single-storey-project-02.html"
+          class="view-link">
+          View Design →
+        </a>
 
       </div>
-
 
     </div>
+
+
+    <!-- PROJECT 03 -->
+
+    <div class="project">
+
+      <div class="project-image">
+        <img
+          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+          alt="Single Storey Project 03">
+      </div>
+
+      <div class="project-content">
+
+        <div class="project-number">
+          Project 03
+        </div>
+
+        <h3>
+          Single Storey Project 03
+        </h3>
+
+        <p>
+          A refined single storey concept balancing
+          functionality, light and everyday comfort.
+        </p>
+
+        <a
+          href="single-storey-project-03.html"
+          class="view-link">
+          View Design →
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="back">
+
+    <a href="house-designs.html">
+      ← Back to House Designs
+    </a>
 
   </div>
 
 </section>
 
 
-<!-- BACK -->
-
-<div class="back-section">
-
-  <a
-    href="house-designs.html"
-    class="back-link"
-  >
-    ← Back to House Designs
-  </a>
-
-</div>
-
-
-<!-- CTA -->
-
 <section class="cta">
 
   <h2>
-    Ready to Build Your Home?
+    Ready to build your home?
   </h2>
 
   <p>
-    Let's talk about your ideas and your plans.
+    Let's start the conversation about your next home.
   </p>
 
-  <a
-    href="index.html#contact"
-    class="button"
-  >
+  <a href="index.html#contact">
     Start Your Build
   </a>
 
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-  <p>
-    © 2026 <strong>Cercobuilt</strong>.
-    All rights reserved.
-  </p>
+  <div class="footer-inner">
+
+    <div class="copyright">
+      © 2026 Cercobuilt. All rights reserved.
+    </div>
+
+    <div>
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="house-designs.html">
+        House Designs
+      </a>
+
+      <a href="index.html#contact">
+        Contact
+      </a>
+    </div>
+
+  </div>
 
 </footer>
 
 
 <script>
 
-function toggleMenu() {
-
-  document
-    .getElementById("mobileMenu")
-    .classList
-    .toggle("open");
-
-}
-
-function closeMenu() {
-
-  document
-    .getElementById("mobileMenu")
-    .classList
-    .remove("open");
-
-}
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("open");
+  }
 
 </script>
-
 
 </body>
 </html>
