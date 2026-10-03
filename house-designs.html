@@ -61,24 +61,28 @@
       color: #777777;
     }
 
+    /* 手机菜单按钮 */
     .menu-button {
       display: none;
       border: none;
       background: transparent;
       font-size: 30px;
+      line-height: 1;
       cursor: pointer;
       color: #222222;
+      padding: 8px;
     }
 
+    /* 手机下拉菜单 */
     .mobile-menu {
       display: none;
-      position: absolute;
+      position: fixed;
       top: 78px;
       left: 0;
       right: 0;
-      background: white;
+      background: #ffffff;
       border-bottom: 1px solid #eeeeee;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
       z-index: 999;
     }
 
@@ -88,9 +92,15 @@
 
     .mobile-menu a {
       display: block;
-      padding: 17px 6%;
+      padding: 18px 6%;
       border-bottom: 1px solid #eeeeee;
+      font-size: 16px;
       font-weight: 600;
+      color: #222222;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
     }
 
     .hero {
@@ -299,6 +309,7 @@
       font-size: 14px;
     }
 
+    /* 平板和手机 */
     @media (max-width: 900px) {
       nav {
         display: none;
@@ -313,6 +324,7 @@
       }
     }
 
+    /* 手机 */
     @media (max-width: 650px) {
       header {
         height: 70px;
@@ -320,6 +332,10 @@
 
       .mobile-menu {
         top: 70px;
+      }
+
+      .logo {
+        font-size: 22px;
       }
 
       .hero {
@@ -394,7 +410,10 @@
       <a href="index.html#contact">Contact</a>
     </nav>
 
-    <button class="menu-button" onclick="toggleMenu()" aria-label="Open menu">
+    <button
+      class="menu-button"
+      onclick="toggleMenu()"
+      aria-label="Open menu">
       ☰
     </button>
   </header>
@@ -462,7 +481,6 @@
       </div>
     </article>
 
-
     <article class="card">
       <div class="card-image">
         <img
@@ -488,7 +506,6 @@
         </a>
       </div>
     </article>
-
 
     <article class="card">
       <div class="card-image">
@@ -516,7 +533,6 @@
       </div>
     </article>
 
-
     <article class="card">
       <div class="card-image">
         <img
@@ -542,7 +558,6 @@
         </a>
       </div>
     </article>
-
 
     <article class="card">
       <div class="card-image">
@@ -570,7 +585,6 @@
         </a>
       </div>
     </article>
-
 
     <article class="card">
       <div class="card-image">
@@ -601,7 +615,6 @@
 
   </section>
 
-
   <section class="statement">
     <h2>
       Your home should feel like it was designed specifically for you.
@@ -612,7 +625,6 @@
       finishes and details around your lifestyle.
     </p>
   </section>
-
 
   <section class="cta" id="contact">
 
@@ -628,7 +640,6 @@
     </a>
 
   </section>
-
 
   <footer>
 
@@ -648,7 +659,6 @@
     </div>
 
   </footer>
-
 
   <script>
     function toggleMenu() {
