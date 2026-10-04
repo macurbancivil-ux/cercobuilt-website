@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Cercobuilt | Commercial Work</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -20,523 +26,683 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#f7f7f5;
-    color:#171717;
+    color:#222;
+    background:#fff;
     line-height:1.6;
 }
+
 
 /* =========================
    HEADER
 ========================= */
 
 header{
-    position:fixed;
+    position:sticky;
     top:0;
-    left:0;
-    width:100%;
     z-index:1000;
-    background:rgba(247,247,245,0.96);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid #e3e3e0;
+    background:#fff;
+    border-bottom:1px solid #eee;
 }
 
 .navbar{
-    max-width:1400px;
+    max-width:1200px;
     margin:auto;
-    height:82px;
-    padding:0 40px;
+    padding:20px 25px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .logo{
-    text-decoration:none;
-    color:#171717;
     font-size:26px;
-    font-weight:700;
+    font-weight:800;
     letter-spacing:2px;
+    color:#111;
+    text-decoration:none;
 }
 
 .nav-links{
     display:flex;
     align-items:center;
-    gap:34px;
+    gap:32px;
 }
 
 .nav-links a{
     text-decoration:none;
-    color:#171717;
-    font-size:13px;
+    color:#333;
+    font-size:14px;
     font-weight:600;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    transition:0.3s ease;
+    transition:.3s;
 }
 
 .nav-links a:hover{
-    opacity:0.55;
+    color:#9a7b4f;
 }
 
-.nav-links .active{
-    border-bottom:1px solid #171717;
-    padding-bottom:5px;
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
 }
+
 
 /* =========================
    HERO
 ========================= */
 
 .hero{
-    min-height:78vh;
-    padding:160px 40px 100px;
-    display:flex;
-    align-items:flex-end;
+
+    min-height:520px;
+
     background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.08),
-            rgba(0,0,0,0.52)
-        ),
-        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=85")
-        center/cover no-repeat;
-    color:white;
+    linear-gradient(
+        rgba(0,0,0,.48),
+        rgba(0,0,0,.48)
+    ),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:#fff;
 }
 
-.hero-inner{
-    width:100%;
-    max-width:1400px;
-    margin:auto;
-}
-
-.hero-label{
-    font-size:12px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    margin-bottom:18px;
-    opacity:0.9;
+.hero-content{
+    max-width:850px;
+    padding:40px 25px;
 }
 
 .hero h1{
-    font-size:clamp(55px,8vw,120px);
-    line-height:0.95;
-    font-weight:500;
-    letter-spacing:-4px;
-    max-width:1000px;
+    font-size:58px;
+    line-height:1.1;
+    margin-bottom:22px;
+    letter-spacing:1px;
 }
 
-.hero-description{
-    margin-top:30px;
-    max-width:620px;
-    font-size:18px;
-    line-height:1.7;
-    color:#eeeeee;
+.hero p{
+    font-size:20px;
+    max-width:720px;
+    margin:auto;
 }
+
 
 /* =========================
    INTRO
 ========================= */
 
 .intro{
-    max-width:1400px;
+
+    max-width:900px;
+
     margin:auto;
-    padding:120px 40px 90px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
+
+    padding:90px 25px 60px;
+
+    text-align:center;
 }
 
-.intro-title{
-    font-size:15px;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-weight:600;
+.intro h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
 }
 
-.intro-text{
-    font-size:28px;
-    line-height:1.35;
-    max-width:650px;
+.intro p{
+
+    color:#666;
+
+    font-size:17px;
 }
+
 
 /* =========================
    PROJECTS
 ========================= */
 
 .projects{
-    max-width:1400px;
+
+    max-width:1200px;
+
     margin:auto;
-    padding:0 40px 130px;
-}
 
-.section-heading{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    margin-bottom:55px;
-    border-bottom:1px solid #d8d8d4;
-    padding-bottom:20px;
+    padding:20px 25px 90px;
 }
-
-.section-heading h2{
-    font-size:14px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    font-weight:600;
-}
-
-.section-heading span{
-    font-size:12px;
-    letter-spacing:1px;
-    color:#777;
-}
-
-/* =========================
-   PROJECT CARD
-========================= */
 
 .project{
-    margin-bottom:110px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    min-height:430px;
+
+    margin-bottom:45px;
+
+    background:#f6f6f6;
+
+    overflow:hidden;
+}
+
+.project:nth-child(even){
+
+    direction:rtl;
+}
+
+.project:nth-child(even) .project-content{
+
+    direction:ltr;
 }
 
 .project-image{
+
     position:relative;
-    width:100%;
-    height:620px;
+
     overflow:hidden;
-    background:#ddd;
+
+    min-height:430px;
 }
 
 .project-image img{
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
+
     display:block;
-    transition:transform 0.8s cubic-bezier(.2,.7,.2,1);
+
+    transition:transform .6s ease;
 }
 
 .project:hover .project-image img{
-    transform:scale(1.045);
-}
 
-.project-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.15);
-    transition:0.4s ease;
-}
-
-.project:hover .project-overlay{
-    background:rgba(0,0,0,0.05);
+    transform:scale(1.06);
 }
 
 .project-number{
+
     position:absolute;
-    top:28px;
-    left:30px;
-    z-index:2;
-    color:white;
+
+    top:25px;
+    left:25px;
+
+    background:#fff;
+
+    color:#222;
+
+    padding:8px 14px;
+
     font-size:12px;
-    letter-spacing:3px;
-    text-transform:uppercase;
+
+    font-weight:700;
+
+    letter-spacing:1px;
 }
 
-.project-type{
-    position:absolute;
-    bottom:28px;
-    left:30px;
-    z-index:2;
-    color:white;
-    font-size:12px;
-    letter-spacing:2px;
-    text-transform:uppercase;
+.project-content{
+
+    padding:60px 55px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
 }
 
-.project-info{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    padding:30px 0 0;
+.project-content h3{
+
+    font-size:32px;
+
+    margin-bottom:18px;
 }
 
-.project-title{
-    font-size:42px;
-    line-height:1.05;
-    font-weight:500;
-    letter-spacing:-1px;
+.project-content h3 a{
+
+    color:#222;
+
+    text-decoration:none;
+
+    transition:.3s;
 }
 
-.project-description{
-    max-width:600px;
+.project-content h3 a:hover{
+
+    color:#9a7b4f;
+}
+
+.project-content p{
+
+    color:#666;
+
     font-size:16px;
-    color:#555;
-    line-height:1.8;
-}
 
-/* =========================
-   CONTACT CTA
-========================= */
-
-.contact-section{
-    background:#171717;
-    color:white;
-    padding:120px 40px;
-}
-
-.contact-inner{
-    max-width:1400px;
-    margin:auto;
-}
-
-.contact-label{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    color:#aaa;
     margin-bottom:25px;
 }
 
-.contact-title{
-    font-size:clamp(48px,7vw,100px);
-    line-height:0.98;
-    letter-spacing:-4px;
-    max-width:900px;
-    font-weight:500;
+.project-tag{
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    color:#9a7b4f;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
 }
 
-.contact-text{
-    margin-top:35px;
-    max-width:580px;
-    color:#bdbdbd;
+.project-link{
+
+    display:inline-block;
+
+    margin-top:5px;
+
+    color:#222;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    transition:.3s;
+}
+
+.project-link:hover{
+
+    color:#9a7b4f;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+
+    background:#111;
+
+    color:#fff;
+
+    padding:90px 25px;
+}
+
+.services-inner{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.services h2{
+
+    font-size:38px;
+
+    margin-bottom:50px;
+}
+
+.service-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+}
+
+.service-box{
+
+    border:1px solid #333;
+
+    padding:40px 25px;
+}
+
+.service-box h3{
+
+    font-size:21px;
+
+    margin-bottom:15px;
+}
+
+.service-box p{
+
+    color:#bbb;
+
+    font-size:15px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+
+    padding:100px 25px;
+
+    text-align:center;
+
+    background:#f4f1ec;
+}
+
+.cta h2{
+
+    font-size:42px;
+
+    margin-bottom:18px;
+}
+
+.cta p{
+
+    color:#666;
+
+    margin-bottom:30px;
+
     font-size:17px;
 }
 
-.contact-button{
+.cta-button{
+
     display:inline-block;
-    margin-top:45px;
-    padding:17px 30px;
-    border:1px solid white;
-    color:white;
+
+    padding:15px 32px;
+
+    background:#111;
+
+    color:#fff;
+
     text-decoration:none;
-    font-size:12px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    transition:0.3s ease;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    transition:.3s;
 }
 
-.contact-button:hover{
-    background:white;
-    color:#171717;
+.cta-button:hover{
+
+    background:#9a7b4f;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+
+    padding:90px 25px;
+
+    background:#fff;
+}
+
+.contact-inner{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.contact h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+}
+
+.contact p{
+
+    color:#666;
+
+    margin-bottom:15px;
+}
+
+.contact a{
+
+    color:#222;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+.contact a:hover{
+
+    color:#9a7b4f;
 }
 
 .contact-details{
-    margin-top:55px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:45px;
+
+    margin-top:30px;
 }
 
-.contact-detail{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-}
-
-.contact-detail span:first-child{
-    font-size:11px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:#777;
-}
-
-.contact-detail a{
-    color:white;
-    text-decoration:none;
-    font-size:16px;
-}
-
-.contact-detail a:hover{
-    opacity:0.65;
-}
 
 /* =========================
    FOOTER
 ========================= */
 
 footer{
+
     background:#111;
-    color:#888;
-    border-top:1px solid #292929;
+
+    color:#aaa;
+
+    padding:35px 25px;
 }
 
 .footer-inner{
-    max-width:1400px;
+
+    max-width:1200px;
+
     margin:auto;
-    padding:35px 40px;
+
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
-    gap:30px;
+
+    justify-content:space-between;
+
+    gap:20px;
 }
 
 .footer-logo{
-    color:white;
-    font-size:18px;
-    font-weight:700;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:800;
+
     letter-spacing:2px;
 }
 
-.footer-copy{
-    font-size:12px;
-}
-
 .footer-links{
+
     display:flex;
-    gap:25px;
+
+    gap:20px;
+
+    flex-wrap:wrap;
 }
 
 .footer-links a{
-    color:#888;
+
+    color:#aaa;
+
     text-decoration:none;
-    font-size:12px;
+
+    font-size:13px;
 }
 
 .footer-links a:hover{
-    color:white;
+
+    color:#fff;
 }
+
+.copyright{
+
+    font-size:12px;
+
+    margin-top:5px;
+}
+
 
 /* =========================
    MOBILE
 ========================= */
 
-@media(max-width:900px){
+@media(max-width:850px){
 
     .navbar{
-        height:72px;
-        padding:0 22px;
-    }
 
-    .logo{
-        font-size:21px;
+        padding:18px 20px;
     }
 
     .nav-links{
-        gap:15px;
+
+        display:none;
+
+        position:absolute;
+
+        top:70px;
+
+        left:0;
+
+        width:100%;
+
+        background:#fff;
+
+        flex-direction:column;
+
+        gap:0;
+
+        border-top:1px solid #eee;
+    }
+
+    .nav-links.show{
+
+        display:flex;
     }
 
     .nav-links a{
-        font-size:10px;
-        letter-spacing:0.7px;
+
+        width:100%;
+
+        padding:16px 20px;
+
+        border-bottom:1px solid #eee;
+
+        text-align:center;
+    }
+
+    .menu-btn{
+
+        display:block;
     }
 
     .hero{
-        min-height:75vh;
-        padding:130px 22px 70px;
+
+        min-height:450px;
     }
 
     .hero h1{
-        font-size:60px;
-        letter-spacing:-3px;
+
+        font-size:42px;
     }
 
-    .hero-description{
-        font-size:16px;
+    .hero p{
+
+        font-size:17px;
     }
 
     .intro{
-        padding:80px 22px 65px;
-        grid-template-columns:1fr;
-        gap:30px;
+
+        padding:70px 25px 40px;
     }
 
-    .intro-text{
-        font-size:23px;
-    }
+    .intro h2{
 
-    .projects{
-        padding:0 22px 80px;
-    }
-
-    .section-heading{
-        margin-bottom:35px;
+        font-size:32px;
     }
 
     .project{
-        margin-bottom:75px;
+
+        grid-template-columns:1fr;
+
+        margin-bottom:30px;
+    }
+
+    .project:nth-child(even){
+
+        direction:ltr;
     }
 
     .project-image{
-        height:440px;
+
+        min-height:300px;
     }
 
-    .project-info{
+    .project-content{
+
+        padding:40px 30px;
+    }
+
+    .project-content h3{
+
+        font-size:28px;
+    }
+
+    .service-grid{
+
         grid-template-columns:1fr;
-        gap:20px;
     }
 
-    .project-title{
+    .services h2{
+
+        font-size:32px;
+    }
+
+    .cta h2{
+
         font-size:34px;
     }
 
-    .project-description{
-        font-size:15px;
-    }
-
-    .contact-section{
-        padding:85px 22px;
-    }
-
-    .contact-title{
-        font-size:55px;
-        letter-spacing:-2px;
-    }
-
-    .contact-details{
-        flex-direction:column;
-        gap:25px;
-    }
-
     .footer-inner{
-        padding:30px 22px;
+
         flex-direction:column;
-        align-items:flex-start;
+
+        text-align:center;
     }
 
-}
+    .footer-links{
 
-@media(max-width:600px){
-
-    .nav-links{
-        gap:10px;
-    }
-
-    .nav-links a{
-        font-size:9px;
-    }
-
-    .hero h1{
-        font-size:49px;
-    }
-
-    .hero-description{
-        font-size:15px;
-    }
-
-    .project-image{
-        height:360px;
-    }
-
-    .project-title{
-        font-size:30px;
-    }
-
-    .contact-title{
-        font-size:45px;
+        justify-content:center;
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -551,31 +717,40 @@ footer{
 
 <div class="navbar">
 
+
 <a href="index.html" class="logo">
-Cercobuilt
+CERCOBUILT
 </a>
 
-<nav class="nav-links">
+
+<div
+class="menu-btn"
+onclick="toggleMenu()"
+>
+☰
+</div>
+
+
+<nav
+class="nav-links"
+id="navLinks"
+>
+
 
 <a href="index.html">
 Home
 </a>
 
-<a href="residential.html">
-Residential
+
+<a href="house-designs.html">
+House Designs
 </a>
 
-<a href="commercial.html" class="active">
-Commercial
-</a>
 
-<a href="about.html">
-About
-</a>
-
-<a href="#contact">
+<a href="index.html#contact">
 Contact
 </a>
+
 
 </nav>
 
@@ -591,18 +766,13 @@ Contact
 
 <section class="hero">
 
-<div class="hero-inner">
-
-<div class="hero-label">
-Cercobuilt / Commercial
-</div>
+<div class="hero-content">
 
 <h1>
-Commercial<br>
-Work
+Commercial Work
 </h1>
 
-<p class="hero-description">
+<p>
 Commercial construction built around quality,
 functionality and long-term performance.
 </p>
@@ -619,16 +789,18 @@ functionality and long-term performance.
 
 <section class="intro">
 
-<div class="intro-title">
+<h2>
 Commercial Construction
-</div>
+</h2>
 
-<div class="intro-text">
-From commercial builds and office spaces to
-retail and industrial projects, Cercobuilt
-delivers practical construction solutions
-with attention to detail.
-</div>
+<p>
+At Cercobuilt, we approach commercial construction
+with the same attention to detail, workmanship and
+quality that defines every project we deliver.
+From initial planning through to completion,
+we focus on practical solutions, quality materials
+and a finished result built for long-term performance.
+</p>
 
 </section>
 
@@ -640,142 +812,246 @@ with attention to detail.
 
 <section class="projects">
 
-<div class="section-heading">
-
-<h2>
-Selected Projects
-</h2>
-
-<span>
-03 / Commercial
-</span>
-
-</div>
-
-
 
 <!-- PROJECT 01 -->
 
-<article class="project">
+<div class="project">
+
 
 <div class="project-image">
 
+<a href="commercial-office.html">
+
 <img
-src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2200&q=85"
-alt="Commercial office project"
+src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
+alt="Commercial Office Project"
 >
 
-<div class="project-overlay"></div>
+</a>
 
 <div class="project-number">
-Project 01
+PROJECT 01
 </div>
 
-<div class="project-type">
+</div>
+
+
+<div class="project-content">
+
+<div class="project-tag">
+Commercial Construction
+</div>
+
+
+<h3>
+
+<a href="commercial-office.html">
 Commercial Office
-</div>
+</a>
 
-</div>
-
-<div class="project-info">
-
-<h3 class="project-title">
-Commercial Office
 </h3>
 
-<p class="project-description">
-A contemporary commercial office environment
-designed with a focus on functionality,
-clean detailing and a professional working
-environment.
+
+<p>
+Modern commercial office environments designed
+around functionality, professional presentation
+and the needs of the people who use the space.
 </p>
+
+
+<a
+href="commercial-office.html"
+class="project-link"
+>
+VIEW PROJECT →
+</a>
 
 </div>
 
-</article>
+</div>
 
 
 
 <!-- PROJECT 02 -->
 
-<article class="project">
+<div class="project">
+
 
 <div class="project-image">
 
 <img
-src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2200&q=85"
-alt="Commercial interior project"
+src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85"
+alt="Retail and Hospitality Project"
 >
 
-<div class="project-overlay"></div>
-
 <div class="project-number">
-Project 02
+PROJECT 02
 </div>
 
-<div class="project-type">
+</div>
+
+
+<div class="project-content">
+
+<div class="project-tag">
 Retail & Hospitality
 </div>
 
-</div>
 
-<div class="project-info">
-
-<h3 class="project-title">
+<h3>
 Retail & Hospitality
 </h3>
 
-<p class="project-description">
-Purpose-built commercial spaces created
-around customer experience, efficient
-layouts and durable finishes.
+
+<p>
+Purpose-built commercial spaces that combine
+practical layouts, durable finishes and a strong
+customer experience.
 </p>
 
 </div>
 
-</article>
+</div>
 
 
 
 <!-- PROJECT 03 -->
 
-<article class="project">
+<div class="project">
+
 
 <div class="project-image">
 
 <img
-src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=2200&q=85"
-alt="Industrial commercial project"
+src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=85"
+alt="Industrial Commercial Project"
 >
 
-<div class="project-overlay"></div>
-
 <div class="project-number">
-Project 03
+PROJECT 03
 </div>
 
-<div class="project-type">
+</div>
+
+
+<div class="project-content">
+
+<div class="project-tag">
 Industrial & Commercial
 </div>
 
-</div>
 
-<div class="project-info">
-
-<h3 class="project-title">
+<h3>
 Industrial & Commercial
 </h3>
 
-<p class="project-description">
-Practical commercial construction focused
-on durability, efficient use of space and
-the requirements of modern business.
+
+<p>
+Functional commercial facilities designed with
+durability, efficiency and long-term usability
+in mind.
 </p>
 
 </div>
 
-</article>
+</div>
 
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services">
+
+<div class="services-inner">
+
+
+<h2>
+Our Commercial Approach
+</h2>
+
+
+<div class="service-grid">
+
+
+<div class="service-box">
+
+<h3>
+Quality Construction
+</h3>
+
+<p>
+Careful workmanship and quality materials
+throughout every stage of construction.
+</p>
+
+</div>
+
+
+
+<div class="service-box">
+
+<h3>
+Practical Solutions
+</h3>
+
+<p>
+Construction solutions developed around
+functionality, efficiency and project requirements.
+</p>
+
+</div>
+
+
+
+<div class="service-box">
+
+<h3>
+Long-Term Performance
+</h3>
+
+<p>
+Built with durability and ongoing performance
+in mind.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<h2>
+Have a Commercial Project in Mind?
+</h2>
+
+<p>
+Talk to Cercobuilt about your next commercial
+construction project.
+</p>
+
+
+<a
+href="mailto:info@cercobuilt.com.au"
+class="cta-button"
+>
+GET IN TOUCH
+</a>
 
 </section>
 
@@ -785,54 +1061,48 @@ the requirements of modern business.
      CONTACT
 ========================= -->
 
-<section class="contact-section" id="contact">
+<section
+class="contact"
+id="contact"
+>
 
 <div class="contact-inner">
 
-<div class="contact-label">
-Start Your Project
-</div>
 
-<h2 class="contact-title">
-Have a commercial
-project in mind?
+<h2>
+Contact Cercobuilt
 </h2>
 
-<p class="contact-text">
-Talk to Cercobuilt about your next commercial
-construction project.
-</p>
 
-<a
-href="mailto:info@cercobuilt.com.au"
-class="contact-button"
->
-Get in Touch
-</a>
+<p>
+Let's discuss your next project.
+</p>
 
 
 <div class="contact-details">
 
-<div class="contact-detail">
 
-<span>Email</span>
+<p>
+
+Email:
 
 <a href="mailto:info@cercobuilt.com.au">
 info@cercobuilt.com.au
 </a>
 
-</div>
+</p>
 
 
-<div class="contact-detail">
+<p>
 
-<span>Phone</span>
+Phone:
 
 <a href="tel:0433759906">
 0433 759 906
 </a>
 
-</div>
+</p>
+
 
 </div>
 
@@ -850,37 +1120,60 @@ info@cercobuilt.com.au
 
 <div class="footer-inner">
 
+
+<div>
+
 <div class="footer-logo">
-Cercobuilt
+CERCOBUILT
 </div>
 
-<div class="footer-copy">
+
+<div class="copyright">
 © 2026 Cercobuilt. All rights reserved.
 </div>
 
+</div>
+
+
+
 <div class="footer-links">
+
 
 <a href="index.html">
 Home
 </a>
 
-<a href="residential.html">
-Residential
+
+<a href="house-designs.html">
+House Designs
 </a>
 
-<a href="commercial.html">
-Commercial
+
+<a href="index.html#contact">
+Contact
 </a>
 
-<a href="about.html">
-About
-</a>
 
 </div>
 
 </div>
 
 </footer>
+
+
+
+<script>
+
+function toggleMenu(){
+
+    const nav =
+    document.getElementById("navLinks");
+
+    nav.classList.toggle("show");
+
+}
+
+</script>
 
 
 </body>
