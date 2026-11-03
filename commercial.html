@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,53 +7,255 @@
 <title>Commercial Projects | Cercobuilt</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;color:#222;background:#fff}
-header{
-    height:85px;padding:0 7%;
-    display:flex;justify-content:space-between;
-    align-items:center;border-bottom:1px solid #eee;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.logo{font-size:25px;font-weight:800;letter-spacing:3px;color:#111;text-decoration:none}
-.menu-btn{font-size:30px;cursor:pointer;color:#111}
-.menu{
-    display:none;position:absolute;right:7%;top:75px;
-    background:#fff;padding:25px 35px;
-    box-shadow:0 8px 25px #0002;z-index:10;
-}
-.menu a{display:block;text-decoration:none;color:#222;padding:12px 0}
-.menu.show{display:block}
 
-.hero{text-align:center;padding:90px 20px 55px}
-.hero h1{font-size:42px;letter-spacing:2px;margin-bottom:18px}
-.hero p{font-size:15px;color:#777;line-height:1.7}
-
-.projects{
-    max-width:1200px;margin:0 auto;
-    padding:30px 6% 100px;
-    display:grid;grid-template-columns:repeat(2,1fr);gap:35px;
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #fff;
 }
-.project{display:block;text-decoration:none;color:#222}
-.project img{
-    width:100%;height:350px;object-fit:cover;
-    display:block;transition:transform .4s;
-}
-.project:hover img{transform:scale(1.02)}
-.image-wrap{overflow:hidden}
-.category{
-    font-size:12px;letter-spacing:2px;
-    color:#888;margin-top:22px;text-transform:uppercase;
-}
-.project h2{font-size:25px;margin-top:10px;font-weight:600}
-.view{font-size:13px;color:#777;margin-top:12px;letter-spacing:1px}
 
-footer{text-align:center;padding:35px 15px;background:#111;color:#aaa;font-size:12px}
+/* HEADER */
+header {
+    height: 90px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    position: relative;
+    z-index: 100;
+}
 
-@media(max-width:700px){
-    .hero{padding:65px 20px 35px}
-    .hero h1{font-size:32px}
-    .projects{grid-template-columns:1fr;padding:20px 6% 70px;gap:40px}
-    .project img{height:270px}
+.logo {
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+
+.logo img {
+    height: 88px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #999;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #111;
+    background: none;
+    border: none;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 90px 20px 55px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 15px;
+    color: #777;
+    line-height: 1.7;
+}
+
+/* PROJECTS */
+.projects {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 6% 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.project {
+    display: block;
+    text-decoration: none;
+    color: #222;
+}
+
+.image-wrap {
+    overflow: hidden;
+}
+
+.project img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.project:hover img {
+    transform: scale(1.02);
+}
+
+.category {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #888;
+    margin-top: 22px;
+    text-transform: uppercase;
+}
+
+.project h2 {
+    font-size: 25px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.view {
+    font-size: 13px;
+    color: #777;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: #aaa;
+    padding: 40px 7% 25px;
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 88px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #888;
+}
+
+/* MOBILE */
+@media(max-width: 900px) {
+    header {
+        padding: 0 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 90px;
+        right: 5%;
+        left: 5%;
+        background: #fff;
+        padding: 20px 25px;
+        box-shadow: 0 8px 25px #0002;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 13px 0;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+@media(max-width: 700px) {
+    header {
+        height: 65px;
+    }
+
+    .logo {
+        height: 65px;
+    }
+
+    .logo img {
+        height: 63px;
+    }
+
+    .nav-links {
+        top: 65px;
+    }
+
+    .hero {
+        padding: 65px 20px 35px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+        padding: 20px 6% 70px;
+        gap: 40px;
+    }
+
+    .project img {
+        height: 270px;
+    }
+
+    .footer-logo img {
+        height: 63px;
+    }
 }
 </style>
 </head>
@@ -60,13 +263,21 @@ footer{text-align:center;padding:35px 15px;background:#111;color:#aaa;font-size:
 <body>
 
 <header>
-    <a class="logo" href="index.html">CERCOBUILT</a>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <nav class="menu" id="menu">
-        <a href="index.html">Home</a>
-        <a href="house-designs.html">House Designs</a>
-        <a href="commercial.html">Commercial</a>
-        <a href="contact.html">Contact</a>
+    <a class="logo" href="/index.html">
+        <img src="/images/logo/logo.PNG" alt="Cercobuilt">
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation">
+        ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="/index.html">Home</a>
+        <a href="/house-designs.html">House Designs</a>
+        <a href="/double-storey.html">Double Storey</a>
+        <a href="/custom-homes.html">Custom Homes</a>
+        <a href="/commercial.html" class="active">Commercial</a>
+        <a href="/index.html#contact">Contact</a>
     </nav>
 </header>
 
@@ -80,21 +291,27 @@ footer{text-align:center;padding:35px 15px;background:#111;color:#aaa;font-size:
 
 <section class="projects">
 
-    <a class="project" href="commercial/rehab-solution.html">
+    <a class="project" href="/commercial/rehab-solution.html">
         <div class="image-wrap">
-            <img src="images/commercial/rehabs-solution/rehabs%20solution%201.JPG"
-                 alt="Rehabs Solution project">
+            <img
+                src="/images/commercial/rehabs-solution/rehabs%20solution%201.JPG"
+                alt="Rehabs Solution project"
+            >
         </div>
+
         <div class="category">Healthcare &amp; Medical</div>
         <h2>Rehabs Solution</h2>
         <div class="view">VIEW PROJECT →</div>
     </a>
 
-    <a class="project" href="commercial/cbd-beauty-salon.html">
+    <a class="project" href="/commercial/cbd-beauty-salon.html">
         <div class="image-wrap">
-            <img src="images/commercial/cbd-beauty-salon/cbd%20beauty%20salon%201.JPG"
-                 alt="CBD Beauty Salon project">
+            <img
+                src="/images/commercial/cbd-beauty-salon/cbd%20beauty%20salon%201.JPG"
+                alt="CBD Beauty Salon project"
+            >
         </div>
+
         <div class="category">Beauty Salon</div>
         <h2>CBD Beauty Salon</h2>
         <div class="view">VIEW PROJECT →</div>
@@ -103,12 +320,29 @@ footer{text-align:center;padding:35px 15px;background:#111;color:#aaa;font-size:
 </section>
 
 <footer>
-    © 2026 CERCOBUILT. ALL RIGHTS RESERVED.
+    <div class="footer-logo">
+        <a href="/index.html">
+            <img src="/images/logo/logo.PNG" alt="Cercobuilt">
+        </a>
+    </div>
+
+    <nav class="footer-links">
+        <a href="/index.html">Home</a>
+        <a href="/house-designs.html">House Designs</a>
+        <a href="/double-storey.html">Double Storey</a>
+        <a href="/custom-homes.html">Custom Homes</a>
+        <a href="/commercial.html">Commercial</a>
+        <a href="/index.html#contact">Contact</a>
+    </nav>
+
+    <div class="copyright">
+        © 2026 CERCOBUILT. ALL RIGHTS RESERVED.
+    </div>
 </footer>
 
 <script>
-function toggleMenu(){
-    document.getElementById("menu").classList.toggle("show");
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
 }
 </script>
 
