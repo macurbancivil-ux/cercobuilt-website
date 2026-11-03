@@ -1,1180 +1,438 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cercobuilt | Commercial Work</title>
+<title>Commercial Projects | Cercobuilt</title>
+
+<meta name="description" content="Explore Cercobuilt commercial construction projects, including healthcare, medical rehabilitation and beauty salon developments in Melbourne.">
 
 <style>
-
-/* =========================
-   RESET
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:#222;
-    background:#fff;
-    line-height:1.6;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #fff;
 }
 
+/* HEADER */
 
-/* =========================
-   HEADER
-========================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#fff;
-    border-bottom:1px solid #eee;
+header {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    padding:20px 25px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #111;
+    text-decoration: none;
 }
 
-.logo{
-    font-size:26px;
-    font-weight:800;
-    letter-spacing:2px;
-    color:#111;
-    text-decoration:none;
+nav {
+    display: flex;
+    gap: 35px;
 }
 
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:32px;
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s;
 }
 
-.nav-links a{
-    text-decoration:none;
-    color:#333;
-    font-size:14px;
-    font-weight:600;
-    transition:.3s;
+nav a:hover,
+nav a.active {
+    color: #a17b4b;
 }
 
-.nav-links a:hover{
-    color:#9a7b4f;
-}
+/* HERO */
 
-.menu-btn{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-
-    min-height:520px;
-
+.hero {
+    height: 390px;
     background:
-    linear-gradient(
-        rgba(0,0,0,.48),
-        rgba(0,0,0,.48)
-    ),
-    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=85")
+    linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.48)),
+    url("images/commercial/rehabs-solution/rehabs%20solution%201.JPG")
     center/cover no-repeat;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 }
 
-.hero-content{
-    max-width:850px;
-    padding:40px 25px;
+.hero-content h1 {
+    font-size: 48px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
 }
 
-.hero h1{
-    font-size:58px;
-    line-height:1.1;
-    margin-bottom:22px;
-    letter-spacing:1px;
+.hero-content p {
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
-.hero p{
-    font-size:20px;
-    max-width:720px;
-    margin:auto;
+/* INTRO */
+
+.intro {
+    text-align: center;
+    padding: 75px 20px 45px;
 }
 
-
-/* =========================
-   INTRO
-========================= */
-
-.intro{
-
-    max-width:900px;
-
-    margin:auto;
-
-    padding:90px 25px 60px;
-
-    text-align:center;
+.intro h2 {
+    font-size: 32px;
+    margin-bottom: 18px;
+    font-weight: 700;
 }
 
-.intro h2{
-
-    font-size:38px;
-
-    margin-bottom:20px;
+.intro p {
+    max-width: 700px;
+    margin: auto;
+    color: #777;
+    line-height: 1.8;
+    font-size: 15px;
 }
 
-.intro p{
+/* PROJECTS */
 
-    color:#666;
-
-    font-size:17px;
+.projects {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 30px 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 38px;
 }
 
-
-/* =========================
-   PROJECTS
-========================= */
-
-.projects{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:20px 25px 90px;
+.project-card {
+    display: block;
+    text-decoration: none;
+    color: #222;
+    background: #fff;
+    overflow: hidden;
 }
 
-.project{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    min-height:430px;
-
-    margin-bottom:45px;
-
-    background:#f6f6f6;
-
-    overflow:hidden;
+.project-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background: #eee;
 }
 
-.project:nth-child(even){
-
-    direction:rtl;
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
 }
 
-.project:nth-child(even) .project-content{
-
-    direction:ltr;
+.project-card:hover .project-image img {
+    transform: scale(1.06);
 }
 
-.project-image{
-
-    position:relative;
-
-    overflow:hidden;
-
-    min-height:430px;
+.project-info {
+    padding: 24px 5px;
 }
 
-.project-image img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:transform .6s ease;
+.project-category {
+    font-size: 11px;
+    color: #a17b4b;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
-.project:hover .project-image img{
-
-    transform:scale(1.06);
+.project-info h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
 }
 
-.project-number{
-
-    position:absolute;
-
-    top:25px;
-    left:25px;
-
-    background:#fff;
-
-    color:#222;
-
-    padding:8px 14px;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
+.project-info p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
-.project-content{
-
-    padding:60px 55px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
+.view-project {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #222;
+    border-bottom: 1px solid #a17b4b;
+    padding-bottom: 6px;
 }
 
-.project-content h3{
+/* FOOTER */
 
-    font-size:32px;
-
-    margin-bottom:18px;
+footer {
+    background: #151515;
+    color: #fff;
+    text-align: center;
+    padding: 45px 20px;
 }
 
-.project-content h3 a{
-
-    color:#222;
-
-    text-decoration:none;
-
-    transition:.3s;
+footer h3 {
+    font-size: 23px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
-.project-content h3 a:hover{
-
-    color:#9a7b4f;
+footer p {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 2;
 }
 
-.project-content p{
-
-    color:#666;
-
-    font-size:16px;
-
-    margin-bottom:25px;
+footer a {
+    color: #fff;
+    text-decoration: none;
 }
 
-.project-tag{
+/* MOBILE */
 
-    font-size:12px;
+@media(max-width: 768px) {
 
-    font-weight:700;
-
-    letter-spacing:1.5px;
-
-    color:#9a7b4f;
-
-    text-transform:uppercase;
-
-    margin-bottom:8px;
-}
-
-.project-link{
-
-    display:inline-block;
-
-    margin-top:5px;
-
-    color:#222;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
-
-    transition:.3s;
-}
-
-.project-link:hover{
-
-    color:#9a7b4f;
-}
-
-
-/* =========================
-   SERVICES
-========================= */
-
-.services{
-
-    background:#111;
-
-    color:#fff;
-
-    padding:90px 25px;
-}
-
-.services-inner{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    text-align:center;
-}
-
-.services h2{
-
-    font-size:38px;
-
-    margin-bottom:50px;
-}
-
-.service-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-}
-
-.service-box{
-
-    border:1px solid #333;
-
-    padding:40px 25px;
-}
-
-.service-box h3{
-
-    font-size:21px;
-
-    margin-bottom:15px;
-}
-
-.service-box p{
-
-    color:#bbb;
-
-    font-size:15px;
-}
-
-
-/* =========================
-   CTA
-========================= */
-
-.cta{
-
-    padding:100px 25px;
-
-    text-align:center;
-
-    background:#f4f1ec;
-}
-
-.cta h2{
-
-    font-size:42px;
-
-    margin-bottom:18px;
-}
-
-.cta p{
-
-    color:#666;
-
-    margin-bottom:30px;
-
-    font-size:17px;
-}
-
-.cta-button{
-
-    display:inline-block;
-
-    padding:15px 32px;
-
-    background:#111;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
-
-    transition:.3s;
-}
-
-.cta-button:hover{
-
-    background:#9a7b4f;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact{
-
-    padding:90px 25px;
-
-    background:#fff;
-}
-
-.contact-inner{
-
-    max-width:900px;
-
-    margin:auto;
-
-    text-align:center;
-}
-
-.contact h2{
-
-    font-size:38px;
-
-    margin-bottom:20px;
-}
-
-.contact p{
-
-    color:#666;
-
-    margin-bottom:15px;
-}
-
-.contact a{
-
-    color:#222;
-
-    text-decoration:none;
-
-    font-weight:600;
-}
-
-.contact a:hover{
-
-    color:#9a7b4f;
-}
-
-.contact-details{
-
-    margin-top:30px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-
-    background:#111;
-
-    color:#aaa;
-
-    padding:35px 25px;
-}
-
-.footer-inner{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:20px;
-}
-
-.footer-logo{
-
-    color:#fff;
-
-    font-size:20px;
-
-    font-weight:800;
-
-    letter-spacing:2px;
-}
-
-.footer-links{
-
-    display:flex;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-}
-
-.footer-links a{
-
-    color:#aaa;
-
-    text-decoration:none;
-
-    font-size:13px;
-}
-
-.footer-links a:hover{
-
-    color:#fff;
-}
-
-.copyright{
-
-    font-size:12px;
-
-    margin-top:5px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:850px){
-
-    .navbar{
-
-        padding:18px 20px;
+    header {
+        height: 75px;
+        padding: 0 5%;
     }
 
-    .nav-links{
-
-        display:none;
-
-        position:absolute;
-
-        top:70px;
-
-        left:0;
-
-        width:100%;
-
-        background:#fff;
-
-        flex-direction:column;
-
-        gap:0;
-
-        border-top:1px solid #eee;
+    .logo {
+        font-size: 21px;
     }
 
-    .nav-links.show{
-
-        display:flex;
+    nav {
+        gap: 13px;
     }
 
-    .nav-links a{
-
-        width:100%;
-
-        padding:16px 20px;
-
-        border-bottom:1px solid #eee;
-
-        text-align:center;
+    nav a {
+        font-size: 11px;
     }
 
-    .menu-btn{
-
-        display:block;
+    .hero {
+        height: 280px;
     }
 
-    .hero{
-
-        min-height:450px;
+    .hero-content h1 {
+        font-size: 32px;
     }
 
-    .hero h1{
-
-        font-size:42px;
+    .intro {
+        padding: 55px 22px 30px;
     }
 
-    .hero p{
-
-        font-size:17px;
+    .intro h2 {
+        font-size: 26px;
     }
 
-    .intro{
-
-        padding:70px 25px 40px;
+    .projects {
+        grid-template-columns: 1fr;
+        padding: 25px 20px 70px;
+        gap: 25px;
     }
 
-    .intro h2{
-
-        font-size:32px;
+    .project-image {
+        height: 260px;
     }
 
-    .project{
-
-        grid-template-columns:1fr;
-
-        margin-bottom:30px;
+    .project-info h3 {
+        font-size: 22px;
     }
-
-    .project:nth-child(even){
-
-        direction:ltr;
-    }
-
-    .project-image{
-
-        min-height:300px;
-    }
-
-    .project-content{
-
-        padding:40px 30px;
-    }
-
-    .project-content h3{
-
-        font-size:28px;
-    }
-
-    .service-grid{
-
-        grid-template-columns:1fr;
-    }
-
-    .services h2{
-
-        font-size:32px;
-    }
-
-    .cta h2{
-
-        font-size:34px;
-    }
-
-    .footer-inner{
-
-        flex-direction:column;
-
-        text-align:center;
-    }
-
-    .footer-links{
-
-        justify-content:center;
-    }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
-<div class="navbar">
+    <a href="index.html" class="logo">
+        CERCOBUILT
+    </a>
 
-
-<a href="index.html" class="logo">
-CERCOBUILT
-</a>
-
-
-<div
-class="menu-btn"
-onclick="toggleMenu()"
->
-☰
-</div>
-
-
-<nav
-class="nav-links"
-id="navLinks"
->
-
-
-<a href="index.html">
-Home
-</a>
-
-
-<a href="house-designs.html">
-House Designs
-</a>
-
-
-<a href="index.html#contact">
-Contact
-</a>
-
-
-</nav>
-
-</div>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="house-designs.html">HOUSE DESIGNS</a>
+        <a href="index.html#contact">CONTACT</a>
+    </nav>
 
 </header>
 
-
-
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero">
 
-<div class="hero-content">
-
-<h1>
-Commercial Work
-</h1>
-
-<p>
-Commercial construction built around quality,
-functionality and long-term performance.
-</p>
-
-</div>
+    <div class="hero-content">
+        <h1>COMMERCIAL</h1>
+        <p>Building Spaces. Creating Opportunities.</p>
+    </div>
 
 </section>
-
-
-
-<!-- =========================
-     INTRO
-========================= -->
 
 <section class="intro">
 
-<h2>
-Commercial Construction
-</h2>
+    <h2>Our Commercial Projects</h2>
 
-<p>
-At Cercobuilt, we approach commercial construction
-with the same attention to detail, workmanship and
-quality that defines every project we deliver.
-From initial planning through to completion,
-we focus on practical solutions, quality materials
-and a finished result built for long-term performance.
-</p>
+    <p>
+        Cercobuilt delivers quality commercial construction
+        solutions, combining thoughtful design, quality
+        workmanship and practical functionality.
+        Explore our completed commercial projects.
+    </p>
 
 </section>
-
-
-
-<!-- =========================
-     PROJECTS
-========================= -->
 
 <section class="projects">
 
+    <!-- HEALTHCARE -->
 
-<!-- PROJECT 01 -->
+    <a href="commercial/rehab-solution.html"
+       class="project-card">
 
-<div class="project">
+        <div class="project-image">
+            <img
+            src="images/commercial/rehabs-solution/rehabs%20solution%201.JPG"
+            alt="Rehabs Solution Healthcare Project">
+        </div>
 
+        <div class="project-info">
 
-<div class="project-image">
+            <div class="project-category">
+                Healthcare & Medical
+            </div>
 
-<a href="commercial-office.html">
+            <h3>Rehabs Solution</h3>
 
-<img
-src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
-alt="Commercial Office Project"
->
+            <p>
+                400 m² | Injury & Disability
+                Rehabilitation Centre
+            </p>
 
-</a>
+            <span class="view-project">
+                VIEW PROJECT →
+            </span>
 
-<div class="project-number">
-PROJECT 01
-</div>
+        </div>
 
-</div>
-
-
-<div class="project-content">
-
-<div class="project-tag">
-Commercial Construction
-</div>
-
-
-<h3>
-
-<a href="commercial-office.html">
-Commercial Office
-</a>
-
-</h3>
+    </a>
 
 
-<p>
-Modern commercial office environments designed
-around functionality, professional presentation
-and the needs of the people who use the space.
-</p>
+    <!-- BEAUTY SALON -->
+
+    <a href="commercial/cbd-beauty-salon.html"
+       class="project-card">
+
+        <div class="project-image">
+            <img
+            src="images/commercial/cbd-beauty-salon/cbd%20beauty%20salon%201.JPG"
+            alt="CBD Beauty Salon Project">
+        </div>
+
+        <div class="project-info">
+
+            <div class="project-category">
+                Beauty Salon
+            </div>
+
+            <h3>CBD Beauty Salon</h3>
+
+            <p>
+                Contemporary beauty salon design
+                and commercial interior construction.
+            </p>
+
+            <span class="view-project">
+                VIEW PROJECT →
+            </span>
+
+        </div>
+
+    </a>
 
 
-<a
-href="commercial-office.html"
-class="project-link"
->
-VIEW PROJECT →
-</a>
+    <!-- INDUSTRIAL & COMMERCIAL -->
 
-</div>
+    <a href="commercial/industrial-commercial.html"
+       class="project-card">
 
-</div>
+        <div class="project-image">
+            <img
+            src="images/commercial/industrial-commercial/01.JPG"
+            alt="Industrial and Commercial Project">
+        </div>
 
+        <div class="project-info">
 
+            <div class="project-category">
+                Industrial & Commercial
+            </div>
 
-<!-- PROJECT 02 -->
+            <h3>Industrial & Commercial</h3>
 
-<div class="project">
+            <p>
+                Commercial construction solutions
+                designed for practical business needs.
+            </p>
 
+            <span class="view-project">
+                VIEW PROJECT →
+            </span>
 
-<div class="project-image">
+        </div>
 
-<img
-src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85"
-alt="Retail and Hospitality Project"
->
-
-<div class="project-number">
-PROJECT 02
-</div>
-
-</div>
-
-
-<div class="project-content">
-
-<div class="project-tag">
-Retail & Hospitality
-</div>
-
-
-<h3>
-Retail & Hospitality
-</h3>
-
-
-<p>
-Purpose-built commercial spaces that combine
-practical layouts, durable finishes and a strong
-customer experience.
-</p>
-
-</div>
-
-</div>
-
-
-
-<!-- PROJECT 03 -->
-
-<div class="project">
-
-
-<div class="project-image">
-
-<img
-src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=85"
-alt="Industrial Commercial Project"
->
-
-<div class="project-number">
-PROJECT 03
-</div>
-
-</div>
-
-
-<div class="project-content">
-
-<div class="project-tag">
-Industrial & Commercial
-</div>
-
-
-<h3>
-Industrial & Commercial
-</h3>
-
-
-<p>
-Functional commercial facilities designed with
-durability, efficiency and long-term usability
-in mind.
-</p>
-
-</div>
-
-</div>
-
+    </a>
 
 </section>
-
-
-
-<!-- =========================
-     SERVICES
-========================= -->
-
-<section class="services">
-
-<div class="services-inner">
-
-
-<h2>
-Our Commercial Approach
-</h2>
-
-
-<div class="service-grid">
-
-
-<div class="service-box">
-
-<h3>
-Quality Construction
-</h3>
-
-<p>
-Careful workmanship and quality materials
-throughout every stage of construction.
-</p>
-
-</div>
-
-
-
-<div class="service-box">
-
-<h3>
-Practical Solutions
-</h3>
-
-<p>
-Construction solutions developed around
-functionality, efficiency and project requirements.
-</p>
-
-</div>
-
-
-
-<div class="service-box">
-
-<h3>
-Long-Term Performance
-</h3>
-
-<p>
-Built with durability and ongoing performance
-in mind.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="cta">
-
-<h2>
-Have a Commercial Project in Mind?
-</h2>
-
-<p>
-Talk to Cercobuilt about your next commercial
-construction project.
-</p>
-
-
-<a
-href="mailto:info@cercobuilt.com.au"
-class="cta-button"
->
-GET IN TOUCH
-</a>
-
-</section>
-
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section
-class="contact"
-id="contact"
->
-
-<div class="contact-inner">
-
-
-<h2>
-Contact Cercobuilt
-</h2>
-
-
-<p>
-Let's discuss your next project.
-</p>
-
-
-<div class="contact-details">
-
-
-<p>
-
-Email:
-
-<a href="mailto:info@cercobuilt.com.au">
-info@cercobuilt.com.au
-</a>
-
-</p>
-
-
-<p>
-
-Phone:
-
-<a href="tel:0433759906">
-0433 759 906
-</a>
-
-</p>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
-<div class="footer-inner">
+    <h3>CERCOBUILT</h3>
 
+    <p>
+        Quality Construction. Thoughtful Design.
+    </p>
 
-<div>
+    <p>
+        Melbourne, Victoria, Australia
+    </p>
 
-<div class="footer-logo">
-CERCOBUILT
-</div>
+    <p>
+        <a href="mailto:info@cercobuilt.com.au">
+            info@cercobuilt.com.au
+        </a>
+        <br>
+        0433 759 906
+    </p>
 
-
-<div class="copyright">
-© 2026 Cercobuilt. All rights reserved.
-</div>
-
-</div>
-
-
-
-<div class="footer-links">
-
-
-<a href="index.html">
-Home
-</a>
-
-
-<a href="house-designs.html">
-House Designs
-</a>
-
-
-<a href="index.html#contact">
-Contact
-</a>
-
-
-</div>
-
-</div>
+    <p style="margin-top:20px;">
+        © 2026 Cercobuilt. All Rights Reserved.
+    </p>
 
 </footer>
-
-
-
-<script>
-
-function toggleMenu(){
-
-    const nav =
-    document.getElementById("navLinks");
-
-    nav.classList.toggle("show");
-
-}
-
-</script>
-
 
 </body>
 </html>
