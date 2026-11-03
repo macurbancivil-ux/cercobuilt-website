@@ -4,728 +4,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Double Storey Homes | Cercobuilt</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:#222;
-    background:#fff;
-    line-height:1.6;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-img{
-    width:100%;
-    display:block;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#222;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
 
 /* HEADER */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#fff;
-    border-bottom:1px solid #eee;
-}
-
-.header-inner{
-    width:100%;
-    height:90px;
-    padding:0 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo-link{
-    display:flex;
-    align-items:center;
-    height:100%;
-}
-
-.logo{
-    display:block;
-    height:88px;
-    width:auto;
-    max-width:220px;
-    object-fit:contain;
-}
-
-nav{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-
-nav a{
-    font-size:13px;
-    font-weight:500;
-    transition:opacity .2s;
-    white-space:nowrap;
-}
-
-nav a:hover{
-    opacity:.55;
-}
-
-.menu-btn{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-    background:none;
-    border:none;
-    color:#111;
-}
+header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #eee}
+.header-inner{width:100%;height:90px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo-link{display:flex;align-items:center;height:100%}
+.logo{display:block;height:88px;width:auto;max-width:750px;object-fit:contain}
+nav{display:flex;align-items:center;gap:28px}
+nav a{font-size:14px;font-weight:500}
+nav a:hover{opacity:.55}
+.menu-btn{display:none;font-size:28px;cursor:pointer}
 
 /* HERO */
-
 .hero{
-    min-height:540px;
-    background:
-        linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.28)),
-        url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=2000&q=85")
-        center/cover;
-    display:flex;
-    align-items:center;
+min-height:540px;
+background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=2000&q=85") center/cover;
+display:flex;align-items:center
 }
+.hero-content{width:100%;max-width:1250px;margin:auto;padding:80px 30px;color:#fff}
+.hero h1{font-size:64px;line-height:1.05;font-weight:600;margin-bottom:20px}
+.hero p{max-width:650px;font-size:19px;line-height:1.7}
 
-.hero-content{
-    width:100%;
-    max-width:1250px;
-    margin:auto;
-    padding:80px 30px;
-    color:#fff;
-}
-
-.hero h1{
-    font-size:64px;
-    line-height:1.05;
-    font-weight:600;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:650px;
-    font-size:19px;
-    line-height:1.7;
-}
-
-/* GENERAL */
-
-.container{
-    max-width:1250px;
-    margin:auto;
-    padding:0 30px;
-}
-
-.section{
-    padding:100px 0;
-}
-
-.section-title{
-    font-size:42px;
-    line-height:1.2;
-    font-weight:500;
-    margin-bottom:20px;
-}
-
-.section-intro{
-    max-width:720px;
-    font-size:18px;
-    color:#666;
-}
-
-/* PROJECT GRID */
-
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    margin-top:55px;
-}
-
-.project-card{
-    background:#f5f5f3;
-    overflow:hidden;
-    transition:transform .2s;
-}
-
-.project-card:hover{
-    transform:translateY(-4px);
-}
-
-.project-card img{
-    height:360px;
-    object-fit:cover;
-}
-
-.project-content{
-    padding:30px;
-}
-
-.project-number{
-    font-size:12px;
-    letter-spacing:1.5px;
-    color:#888;
-    margin-bottom:8px;
-}
-
-.project-content h2{
-    font-size:27px;
-    font-weight:500;
-    margin-bottom:12px;
-}
-
-.project-content p{
-    color:#666;
-    margin-bottom:22px;
-}
-
-.text-link{
-    font-size:14px;
-    font-weight:600;
-    letter-spacing:.5px;
-}
+/* PROJECTS */
+.container{max-width:1250px;margin:auto;padding:0 30px}
+.section{padding:100px 0}
+.section-title{font-size:42px;line-height:1.2;font-weight:500;margin-bottom:20px}
+.section-intro{max-width:720px;font-size:18px;color:#666}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:55px}
+.project-card{background:#f5f5f3;overflow:hidden;transition:transform .2s}
+.project-card:hover{transform:translateY(-4px)}
+.project-card img{height:400px;object-fit:cover}
+.project-content{padding:30px}
+.project-number{font-size:12px;letter-spacing:1.5px;color:#888;margin-bottom:8px}
+.project-content h2{font-size:27px;font-weight:500;margin-bottom:12px}
+.project-content p{color:#666;margin-bottom:22px}
+.text-link{font-size:14px;font-weight:600;letter-spacing:.5px}
 
 /* BACK */
-
-.back-section{
-    padding-top:0;
-}
-
-.back-link{
-    font-size:14px;
-    font-weight:600;
-    letter-spacing:.5px;
-}
+.back-section{padding-top:0}
+.back-link{font-size:14px;font-weight:600;letter-spacing:.5px}
 
 /* CTA */
-
-.cta{
-    background:#222;
-    color:#fff;
-    text-align:center;
-}
-
-.cta .section-title{
-    max-width:700px;
-    margin:0 auto 25px;
-}
-
-.cta p{
-    color:#ccc;
-    max-width:600px;
-    margin:0 auto 30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:15px 28px;
-    font-size:14px;
-    font-weight:600;
-    border:1px solid #fff;
-}
-
-.btn-light{
-    background:#fff;
-    color:#222;
-}
+.cta{background:#222;color:#fff;text-align:center}
+.cta .section-title{max-width:700px;margin:0 auto 25px}
+.cta p{color:#ccc;max-width:600px;margin:0 auto 30px}
+.btn{display:inline-block;padding:15px 28px;font-size:14px;font-weight:600;border:1px solid #fff}
+.btn-light{background:#fff;color:#222}
 
 /* FOOTER */
-
-footer{
-    background:#171717;
-    color:#fff;
-    padding:45px 0 30px;
-}
-
-.footer-grid{
-    max-width:1250px;
-    margin:auto;
-    padding:0 30px;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:50px;
-}
-
-.footer-logo-link{
-    display:inline-flex;
-    align-items:center;
-    margin-bottom:15px;
-}
-
-.footer-logo{
-    display:block;
-    height:88px;
-    max-width:220px;
-    width:auto;
-    object-fit:contain;
-}
-
-.footer-about{
-    color:#aaa;
-    max-width:400px;
-}
-
-.footer-title{
-    font-size:14px;
-    font-weight:600;
-    margin-bottom:18px;
-}
-
-.footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-}
-
-.footer-links a{
-    color:#aaa;
-    font-size:14px;
-}
-
-.footer-links a:hover{
-    color:#fff;
-}
-
-.footer-bottom{
-    max-width:1250px;
-    margin:35px auto 0;
-    padding:20px 30px 0;
-    border-top:1px solid #333;
-    color:#777;
-    font-size:13px;
-}
+footer{background:#171717;color:#fff;padding:65px 0 30px}
+.footer-grid{max-width:1250px;margin:auto;padding:0 30px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px}
+.footer-logo-link{display:inline-flex;align-items:center;margin-bottom:15px}
+.footer-logo{display:block;height:200px;max-width:650px;width:auto;object-fit:contain}
+.footer-about{color:#aaa;max-width:400px}
+.footer-title{font-size:14px;font-weight:600;margin-bottom:18px}
+.footer-links{display:flex;flex-direction:column;gap:9px}
+.footer-links a{color:#aaa;font-size:14px}
+.footer-links a:hover{color:#fff}
+.footer-bottom{max-width:1250px;margin:50px auto 0;padding:20px 30px 0;border-top:1px solid #333;color:#777;font-size:13px}
 
 /* MOBILE */
-
-@media(max-width:1000px){
-
-    nav{
-        gap:15px;
-    }
-
-    nav a{
-        font-size:12px;
-    }
-}
-
 @media(max-width:850px){
-
-    .header-inner{
-        height:65px;
-        padding:0 10px;
-    }
-
-    .logo{
-        height:63px;
-        max-width:220px;
-    }
-
-    nav{
-        display:none;
-        position:absolute;
-        top:65px;
-        left:0;
-        width:100%;
-        background:#fff;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:0;
-        border-bottom:1px solid #eee;
-    }
-
-    nav.active{
-        display:flex;
-    }
-
-    nav a{
-        width:100%;
-        padding:16px 20px;
-        border-top:1px solid #eee;
-        font-size:14px;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-
-    .hero{
-        min-height:500px;
-    }
-
-    .hero-content{
-        padding:60px 20px;
-    }
-
-    .hero h1{
-        font-size:48px;
-    }
-
-    .hero p{
-        font-size:17px;
-    }
-
-    .container{
-        padding:0 20px;
-    }
-
-    .section{
-        padding:70px 0;
-    }
-
-    .section-title{
-        font-size:34px;
-    }
-
-    .project-grid{
-        grid-template-columns:1fr;
-    }
-
-    .project-card img{
-        height:300px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-        gap:35px;
-        padding:0 20px;
-    }
-
-    .footer-logo{
-        height:63px;
-        max-width:220px;
-    }
-
-    .footer-bottom{
-        padding:20px;
-    }
+.header-inner{height:65px;padding:0 10px}
+.logo{height:63px;max-width:500px}
+nav{display:none;position:absolute;top:65px;left:0;width:100%;background:#fff;flex-direction:column;align-items:flex-start;gap:0;border-bottom:1px solid #eee}
+nav.active{display:flex}
+nav a{width:100%;padding:16px 20px;border-top:1px solid #eee}
+.menu-btn{display:block}
+.hero{min-height:450px}
+.hero-content{padding:60px 20px}
+.hero h1{font-size:48px}
+.hero p{font-size:17px}
+.container{padding:0 20px}
+.section{padding:70px 0}
+.section-title{font-size:34px}
+.project-grid{grid-template-columns:1fr;gap:25px}
+.project-card img{height:300px}
+.project-content{padding:25px}
+.footer-grid{grid-template-columns:1fr;gap:35px;padding:0 20px}
+.footer-logo{height:150px;max-width:500px}
+.footer-bottom{padding:20px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
+<div class="header-inner">
+<a href="/index.html" class="logo-link">
+<img src="/images/logo/logo.PNG" alt="Cercobuilt" class="logo">
+</a>
 
-    <div class="header-inner">
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-        <a href="/index.html" class="logo-link">
-            <img
-                src="/images/logo/logo.PNG"
-                alt="Cercobuilt"
-                class="logo"
-            >
-        </a>
-
-        <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation">
-            ☰
-        </button>
-
-        <nav id="mainNav">
-
-            <a href="/index.html">Home</a>
-
-            <a href="/house-designs.html">House Designs</a>
-
-            <a href="/double-storey.html">Double Storey</a>
-
-            <a href="/custom-homes.html">Custom Homes</a>
-
-            <a href="/commercial.html">Commercial</a>
-
-            <a href="/index.html#contact">Contact</a>
-
-        </nav>
-
-    </div>
-
+<nav id="mainNav">
+<a href="/index.html">Home</a>
+<a href="/house-designs.html">House Designs</a>
+<a href="/single-storey.html">Single Storey</a>
+<a href="/double-storey.html">Double Storey</a>
+<a href="/custom-homes.html">Custom Homes</a>
+<a href="/commercial.html">Commercial</a>
+<a href="/index.html#contact">Contact</a>
+</nav>
+</div>
 </header>
 
-
-<!-- HERO -->
-
 <section class="hero">
-
-    <div class="hero-content">
-
-        <h1>Double Storey</h1>
-
-        <p>
-            Flexible two-level homes designed to create
-            generous spaces for modern living.
-        </p>
-
-    </div>
-
+<div class="hero-content">
+<h1>Double Storey</h1>
+<p>Flexible two-level homes designed to create generous spaces for modern living.</p>
+</div>
 </section>
-
-
-<!-- PROJECTS -->
 
 <section class="section">
+<div class="container">
 
-    <div class="container">
+<h2 class="section-title">Double Storey Projects</h2>
 
-        <h2 class="section-title">
-            Double Storey Projects
-        </h2>
+<p class="section-intro">
+Explore our completed double-storey projects.
+Discover contemporary homes designed around modern family living.
+</p>
 
-        <p class="section-intro">
-            Explore our double-storey project collection.
-            Each concept can be adapted to suit different
-            lifestyles, sites and requirements.
-        </p>
+<div class="project-grid">
 
-        <div class="project-grid">
+<a href="/double-storey-project-01.html" class="project-card">
+<img src="/images/double%20story/hurstville-modern-home/H%201.JPG" alt="Hurstville Modern House">
+<div class="project-content">
+<div class="project-number">PROJECT 01</div>
+<h2>Hurstville Modern House</h2>
+<p>A contemporary modern home designed with style, space and functionality.</p>
+<span class="text-link">VIEW PROJECT →</span>
+</div>
+</a>
 
-            <!-- PROJECT 01 -->
+<a href="/double-storey-project-02.html" class="project-card">
+<img src="/images/double%20story/concord-duplex/C%201.JPG" alt="Concord Duplex">
+<div class="project-content">
+<div class="project-number">PROJECT 02</div>
+<h2>Concord Duplex</h2>
+<p>A modern duplex project combining practical design and contemporary living.</p>
+<span class="text-link">VIEW PROJECT →</span>
+</div>
+</a>
 
-            <a href="double-storey-project-01.html" class="project-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1400&q=85"
-                    alt="Double Storey Project 01"
-                >
-
-                <div class="project-content">
-
-                    <div class="project-number">
-                        PROJECT 01
-                    </div>
-
-                    <h2>Double Storey Project 01</h2>
-
-                    <p>
-                        A contemporary two-level concept
-                        designed around spacious family living.
-                    </p>
-
-                    <span class="text-link">
-                        VIEW PROJECT →
-                    </span>
-
-                </div>
-
-            </a>
-
-
-            <!-- PROJECT 02 -->
-
-            <a href="double-storey-project-02.html" class="project-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=85"
-                    alt="Double Storey Project 02"
-                >
-
-                <div class="project-content">
-
-                    <div class="project-number">
-                        PROJECT 02
-                    </div>
-
-                    <h2>Double Storey Project 02</h2>
-
-                    <p>
-                        A balanced two-storey concept with
-                        flexible living and entertaining spaces.
-                    </p>
-
-                    <span class="text-link">
-                        VIEW PROJECT →
-                    </span>
-
-                </div>
-
-            </a>
-
-
-            <!-- PROJECT 03 -->
-
-            <a href="double-storey-project-03.html" class="project-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
-                    alt="Double Storey Project 03"
-                >
-
-                <div class="project-content">
-
-                    <div class="project-number">
-                        PROJECT 03
-                    </div>
-
-                    <h2>Double Storey Project 03</h2>
-
-                    <p>
-                        A modern two-level home concept
-                        focused on light, space and functionality.
-                    </p>
-
-                    <span class="text-link">
-                        VIEW PROJECT →
-                    </span>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </section>
-
-
-<!-- BACK -->
 
 <section class="section back-section">
-
-    <div class="container">
-
-        <a href="house-designs.html" class="back-link">
-            ← BACK TO HOUSE DESIGNS
-        </a>
-
-    </div>
-
+<div class="container">
+<a href="/house-designs.html" class="back-link">← BACK TO HOUSE DESIGNS</a>
+</div>
 </section>
-
-
-<!-- CTA -->
 
 <section class="section cta">
-
-    <div class="container">
-
-        <h2 class="section-title">
-            Ready to build your next chapter?
-        </h2>
-
-        <p>
-            Tell us about your project and let's start
-            the conversation.
-        </p>
-
-        <a href="/index.html#contact" class="btn btn-light">
-            Start Your Build
-        </a>
-
-    </div>
-
+<div class="container">
+<h2 class="section-title">Ready to build your next chapter?</h2>
+<p>Tell us about your project and let's start the conversation.</p>
+<a href="/index.html#contact" class="btn btn-light">Start Your Build</a>
+</div>
 </section>
 
-
-<!-- FOOTER -->
-
 <footer>
+<div class="footer-grid">
 
-    <div class="footer-grid">
+<div>
+<a href="/index.html" class="footer-logo-link">
+<img src="/images/logo/logo.PNG" alt="Cercobuilt" class="footer-logo">
+</a>
+<p class="footer-about">Thoughtfully designed homes, quality construction and a building experience centred around you.</p>
+</div>
 
-        <div>
+<div>
+<div class="footer-title">EXPLORE</div>
+<div class="footer-links">
+<a href="/index.html">Home</a>
+<a href="/house-designs.html">House Designs</a>
+<a href="/single-storey.html">Single Storey</a>
+<a href="/double-storey.html">Double Storey</a>
+<a href="/custom-homes.html">Custom Homes</a>
+<a href="/commercial.html">Commercial</a>
+</div>
+</div>
 
-            <a href="/index.html" class="footer-logo-link">
-                <img
-                    src="/images/logo/logo.PNG"
-                    alt="Cercobuilt"
-                    class="footer-logo"
-                >
-            </a>
+<div>
+<div class="footer-title">CONTACT</div>
+<div class="footer-links">
+<a href="/index.html#contact">Start Your Build</a>
+<a href="mailto:info@cercobuilt.com.au">info@cercobuilt.com.au</a>
+<a href="tel:0433759906">0433 759 906</a>
+</div>
+</div>
 
-            <p class="footer-about">
-                Thoughtfully designed homes,
-                quality construction and a
-                building experience centred around you.
-            </p>
+</div>
 
-        </div>
-
-
-        <div>
-
-            <div class="footer-title">
-                EXPLORE
-            </div>
-
-            <div class="footer-links">
-
-                <a href="/index.html">Home</a>
-
-                <a href="/house-designs.html">House Designs</a>
-
-                <a href="/double-storey.html">Double Storey</a>
-
-                <a href="/custom-homes.html">Custom Homes</a>
-
-                <a href="/commercial.html">Commercial</a>
-
-            </div>
-
-        </div>
-
-
-        <div>
-
-            <div class="footer-title">
-                CONTACT
-            </div>
-
-            <div class="footer-links">
-
-                <a href="/index.html#contact">
-                    Start Your Build
-                </a>
-
-                <a href="mailto:hello@cercobuilt.com.au">
-                    hello@cercobuilt.com.au
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        © 2026 Cercobuilt. All rights reserved.
-
-    </div>
-
+<div class="footer-bottom">© 2026 Cercobuilt. All rights reserved.</div>
 </footer>
 
-
 <script>
-
 function toggleMenu(){
-
-    document
-        .getElementById("mainNav")
-        .classList.toggle("active");
-
+document.getElementById("mainNav").classList.toggle("active");
 }
-
 </script>
 
 </body>
