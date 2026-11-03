@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cercobuilt | House Designs</title>
-<meta name="description" content="Explore Cercobuilt double-storey and custom home designs, built around your lifestyle and future.">
+<title>House Designs | Cercobuilt</title>
+<meta name="description" content="Explore double storey and custom home designs by Cercobuilt.">
 
 <style>
 *{
@@ -20,37 +20,26 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     color:#222;
     background:#fff;
     line-height:1.6;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-img{
-    display:block;
-    width:100%;
-}
-
 /* HEADER */
 
 header{
+    height:90px;
+    background:#fff;
+    border-bottom:1px solid #eee;
     position:sticky;
     top:0;
     z-index:1000;
-    background:#fff;
-    border-bottom:1px solid #eee;
 }
 
-.navbar{
-    max-width:1250px;
-    margin:auto;
-    padding:0 30px;
-    height:90px;
+.header-inner{
+    height:100%;
+    padding:0 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -59,74 +48,64 @@ header{
 .logo-link{
     display:flex;
     align-items:center;
-    height:90px;
-    flex-shrink:0;
+    height:100%;
 }
 
 .logo{
     display:block;
     height:88px;
     width:auto;
-    max-width:220px;
+    max-width:750px;
     object-fit:contain;
 }
 
-.nav-links{
+nav{
     display:flex;
     align-items:center;
-    gap:30px;
+    gap:32px;
 }
 
-.nav-links a{
-    color:#333;
-    font-size:14px;
-    font-weight:500;
-    transition:.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active{
-    color:#9a7b4f;
-}
-
-.menu-btn{
-    display:none;
-    font-size:27px;
-    cursor:pointer;
+nav a{
     color:#222;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#888;
+}
+
+.menu-toggle{
+    display:none;
     background:none;
-    border:none;
+    border:0;
+    font-size:28px;
+    cursor:pointer;
 }
 
 /* HERO */
 
 .hero{
-    min-height:500px;
-    background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
-    center/cover no-repeat;
+    min-height:330px;
+    background:#222;
+    color:#fff;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    color:#fff;
-}
-
-.hero-content{
-    max-width:850px;
-    padding:40px 25px;
+    padding:65px 20px;
 }
 
 .hero h1{
-    font-size:58px;
-    line-height:1.1;
-    margin-bottom:20px;
+    font-size:42px;
     letter-spacing:1px;
+    margin-bottom:12px;
 }
 
 .hero p{
-    font-size:19px;
+    font-size:16px;
+    color:#ddd;
 }
 
 /* INTRO */
@@ -134,372 +113,280 @@ header{
 .intro{
     max-width:900px;
     margin:auto;
-    padding:90px 25px 60px;
+    padding:65px 24px 30px;
     text-align:center;
 }
 
 .intro h2{
-    font-size:38px;
-    margin-bottom:20px;
+    font-size:30px;
+    margin-bottom:15px;
 }
 
 .intro p{
-    color:#666;
-    font-size:17px;
+    color:#777;
+    font-size:15px;
 }
 
-/* HOUSE DESIGNS */
+/* HOUSE PROJECTS */
 
-.designs{
+.container{
     max-width:1200px;
     margin:auto;
-    padding:20px 25px 100px;
+    padding:35px 24px 80px;
 }
 
-.design-grid{
+.projects{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,minmax(0,1fr));
     gap:30px;
-    max-width:850px;
-    margin:auto;
 }
 
-.design-card{
-    background:#f5f5f5;
-    overflow:hidden;
-    transition:.3s;
+.project-card{
+    display:block;
+    color:inherit;
+    text-decoration:none;
+    background:#fff;
+    box-shadow:0 5px 22px rgba(0,0,0,.08);
+    transition:transform .25s,box-shadow .25s;
 }
 
-.design-card:hover{
+.project-card:hover{
     transform:translateY(-5px);
+    box-shadow:0 10px 28px rgba(0,0,0,.13);
 }
 
-.design-image{
-    height:320px;
-    overflow:hidden;
-}
-
-.design-image img{
+.project-card img{
+    display:block;
     width:100%;
-    height:100%;
+    height:360px;
     object-fit:cover;
-    transition:transform .6s ease;
 }
 
-.design-card:hover .design-image img{
-    transform:scale(1.06);
+.project-info{
+    padding:25px;
 }
 
-.design-content{
-    padding:30px;
+.project-info span{
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#888;
 }
 
-.design-content h3{
-    font-size:25px;
-    margin-bottom:12px;
-    font-weight:500;
+.project-info h3{
+    font-size:24px;
+    margin:8px 0;
 }
 
-.design-content p{
-    color:#666;
-    font-size:15px;
-    margin-bottom:20px;
+.project-info p{
+    font-size:14px;
+    color:#777;
 }
 
-.design-link{
-    color:#222;
+.view-link{
+    display:inline-block;
+    margin-top:16px;
     font-size:13px;
-    font-weight:700;
-    letter-spacing:.5px;
+    font-weight:bold;
+    letter-spacing:1px;
+    text-transform:uppercase;
 }
 
-.design-link:hover{
-    color:#9a7b4f;
-}
-
-/* FEATURE */
+/* BUILT AROUND YOU */
 
 .feature{
-    background:#111;
-    color:#fff;
-    padding:90px 25px;
+    background:#f5f5f5;
+    padding:75px 20px;
+    text-align:center;
 }
 
-.feature-inner{
-    max-width:1100px;
+.feature h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.feature p{
+    max-width:750px;
     margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.feature-image{
-    height:450px;
-    overflow:hidden;
-}
-
-.feature-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.feature-content h2{
-    font-size:40px;
-    margin-bottom:20px;
-}
-
-.feature-content p{
-    color:#bbb;
-    margin-bottom:25px;
-    font-size:16px;
-}
-
-.feature-button{
-    display:inline-block;
-    padding:14px 28px;
-    background:#fff;
-    color:#111;
-    font-size:13px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.feature-button:hover{
-    background:#9a7b4f;
-    color:#fff;
+    color:#666;
+    font-size:15px;
 }
 
 /* COMMERCIAL */
 
-.commercial{
-    padding:100px 25px;
-    background:#f4f1ec;
+.commercial-section{
+    padding:75px 20px;
     text-align:center;
 }
 
-.commercial-inner{
-    max-width:850px;
-    margin:auto;
+.commercial-section h2{
+    font-size:30px;
+    margin-bottom:12px;
 }
 
-.commercial h2{
-    font-size:40px;
-    margin-bottom:18px;
+.commercial-section p{
+    color:#777;
+    margin-bottom:25px;
 }
 
-.commercial p{
-    color:#666;
-    font-size:17px;
-    margin-bottom:30px;
-}
-
-.commercial-button{
+.commercial-link{
     display:inline-block;
-    padding:15px 32px;
-    background:#111;
-    color:#fff;
-    font-size:14px;
-    font-weight:700;
-    transition:.3s;
+    padding:13px 30px;
+    border:1px solid #222;
+    color:#222;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:1px;
 }
 
-.commercial-button:hover{
-    background:#9a7b4f;
+.commercial-link:hover{
+    background:#222;
+    color:#fff;
 }
 
 /* CONTACT */
 
-.contact{
-    padding:90px 25px;
-    background:#fff;
+.contact-section{
+    background:#222;
+    color:#fff;
     text-align:center;
+    padding:70px 20px;
 }
 
-.contact-inner{
-    max-width:900px;
-    margin:auto;
+.contact-section h2{
+    font-size:30px;
+    margin-bottom:12px;
 }
 
-.contact h2{
-    font-size:38px;
+.contact-section p{
+    color:#ddd;
     margin-bottom:20px;
 }
 
-.contact p{
-    color:#666;
-    margin-bottom:15px;
-}
-
-.contact a{
-    color:#222;
-    font-weight:600;
-}
-
-.contact a:hover{
-    color:#9a7b4f;
-}
-
-.contact-details{
-    margin-top:30px;
+.contact-section a{
+    color:#fff;
+    text-decoration:none;
 }
 
 /* FOOTER */
 
 footer{
     background:#171717;
-    color:#aaa;
-    padding:45px 25px 30px;
-}
-
-.footer-inner{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
-}
-
-.footer-logo img{
-    display:block;
-    height:88px;
-    width:auto;
-    max-width:220px;
-    object-fit:contain;
-}
-
-.footer-links{
-    display:flex;
-    gap:25px;
-    flex-wrap:wrap;
-}
-
-.footer-links a{
-    color:#aaa;
-    font-size:13px;
-}
-
-.footer-links a:hover{
     color:#fff;
+    text-align:center;
+    padding:35px 20px;
 }
 
-.copyright{
-    font-size:12px;
-    margin-top:12px;
-    color:#777;
+.footer-logo{
+    height:200px;
+    max-width:650px;
+    width:auto;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 18px;
+}
+
+footer p{
+    font-size:13px;
+    color:#ccc;
+    margin:5px 0;
+}
+
+footer a{
+    color:#fff;
+    text-decoration:none;
 }
 
 /* MOBILE */
 
 @media(max-width:850px){
 
-    .navbar{
+    header{
         height:65px;
-        padding:0 20px;
     }
 
-    .logo-link{
-        height:65px;
+    .header-inner{
+        padding:0 10px;
     }
 
     .logo{
         height:63px;
-        max-width:180px;
+        max-width:500px;
     }
 
-    .nav-links{
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
         display:none;
         position:absolute;
         top:65px;
         left:0;
         width:100%;
         background:#fff;
+        padding:18px 20px;
         flex-direction:column;
-        gap:0;
-        border-top:1px solid #eee;
-    }
-
-    .nav-links.show{
-        display:flex;
-    }
-
-    .nav-links a{
-        width:100%;
-        padding:15px;
-        text-align:center;
+        align-items:flex-start;
+        gap:18px;
         border-bottom:1px solid #eee;
     }
 
-    .menu-btn{
-        display:block;
+    nav.open{
+        display:flex;
     }
 
     .hero{
-        min-height:420px;
+        min-height:230px;
+        padding:45px 20px;
     }
 
     .hero h1{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:17px;
+        font-size:30px;
     }
 
     .intro{
-        padding:70px 25px 50px;
+        padding:45px 18px 25px;
     }
 
     .intro h2{
-        font-size:32px;
+        font-size:25px;
     }
 
-    .design-grid{
+    .container{
+        padding:25px 16px 55px;
+    }
+
+    .projects{
         grid-template-columns:1fr;
-        max-width:550px;
+        gap:24px;
     }
 
-    .design-image{
-        height:280px;
+    .project-card img{
+        height:260px;
     }
 
-    .feature-inner{
-        grid-template-columns:1fr;
-        gap:40px;
+    .project-info{
+        padding:20px;
     }
 
-    .feature-image{
-        height:320px;
+    .feature,
+    .commercial-section{
+        padding:55px 20px;
     }
 
-    .feature-content h2{
-        font-size:32px;
+    .feature h2,
+    .commercial-section h2,
+    .contact-section h2{
+        font-size:25px;
     }
 
-    .commercial h2,
-    .contact h2{
-        font-size:32px;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .footer-logo img{
-        height:63px;
-        max-width:180px;
-        margin:auto;
-    }
-
-    .footer-links{
-        justify-content:center;
-        gap:18px;
+    .footer-logo{
+        height:150px;
+        max-width:500px;
     }
 }
-
 </style>
 </head>
 
@@ -508,26 +395,21 @@ footer{
 <!-- HEADER -->
 
 <header>
-<div class="navbar">
+<div class="header-inner">
 
-<a href="/index.html" class="logo-link">
-<img
-src="/images/logo/logo.PNG"
-alt="Cercobuilt Logo"
-class="logo"
->
+<a class="logo-link" href="/index.html">
+<img class="logo" src="/images/logo/logo.PNG" alt="Cercobuilt">
 </a>
 
-<button class="menu-btn"
-onclick="toggleMenu()"
-aria-label="Toggle navigation"
-aria-expanded="false">
+<button class="menu-toggle"
+aria-label="Open menu"
+onclick="document.querySelector('nav').classList.toggle('open')">
 ☰
 </button>
 
-<nav class="nav-links" id="navLinks">
+<nav>
 <a href="/index.html">Home</a>
-<a href="/house-designs.html" class="active">House Designs</a>
+<a href="/house-designs.html">House Designs</a>
 <a href="/commercial.html">Commercial</a>
 <a href="/index.html#contact">Contact</a>
 </nav>
@@ -538,225 +420,145 @@ aria-expanded="false">
 <!-- HERO -->
 
 <section class="hero">
-<div class="hero-content">
+<div>
 <h1>House Designs</h1>
-<p>
-Thoughtfully designed homes built around
-your lifestyle, needs and future.
-</p>
+<p>Discover quality homes designed around the way you live.</p>
 </div>
 </section>
 
 <!-- INTRO -->
 
 <section class="intro">
-<h2>Designed for the Way You Live</h2>
+<h2>Explore Our Homes</h2>
 <p>
-At Cercobuilt, we believe a great home starts with
-great design. Our house designs combine practical
-layouts, modern architecture and quality construction
-to create homes that are comfortable, functional and
-built for the future.
+At Cercobuilt, we create thoughtfully designed homes
+combining quality construction, practical layouts and
+timeless style.
 </p>
 </section>
 
-<!-- HOUSE DESIGNS -->
+<!-- HOUSE PROJECTS -->
 
-<section class="designs">
-<div class="design-grid">
+<main class="container">
+
+<div class="projects">
 
 <!-- DOUBLE STOREY -->
 
-<div class="design-card">
+<a class="project-card" href="/double-storey.html">
 
-<div class="design-image">
 <img
-src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
-alt="Double Storey House"
+src="/images/double-storey/hurstville-modern-home/H%201.JPG"
+alt="Double Storey Home"
 >
-</div>
 
-<div class="design-content">
-
-<h3>Double Storey</h3>
-
+<div class="project-info">
+<span>Residential</span>
+<h3>Double Storey Homes</h3>
 <p>
-Modern double-storey homes that maximise space,
-functionality and street appeal.
+Explore our double storey homes featuring modern
+architecture and carefully considered living spaces.
 </p>
+<span class="view-link">Explore Designs →</span>
+</div>
 
-<a href="double-storey.html" class="design-link">
-VIEW DESIGNS →
 </a>
-
-</div>
-</div>
 
 <!-- CUSTOM HOMES -->
 
-<div class="design-card">
+<a class="project-card" href="/custom-homes.html">
 
-<div class="design-image">
 <img
-src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-alt="Custom Home"
+src="/images/custom-homes/vaucluse-mansion/V%201.JPG"
+alt="Vaucluse Mansion - Custom Homes"
 >
+
+<div class="project-info">
+<span>Residential</span>
+<h3>Custom Homes</h3>
+<p>
+Individually designed homes with distinctive
+architecture and refined details.
+</p>
+<span class="view-link">Explore Designs →</span>
 </div>
 
-<div class="design-content">
-
-<h3>Custom Homes</h3>
-
-<p>
-Unique homes designed around your block,
-your lifestyle and your vision.
-</p>
-
-<a href="custom-homes.html" class="design-link">
-VIEW DESIGNS →
 </a>
 
 </div>
-</div>
 
-</div>
-</section>
+</main>
 
 <!-- FEATURE -->
 
 <section class="feature">
-<div class="feature-inner">
-
-<div class="feature-image">
-<img
-src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-alt="Modern Home"
->
-</div>
-
-<div class="feature-content">
 <h2>Built Around You</h2>
-
 <p>
-Every family is different, which is why we focus
-on creating homes that work for the people who
-live in them.
-
-From the initial concept through to construction,
-we work closely with our clients to achieve a
-home that combines design, functionality and
-quality workmanship.
+Every home should reflect the people who live in it.
+Cercobuilt focuses on thoughtful design, quality
+workmanship and homes built around your lifestyle.
 </p>
-
-<a href="custom-homes.html" class="feature-button">
-EXPLORE CUSTOM HOMES
-</a>
-
-</div>
-
-</div>
 </section>
 
 <!-- COMMERCIAL -->
 
-<section class="commercial">
-<div class="commercial-inner">
-
+<section class="commercial-section">
 <h2>Commercial Construction</h2>
-
 <p>
-Cercobuilt also delivers commercial construction
-projects with a focus on quality, functionality
-and long-term performance.
+Discover our commercial construction and fit-out projects.
 </p>
 
-<a href="/commercial.html" class="commercial-button">
-VIEW COMMERCIAL WORK
+<a class="commercial-link" href="/commercial.html">
+VIEW COMMERCIAL PROJECTS
 </a>
-
-</div>
 </section>
 
 <!-- CONTACT -->
 
-<section class="contact" id="contact">
-<div class="contact-inner">
-
+<section class="contact-section" id="contact">
 <h2>Contact Cercobuilt</h2>
-
 <p>Let's discuss your next project.</p>
 
-<div class="contact-details">
-
 <p>
-Email:
 <a href="mailto:info@cercobuilt.com.au">
 info@cercobuilt.com.au
 </a>
 </p>
 
 <p>
-Phone:
 <a href="tel:0433759906">
 0433 759 906
 </a>
 </p>
-
-</div>
-</div>
 </section>
 
 <!-- FOOTER -->
 
 <footer>
-<div class="footer-inner">
 
-<div>
-
-<div class="footer-logo">
 <a href="/index.html">
-<img
+<img class="footer-logo"
 src="/images/logo/logo.PNG"
-alt="Cercobuilt Logo"
->
+alt="Cercobuilt">
 </a>
-</div>
 
-<div class="copyright">
-© 2026 Cercobuilt. All rights reserved.
-</div>
+<p>Building Your Future Home</p>
 
-</div>
+<p>
+<a href="mailto:info@cercobuilt.com.au">
+info@cercobuilt.com.au
+</a>
+</p>
 
-<div class="footer-links">
+<p>
+<a href="tel:0433759906">
+0433 759 906
+</a>
+</p>
 
-<a href="/index.html">Home</a>
-<a href="/house-designs.html">House Designs</a>
-<a href="/commercial.html">Commercial</a>
-<a href="/index.html#contact">Contact</a>
+<p>© 2026 Cercobuilt. All rights reserved.</p>
 
-</div>
-
-</div>
 </footer>
-
-<script>
-
-function toggleMenu(){
-
-    const nav = document.getElementById("navLinks");
-    const button = document.querySelector(".menu-btn");
-
-    nav.classList.toggle("show");
-
-    button.setAttribute(
-        "aria-expanded",
-        nav.classList.contains("show")
-    );
-
-}
-
-</script>
 
 </body>
 </html>
