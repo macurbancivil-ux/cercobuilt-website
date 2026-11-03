@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Commercial Projects | Cercobuilt</title>
+<title>Rehabs Solution | Cercobuilt</title>
 
-<meta name="description" content="Explore Cercobuilt commercial construction projects, including healthcare, medical rehabilitation and beauty salon developments in Melbourne.">
+<meta name="description" content="Cercobuilt Healthcare and Medical rehabilitation construction project in Melbourne.">
 
 <style>
 * {
@@ -31,186 +31,209 @@ body {
 header {
     width: 100%;
     height: 85px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0 7%;
-    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #eee;
+    background: #fff;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo {
-    font-size: 27px;
+    font-size: 26px;
     font-weight: 800;
     letter-spacing: 2px;
     color: #111;
     text-decoration: none;
 }
 
-nav {
-    display: flex;
-    gap: 35px;
-}
-
-nav a {
+.back {
+    font-size: 13px;
+    color: #333;
     text-decoration: none;
-    color: #222;
-    font-size: 14px;
     font-weight: 600;
-    transition: .3s;
 }
 
-nav a:hover,
-nav a.active {
+.back:hover {
     color: #a17b4b;
 }
 
 /* HERO */
 
 .hero {
-    height: 390px;
+    height: 350px;
     background:
-    linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.48)),
-    url("images/commercial/rehabs-solution/rehabs%20solution%201.JPG")
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("../images/commercial/rehabs-solution/rehabs%20solution%201.JPG")
     center/cover no-repeat;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
 }
 
-.hero-content h1 {
-    font-size: 48px;
+.hero h1 {
+    font-size: 46px;
     letter-spacing: 3px;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
-.hero-content p {
-    font-size: 16px;
+.hero p {
+    font-size: 15px;
     letter-spacing: 1px;
 }
 
-/* INTRO */
+/* PROJECT INTRO */
 
 .intro {
     text-align: center;
-    padding: 75px 20px 45px;
+    padding: 65px 20px 45px;
+}
+
+.intro .category {
+    font-size: 12px;
+    color: #a17b4b;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
 .intro h2 {
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 18px;
-    font-weight: 700;
 }
 
 .intro p {
-    max-width: 700px;
+    max-width: 750px;
     margin: auto;
-    color: #777;
-    line-height: 1.8;
     font-size: 15px;
+    color: #777;
+    line-height: 1.9;
 }
 
-/* PROJECTS */
+/* PROJECT DETAILS */
 
-.projects {
+.details {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    text-align: center;
+}
+
+.detail-item h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.detail-item p {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* GALLERY */
+
+.gallery-section {
     max-width: 1250px;
     margin: auto;
-    padding: 35px 30px 100px;
+    padding: 35px 25px 100px;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+
+.gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 38px;
+    gap: 22px;
 }
 
-.project-card {
+.gallery-item {
     display: block;
-    text-decoration: none;
-    color: #222;
-    background: #fff;
     overflow: hidden;
-}
-
-.project-image {
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
+    cursor: pointer;
     background: #eee;
 }
 
-.project-image img {
+.gallery-item img {
     width: 100%;
-    height: 100%;
+    height: 390px;
     object-fit: cover;
-    transition: transform .6s ease;
+    display: block;
+    transition: transform .5s ease;
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.06);
+.gallery-item:hover img {
+    transform: scale(1.04);
 }
 
-.project-info {
-    padding: 24px 5px;
+/* LIGHTBOX */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,.96);
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
 }
 
-.project-category {
-    font-size: 11px;
-    color: #a17b4b;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 12px;
+.lightbox:target {
+    display: flex;
 }
 
-.project-info h3 {
-    font-size: 25px;
-    margin-bottom: 12px;
+.lightbox img {
+    max-width: 95%;
+    max-height: 85vh;
+    object-fit: contain;
 }
 
-.project-info p {
-    color: #777;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.view-project {
-    display: inline-block;
-    margin-top: 18px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #222;
-    border-bottom: 1px solid #a17b4b;
-    padding-bottom: 6px;
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
 }
 
 /* FOOTER */
 
 footer {
     background: #151515;
-    color: #fff;
+    color: white;
     text-align: center;
     padding: 45px 20px;
 }
 
 footer h3 {
-    font-size: 23px;
+    font-size: 24px;
     letter-spacing: 2px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 footer p {
-    font-size: 13px;
     color: #aaa;
+    font-size: 13px;
     line-height: 2;
 }
 
 footer a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 
@@ -219,194 +242,188 @@ footer a {
 @media(max-width: 768px) {
 
     header {
-        height: 75px;
+        height: 72px;
         padding: 0 5%;
     }
 
     .logo {
-        font-size: 21px;
+        font-size: 20px;
     }
 
-    nav {
-        gap: 13px;
-    }
-
-    nav a {
-        font-size: 11px;
+    .back {
+        font-size: 10px;
     }
 
     .hero {
-        height: 280px;
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
-    }
-
-    .intro {
-        padding: 55px 22px 30px;
-    }
-
-    .intro h2 {
-        font-size: 26px;
-    }
-
-    .projects {
-        grid-template-columns: 1fr;
-        padding: 25px 20px 70px;
-        gap: 25px;
-    }
-
-    .project-image {
         height: 260px;
     }
 
-    .project-info h3 {
-        font-size: 22px;
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .intro {
+        padding: 50px 20px 35px;
+    }
+
+    .intro h2 {
+        font-size: 25px;
+    }
+
+    .details {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .gallery-section {
+        padding: 25px 18px 65px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .gallery-item img {
+        height: 280px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
-    <a href="index.html" class="logo">
+    <a href="../index.html" class="logo">
         CERCOBUILT
     </a>
 
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="house-designs.html">HOUSE DESIGNS</a>
-        <a href="index.html#contact">CONTACT</a>
-    </nav>
+    <a href="../commercial.html" class="back">
+        ← BACK TO COMMERCIAL
+    </a>
 
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
 
-    <div class="hero-content">
-        <h1>COMMERCIAL</h1>
-        <p>Building Spaces. Creating Opportunities.</p>
+    <div>
+        <h1>REHABS SOLUTION</h1>
+
+        <p>
+            Healthcare & Medical
+        </p>
     </div>
 
 </section>
 
+
+<!-- INTRO -->
+
 <section class="intro">
 
-    <h2>Our Commercial Projects</h2>
+    <div class="category">
+        COMMERCIAL PROJECT
+    </div>
+
+    <h2>Rehabs Solution</h2>
 
     <p>
-        Cercobuilt delivers quality commercial construction
-        solutions, combining thoughtful design, quality
-        workmanship and practical functionality.
-        Explore our completed commercial projects.
+        A purpose-designed injury and disability
+        rehabilitation centre, delivering a functional
+        and welcoming environment for rehabilitation
+        and healthcare services.
     </p>
 
 </section>
 
-<section class="projects">
 
-    <!-- HEALTHCARE -->
+<!-- DETAILS -->
 
-    <a href="commercial/rehab-solution.html"
-       class="project-card">
+<section class="details">
 
-        <div class="project-image">
-            <img
-            src="images/commercial/rehabs-solution/rehabs%20solution%201.JPG"
-            alt="Rehabs Solution Healthcare Project">
-        </div>
+    <div class="detail-item">
+        <h3>400 m²</h3>
+        <p>PROJECT AREA</p>
+    </div>
 
-        <div class="project-info">
-
-            <div class="project-category">
-                Healthcare & Medical
-            </div>
-
-            <h3>Rehabs Solution</h3>
-
-            <p>
-                400 m² | Injury & Disability
-                Rehabilitation Centre
-            </p>
-
-            <span class="view-project">
-                VIEW PROJECT →
-            </span>
-
-        </div>
-
-    </a>
-
-
-    <!-- BEAUTY SALON -->
-
-    <a href="commercial/cbd-beauty-salon.html"
-       class="project-card">
-
-        <div class="project-image">
-            <img
-            src="images/commercial/cbd-beauty-salon/cbd%20beauty%20salon%201.JPG"
-            alt="CBD Beauty Salon Project">
-        </div>
-
-        <div class="project-info">
-
-            <div class="project-category">
-                Beauty Salon
-            </div>
-
-            <h3>CBD Beauty Salon</h3>
-
-            <p>
-                Contemporary beauty salon design
-                and commercial interior construction.
-            </p>
-
-            <span class="view-project">
-                VIEW PROJECT →
-            </span>
-
-        </div>
-
-    </a>
-
-
-    <!-- INDUSTRIAL & COMMERCIAL -->
-
-    <a href="commercial/industrial-commercial.html"
-       class="project-card">
-
-        <div class="project-image">
-            <img
-            src="images/commercial/industrial-commercial/01.JPG"
-            alt="Industrial and Commercial Project">
-        </div>
-
-        <div class="project-info">
-
-            <div class="project-category">
-                Industrial & Commercial
-            </div>
-
-            <h3>Industrial & Commercial</h3>
-
-            <p>
-                Commercial construction solutions
-                designed for practical business needs.
-            </p>
-
-            <span class="view-project">
-                VIEW PROJECT →
-            </span>
-
-        </div>
-
-    </a>
+    <div class="detail-item">
+        <h3>Healthcare</h3>
+        <p>PROJECT TYPE</p>
+    </div>
 
 </section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery-section">
+
+    <h2 class="gallery-title">
+        Project Gallery
+    </h2>
+
+    <div class="gallery">
+
+        <a href="#photo1" class="gallery-item">
+            <img
+            src="../images/commercial/rehabs-solution/rehabs%20solution%201.JPG"
+            alt="Rehabs Solution Project Photo 1">
+        </a>
+
+        <a href="#photo2" class="gallery-item">
+            <img
+            src="../images/commercial/rehabs-solution/rehabs%20solution%202.JPG"
+            alt="Rehabs Solution Project Photo 2">
+        </a>
+
+        <a href="#photo3" class="gallery-item">
+            <img
+            src="../images/commercial/rehabs-solution/rehabs%20solution%203.JPG"
+            alt="Rehabs Solution Project Photo 3">
+        </a>
+
+        <a href="#photo4" class="gallery-item">
+            <img
+            src="../images/commercial/rehabs-solution/rehabs%20solution%204.JPG"
+            alt="Rehabs Solution Project Photo 4">
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- IMAGE ENLARGEMENT -->
+
+<div class="lightbox" id="photo1">
+    <a href="#" class="close">×</a>
+    <img src="../images/commercial/rehabs-solution/rehabs%20solution%201.JPG">
+</div>
+
+<div class="lightbox" id="photo2">
+    <a href="#" class="close">×</a>
+    <img src="../images/commercial/rehabs-solution/rehabs%20solution%202.JPG">
+</div>
+
+<div class="lightbox" id="photo3">
+    <a href="#" class="close">×</a>
+    <img src="../images/commercial/rehabs-solution/rehabs%20solution%203.JPG">
+</div>
+
+<div class="lightbox" id="photo4">
+    <a href="#" class="close">×</a>
+    <img src="../images/commercial/rehabs-solution/rehabs%20solution%204.JPG">
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
 
