@@ -1,59 +1,311 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Rehabs Solution | Cercobuilt</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;color:#222;background:#fff}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#222;
+    background:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+
 header{
-    height:85px;padding:0 7%;display:flex;
-    justify-content:space-between;align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
     border-bottom:1px solid #eee;
 }
-.logo{font-size:25px;font-weight:800;letter-spacing:3px;color:#111;text-decoration:none}
-.back{color:#555;text-decoration:none;font-size:14px}
-.hero{text-align:center;padding:65px 20px 45px}
-.hero h1{font-size:36px;margin-bottom:15px}
-.hero p{color:#777;line-height:1.8;font-size:14px}
-.category{font-size:12px;letter-spacing:2px;color:#999;margin-bottom:15px}
-.gallery{
-    max-width:1300px;margin:auto;padding:15px 5% 80px;
-    display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
+
+.header-inner{
+    width:100%;
+    height:90px;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
-.gallery img{width:100%;height:350px;object-fit:cover;display:block}
-footer{text-align:center;background:#111;color:#aaa;padding:30px;font-size:12px}
-@media(max-width:700px){
-    .hero h1{font-size:29px}
-    .gallery{grid-template-columns:1fr;padding:10px 5% 55px}
-    .gallery img{height:auto;max-height:420px}
+
+.logo-link{
+    display:flex;
+    align-items:center;
+    height:100%;
+}
+
+.logo{
+    display:block;
+    height:88px;
+    width:auto;
+    max-width:750px;
+    object-fit:contain;
+}
+
+.back{
+    color:#555;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+.back:hover{
+    opacity:.6;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:65px 20px 45px;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:15px;
+    font-weight:500;
+}
+
+.hero p{
+    color:#777;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.category{
+    font-size:12px;
+    letter-spacing:2px;
+    color:#999;
+    margin-bottom:15px;
+}
+
+/* GALLERY */
+
+.gallery{
+    max-width:1300px;
+    margin:auto;
+    padding:15px 5% 80px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.gallery img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    display:block;
+}
+
+/* FOOTER */
+
+footer{
+    background:#171717;
+    color:#fff;
+    padding:50px 30px 25px;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.footer-logo-link{
+    display:inline-flex;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.footer-logo{
+    display:block;
+    height:200px;
+    max-width:650px;
+    width:auto;
+    object-fit:contain;
+}
+
+.footer-text{
+    color:#aaa;
+    font-size:13px;
+}
+
+.footer-bottom{
+    max-width:1250px;
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid #333;
+    color:#777;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .header-inner{
+        height:65px;
+        padding:0 10px;
+    }
+
+    .logo{
+        height:63px;
+        max-width:500px;
+    }
+
+    .back{
+        font-size:11px;
+        letter-spacing:0;
+    }
+
+    .hero{
+        padding:55px 20px 35px;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+        padding:10px 5% 55px;
+    }
+
+    .gallery img{
+        height:auto;
+        max-height:420px;
+    }
+
+    footer{
+        padding:40px 20px 20px;
+    }
+
+    .footer-logo{
+        height:150px;
+        max-width:500px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-    <a class="logo" href="../index.html">CERCOBUILT</a>
-    <a class="back" href="../commercial.html">← ALL COMMERCIAL PROJECTS</a>
+
+    <div class="header-inner">
+
+        <a href="/index.html" class="logo-link">
+            <img
+                src="/images/logo/logo.PNG"
+                alt="Cercobuilt"
+                class="logo"
+            >
+        </a>
+
+        <a class="back" href="/commercial.html">
+            ← ALL COMMERCIAL PROJECTS
+        </a>
+
+    </div>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
-    <div class="category">HEALTHCARE &amp; MEDICAL</div>
+
+    <div class="category">
+        HEALTHCARE &amp; MEDICAL
+    </div>
+
     <h1>Rehabs Solution</h1>
-    <p>400 m² | Injury &amp; Disability Rehabilitation Centre</p>
+
+    <p>
+        400 m² | Injury &amp; Disability Rehabilitation Centre
+    </p>
+
 </section>
+
+
+<!-- PROJECT GALLERY -->
 
 <section class="gallery">
-    <img src="../images/commercial/rehabs-solution/rehabs%20solution%201.JPG" alt="Rehabs Solution 1">
-    <img src="../images/commercial/rehabs-solution/rehabs%20solution%202.JPG" alt="Rehabs Solution 2">
-    <img src="../images/commercial/rehabs-solution/rehabs%20solution%203.JPG" alt="Rehabs Solution 3">
-    <img src="../images/commercial/rehabs-solution/rehabs%20solution%204.JPG" alt="Rehabs Solution 4">
+
+    <img
+        src="/images/commercial/rehabs-solution/rehabs%20solution%201.JPG"
+        alt="Rehabs Solution 1"
+    >
+
+    <img
+        src="/images/commercial/rehabs-solution/rehabs%20solution%202.JPG"
+        alt="Rehabs Solution 2"
+    >
+
+    <img
+        src="/images/commercial/rehabs-solution/rehabs%20solution%203.JPG"
+        alt="Rehabs Solution 3"
+    >
+
+    <img
+        src="/images/commercial/rehabs-solution/rehabs%20solution%204.JPG"
+        alt="Rehabs Solution 4"
+    >
+
 </section>
 
-<footer>© 2026 CERCOBUILT. ALL RIGHTS RESERVED.</footer>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <a href="/index.html" class="footer-logo-link">
+            <img
+                src="/images/logo/logo.PNG"
+                alt="Cercobuilt"
+                class="footer-logo"
+            >
+        </a>
+
+        <p class="footer-text">
+            Quality Construction | Thoughtful Design
+        </p>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Cercobuilt. All rights reserved.
+    </div>
+
+</footer>
 
 </body>
 </html>
