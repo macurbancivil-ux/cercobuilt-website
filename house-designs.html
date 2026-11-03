@@ -8,9 +8,6 @@
 <title>Cercobuilt | House Designs</title>
 
 <style>
-
-/* RESET */
-
 *{
     margin:0;
     padding:0;
@@ -39,13 +36,18 @@ header{
 }
 
 .navbar{
-    max-width:100%;
-    margin:auto;
+    width:100%;
     padding:0 20px;
     height:90px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+}
+
+.logo-link{
+    display:flex;
+    align-items:center;
+    height:100%;
 }
 
 .logo{
@@ -79,6 +81,7 @@ header{
     display:none;
     font-size:28px;
     cursor:pointer;
+    color:#222;
 }
 
 /* HERO */
@@ -86,13 +89,9 @@ header{
 .hero{
     min-height:500px;
     background:
-    linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.45)
-    ),
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
     url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
     center/cover no-repeat;
-
     display:flex;
     align-items:center;
     justify-content:center;
@@ -135,7 +134,7 @@ header{
     font-size:17px;
 }
 
-/* HOUSE GRID */
+/* HOUSE DESIGNS */
 
 .designs{
     max-width:1200px;
@@ -480,7 +479,6 @@ footer{
     .footer-links{
         justify-content:center;
     }
-
 }
 
 </style>
@@ -491,10 +489,9 @@ footer{
 <!-- HEADER -->
 
 <header>
-
 <div class="navbar">
 
-<a href="/index.html">
+<a href="/index.html" class="logo-link">
 <img
 src="/images/logo/logo.PNG"
 alt="Cercobuilt Logo"
@@ -502,57 +499,34 @@ class="logo"
 >
 </a>
 
-<div class="menu-btn" onclick="toggleMenu()">
-☰
-</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 <nav class="nav-links" id="navLinks">
-
-<a href="/index.html">
-Home
-</a>
-
-<a href="/house-designs.html" class="active">
-House Designs
-</a>
-
-<a href="/commercial.html">
-Commercial
-</a>
-
-<a href="/index.html#contact">
-Contact
-</a>
-
+<a href="/index.html">Home</a>
+<a href="/house-designs.html" class="active">House Designs</a>
+<a href="/commercial.html">Commercial</a>
+<a href="/index.html#contact">Contact</a>
 </nav>
 
 </div>
-
 </header>
 
 <!-- HERO -->
 
 <section class="hero">
-
 <div class="hero-content">
-
 <h1>House Designs</h1>
-
 <p>
 Thoughtfully designed homes built around
 your lifestyle, needs and future.
 </p>
-
 </div>
-
 </section>
 
 <!-- INTRO -->
 
 <section class="intro">
-
 <h2>Designed for the Way You Live</h2>
-
 <p>
 At Cercobuilt, we believe a great home starts with
 great design. Our house designs combine practical
@@ -560,128 +534,87 @@ layouts, modern architecture and quality construction
 to create homes that are comfortable, functional and
 built for the future.
 </p>
-
 </section>
 
 <!-- HOUSE DESIGNS -->
 
 <section class="designs">
-
 <div class="design-grid">
 
-<!-- SINGLE STOREY -->
-
 <div class="design-card">
-
 <div class="design-image">
-
 <img
 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
 alt="Single Storey House"
 >
-
 </div>
-
 <div class="design-content">
-
 <h3>Single Storey</h3>
-
 <p>
 Practical and comfortable single-storey homes
 designed for modern family living.
 </p>
-
 <a href="single-storey.html" class="design-link">
 VIEW DESIGNS →
 </a>
-
 </div>
-
 </div>
-
-<!-- DOUBLE STOREY -->
 
 <div class="design-card">
-
 <div class="design-image">
-
 <img
 src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
 alt="Double Storey House"
 >
-
 </div>
-
 <div class="design-content">
-
 <h3>Double Storey</h3>
-
 <p>
 Modern double-storey homes that maximise space,
 functionality and street appeal.
 </p>
-
 <a href="double-storey.html" class="design-link">
 VIEW DESIGNS →
 </a>
-
 </div>
-
 </div>
-
-<!-- CUSTOM HOMES -->
 
 <div class="design-card">
-
 <div class="design-image">
-
 <img
 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
 alt="Custom Home"
 >
-
 </div>
-
 <div class="design-content">
-
 <h3>Custom Homes</h3>
-
 <p>
 Unique homes designed around your block,
 your lifestyle and your vision.
 </p>
-
 <a href="custom-homes.html" class="design-link">
 VIEW DESIGNS →
 </a>
-
+</div>
 </div>
 
 </div>
-
-</div>
-
 </section>
 
 <!-- FEATURE -->
 
 <section class="feature">
-
 <div class="feature-inner">
 
 <div class="feature-image">
-
 <img
 src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
 alt="Modern Home"
 >
-
 </div>
 
 <div class="feature-content">
-
 <h2>Built Around You</h2>
-
 <p>
 Every family is different, which is why we focus
 on creating homes that work for the people who
@@ -692,51 +625,38 @@ we work closely with our clients to achieve a
 home that combines design, functionality and
 quality workmanship.
 </p>
-
 <a href="custom-homes.html" class="feature-button">
 EXPLORE CUSTOM HOMES
 </a>
-
 </div>
 
 </div>
-
 </section>
 
 <!-- COMMERCIAL -->
 
 <section class="commercial">
-
 <div class="commercial-inner">
-
 <h2>Commercial Construction</h2>
-
 <p>
 Cercobuilt also delivers commercial construction
 projects with a focus on quality, functionality
 and long-term performance.
 </p>
-
 <a href="/commercial.html" class="commercial-button">
 VIEW COMMERCIAL WORK
 </a>
-
 </div>
-
 </section>
 
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
-
 <div class="contact-inner">
-
 <h2>Contact Cercobuilt</h2>
-
 <p>Let's discuss your next project.</p>
 
 <div class="contact-details">
-
 <p>
 Email:
 <a href="mailto:info@cercobuilt.com.au">
@@ -750,64 +670,45 @@ Phone:
 0433 759 906
 </a>
 </p>
-
 </div>
-
 </div>
-
 </section>
 
 <!-- FOOTER -->
 
 <footer>
-
 <div class="footer-inner">
 
 <div>
-
 <div class="footer-logo">
-
 <a href="/index.html">
 <img
 src="/images/logo/logo.PNG"
 alt="Cercobuilt Logo"
 >
 </a>
-
 </div>
 
 <div class="copyright">
 © 2026 Cercobuilt. All rights reserved.
 </div>
-
 </div>
 
 <div class="footer-links">
-
 <a href="/index.html">Home</a>
-
 <a href="/house-designs.html">House Designs</a>
-
 <a href="/commercial.html">Commercial</a>
-
 <a href="/index.html#contact">Contact</a>
-
 </div>
 
 </div>
-
 </footer>
 
 <script>
-
 function toggleMenu(){
-
     const nav = document.getElementById("navLinks");
-
     nav.classList.toggle("show");
-
 }
-
 </script>
 
 </body>
