@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Custom Homes | Cercobuilt</title>
+<meta name="description" content="Explore Cercobuilt custom home projects, thoughtfully designed around your land, lifestyle and vision.">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -30,9 +36,7 @@ img{
     display:block;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
     position:sticky;
@@ -44,23 +48,33 @@ header{
 
 .header-inner{
     max-width:1250px;
+    height:90px;
     margin:auto;
-    padding:20px 30px;
+    padding:0 30px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .logo{
-    font-size:23px;
-    font-weight:700;
-    letter-spacing:2px;
+    height:88px;
+    width:auto;
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.logo img{
+    height:88px;
+    width:auto;
+    max-width:220px;
+    object-fit:contain;
 }
 
 nav{
     display:flex;
     align-items:center;
-    gap:28px;
+    gap:30px;
 }
 
 nav a{
@@ -75,18 +89,19 @@ nav a:hover{
 
 .menu-btn{
     display:none;
-    font-size:28px;
+    font-size:27px;
     cursor:pointer;
+    color:#222;
+    background:none;
+    border:none;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     min-height:540px;
     background:
-        linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.28)),
+        linear-gradient(rgba(0,0,0,.30),rgba(0,0,0,.30)),
         url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85")
         center/cover;
     display:flex;
@@ -114,9 +129,7 @@ nav a:hover{
     line-height:1.7;
 }
 
-/* =========================
-   GENERAL
-========================= */
+/* GENERAL */
 
 .container{
     max-width:1250px;
@@ -141,9 +154,7 @@ nav a:hover{
     color:#666;
 }
 
-/* =========================
-   PROJECT GRID
-========================= */
+/* PROJECT GRID */
 
 .project-grid{
     display:grid;
@@ -153,9 +164,10 @@ nav a:hover{
 }
 
 .project-card{
+    display:block;
     background:#f5f5f3;
     overflow:hidden;
-    transition:transform .2s;
+    transition:transform .25s;
 }
 
 .project-card:hover{
@@ -165,6 +177,11 @@ nav a:hover{
 .project-card img{
     height:360px;
     object-fit:cover;
+    transition:transform .5s;
+}
+
+.project-card:hover img{
+    transform:scale(1.03);
 }
 
 .project-content{
@@ -179,7 +196,7 @@ nav a:hover{
 }
 
 .project-content h2{
-    font-size:27px;
+    font-size:25px;
     font-weight:500;
     margin-bottom:12px;
 }
@@ -195,9 +212,7 @@ nav a:hover{
     letter-spacing:.5px;
 }
 
-/* =========================
-   BACK
-========================= */
+/* BACK */
 
 .back-section{
     padding-top:0;
@@ -209,9 +224,7 @@ nav a:hover{
     letter-spacing:.5px;
 }
 
-/* =========================
-   CTA
-========================= */
+/* CTA */
 
 .cta{
     background:#222;
@@ -236,6 +249,7 @@ nav a:hover{
     font-size:14px;
     font-weight:600;
     border:1px solid #fff;
+    transition:all .2s;
 }
 
 .btn-light{
@@ -243,9 +257,12 @@ nav a:hover{
     color:#222;
 }
 
-/* =========================
-   FOOTER
-========================= */
+.btn-light:hover{
+    background:transparent;
+    color:#fff;
+}
+
+/* FOOTER */
 
 footer{
     background:#171717;
@@ -263,10 +280,16 @@ footer{
 }
 
 .footer-logo{
-    font-size:23px;
-    font-weight:700;
-    letter-spacing:2px;
+    display:inline-flex;
+    align-items:center;
     margin-bottom:15px;
+}
+
+.footer-logo img{
+    height:88px;
+    width:auto;
+    max-width:220px;
+    object-fit:contain;
 }
 
 .footer-about{
@@ -289,6 +312,11 @@ footer{
 .footer-links a{
     color:#aaa;
     font-size:14px;
+    transition:color .2s;
+}
+
+.footer-links a:hover{
+    color:#fff;
 }
 
 .footer-bottom{
@@ -300,18 +328,22 @@ footer{
     font-size:13px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:900px){
 
     .header-inner{
-        padding:17px 20px;
+        height:65px;
+        padding:0 20px;
     }
 
     .logo{
-        font-size:20px;
+        height:63px;
+    }
+
+    .logo img{
+        height:63px;
+        max-width:180px;
     }
 
     nav{
@@ -371,16 +403,26 @@ footer{
 
     .project-grid{
         grid-template-columns:1fr;
+        gap:25px;
     }
 
     .project-card img{
         height:300px;
     }
 
+    .project-content{
+        padding:25px;
+    }
+
     .footer-grid{
         grid-template-columns:1fr;
         gap:35px;
         padding:0 20px;
+    }
+
+    .footer-logo img{
+        height:63px;
+        max-width:180px;
     }
 
     .footer-bottom{
@@ -395,47 +437,29 @@ footer{
 <!-- HEADER -->
 
 <header>
-
     <div class="header-inner">
 
         <a href="index.html" class="logo">
-            CERCOBUILT
+            <img src="images/logo/logo.PNG" alt="Cercobuilt">
         </a>
 
-        <div class="menu-btn" onclick="toggleMenu()">
+        <button class="menu-btn"
+                onclick="toggleMenu()"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
             ☰
-        </div>
+        </button>
 
         <nav id="mainNav">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="house-designs.html">
-                House Designs
-            </a>
-
-            <a href="single-storey.html">
-                Single Storey
-            </a>
-
-            <a href="double-storey.html">
-                Double Storey
-            </a>
-
-            <a href="custom-homes.html">
-                Custom Homes
-            </a>
-
-            <a href="index.html#contact">
-                Contact
-            </a>
-
+            <a href="index.html">Home</a>
+            <a href="house-designs.html">House Designs</a>
+            <a href="single-storey.html">Single Storey</a>
+            <a href="double-storey.html">Double Storey</a>
+            <a href="custom-homes.html">Custom Homes</a>
+            <a href="index.html#contact">Contact</a>
         </nav>
 
     </div>
-
 </header>
 
 
@@ -445,9 +469,7 @@ footer{
 
     <div class="hero-content">
 
-        <h1>
-            Custom Homes
-        </h1>
+        <h1>Custom Homes</h1>
 
         <p>
             Individual home concepts shaped around your
@@ -475,17 +497,17 @@ footer{
             a home that is uniquely yours.
         </p>
 
-
         <div class="project-grid">
-
 
             <!-- PROJECT 01 -->
 
-            <a href="custom-home-project-01.html" class="project-card">
+            <a href="custom-home-project-01.html"
+               class="project-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85"
+                    src="images/custom-homes/custom-home-project-01/1.JPG"
                     alt="Custom Home Project 01"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85';"
                 >
 
                 <div class="project-content">
@@ -494,9 +516,7 @@ footer{
                         PROJECT 01
                     </div>
 
-                    <h2>
-                        Custom Home Project 01
-                    </h2>
+                    <h2>Custom Home Project 01</h2>
 
                     <p>
                         A tailored home concept designed
@@ -514,11 +534,13 @@ footer{
 
             <!-- PROJECT 02 -->
 
-            <a href="custom-home-project-02.html" class="project-card">
+            <a href="custom-home-project-02.html"
+               class="project-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85"
+                    src="images/custom-homes/custom-home-project-02/1.JPG"
                     alt="Custom Home Project 02"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85';"
                 >
 
                 <div class="project-content">
@@ -527,9 +549,7 @@ footer{
                         PROJECT 02
                     </div>
 
-                    <h2>
-                        Custom Home Project 02
-                    </h2>
+                    <h2>Custom Home Project 02</h2>
 
                     <p>
                         A contemporary concept combining
@@ -547,11 +567,13 @@ footer{
 
             <!-- PROJECT 03 -->
 
-            <a href="custom-home-project-03.html" class="project-card">
+            <a href="custom-home-project-03.html"
+               class="project-card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85"
+                    src="images/custom-homes/custom-home-project-03/1.JPG"
                     alt="Custom Home Project 03"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85';"
                 >
 
                 <div class="project-content">
@@ -560,9 +582,7 @@ footer{
                         PROJECT 03
                     </div>
 
-                    <h2>
-                        Custom Home Project 03
-                    </h2>
+                    <h2>Custom Home Project 03</h2>
 
                     <p>
                         A flexible custom home concept
@@ -631,9 +651,9 @@ footer{
 
         <div>
 
-            <div class="footer-logo">
-                CERCOBUILT
-            </div>
+            <a href="index.html" class="footer-logo">
+                <img src="images/logo/logo.PNG" alt="Cercobuilt">
+            </a>
 
             <p class="footer-about">
                 Thoughtfully designed homes,
@@ -652,25 +672,11 @@ footer{
 
             <div class="footer-links">
 
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="house-designs.html">
-                    House Designs
-                </a>
-
-                <a href="single-storey.html">
-                    Single Storey
-                </a>
-
-                <a href="double-storey.html">
-                    Double Storey
-                </a>
-
-                <a href="custom-homes.html">
-                    Custom Homes
-                </a>
+                <a href="index.html">Home</a>
+                <a href="house-designs.html">House Designs</a>
+                <a href="single-storey.html">Single Storey</a>
+                <a href="double-storey.html">Double Storey</a>
+                <a href="custom-homes.html">Custom Homes</a>
 
             </div>
 
@@ -701,9 +707,7 @@ footer{
 
 
     <div class="footer-bottom">
-
         © 2026 Cercobuilt. All rights reserved.
-
     </div>
 
 </footer>
@@ -713,9 +717,15 @@ footer{
 
 function toggleMenu(){
 
-    document
-        .getElementById("mainNav")
-        .classList.toggle("active");
+    const nav = document.getElementById("mainNav");
+    const button = document.querySelector(".menu-btn");
+
+    nav.classList.toggle("active");
+
+    button.setAttribute(
+        "aria-expanded",
+        nav.classList.contains("active")
+    );
 
 }
 
