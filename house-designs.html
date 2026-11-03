@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Cercobuilt | House Designs</title>
+<meta name="description" content="Explore Cercobuilt double-storey and custom home designs, built around your lifestyle and future.">
 
 <style>
 *{
@@ -25,6 +26,16 @@ body{
     line-height:1.6;
 }
 
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
 /* HEADER */
 
 header{
@@ -36,8 +47,9 @@ header{
 }
 
 .navbar{
-    width:100%;
-    padding:0 20px;
+    max-width:1250px;
+    margin:auto;
+    padding:0 30px;
     height:90px;
     display:flex;
     align-items:center;
@@ -47,14 +59,15 @@ header{
 .logo-link{
     display:flex;
     align-items:center;
-    height:100%;
+    height:90px;
+    flex-shrink:0;
 }
 
 .logo{
     display:block;
     height:88px;
     width:auto;
-    max-width:750px;
+    max-width:220px;
     object-fit:contain;
 }
 
@@ -65,10 +78,9 @@ header{
 }
 
 .nav-links a{
-    text-decoration:none;
     color:#333;
     font-size:14px;
-    font-weight:600;
+    font-weight:500;
     transition:.3s;
 }
 
@@ -79,9 +91,11 @@ header{
 
 .menu-btn{
     display:none;
-    font-size:28px;
+    font-size:27px;
     cursor:pointer;
     color:#222;
+    background:none;
+    border:none;
 }
 
 /* HERO */
@@ -144,8 +158,10 @@ header{
 
 .design-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(2,1fr);
     gap:30px;
+    max-width:850px;
+    margin:auto;
 }
 
 .design-card{
@@ -159,7 +175,7 @@ header{
 }
 
 .design-image{
-    height:300px;
+    height:320px;
     overflow:hidden;
 }
 
@@ -167,7 +183,6 @@ header{
     width:100%;
     height:100%;
     object-fit:cover;
-    display:block;
     transition:transform .6s ease;
 }
 
@@ -182,6 +197,7 @@ header{
 .design-content h3{
     font-size:25px;
     margin-bottom:12px;
+    font-weight:500;
 }
 
 .design-content p{
@@ -192,7 +208,6 @@ header{
 
 .design-link{
     color:#222;
-    text-decoration:none;
     font-size:13px;
     font-weight:700;
     letter-spacing:.5px;
@@ -246,9 +261,9 @@ header{
     padding:14px 28px;
     background:#fff;
     color:#111;
-    text-decoration:none;
     font-size:13px;
     font-weight:700;
+    transition:.3s;
 }
 
 .feature-button:hover{
@@ -285,7 +300,6 @@ header{
     padding:15px 32px;
     background:#111;
     color:#fff;
-    text-decoration:none;
     font-size:14px;
     font-weight:700;
     transition:.3s;
@@ -320,7 +334,6 @@ header{
 
 .contact a{
     color:#222;
-    text-decoration:none;
     font-weight:600;
 }
 
@@ -335,9 +348,9 @@ header{
 /* FOOTER */
 
 footer{
-    background:#111;
+    background:#171717;
     color:#aaa;
-    padding:35px 25px;
+    padding:45px 25px 30px;
 }
 
 .footer-inner{
@@ -346,26 +359,25 @@ footer{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+    gap:30px;
 }
 
 .footer-logo img{
     display:block;
-    height:200px;
+    height:88px;
     width:auto;
-    max-width:650px;
+    max-width:220px;
     object-fit:contain;
 }
 
 .footer-links{
     display:flex;
-    gap:20px;
+    gap:25px;
     flex-wrap:wrap;
 }
 
 .footer-links a{
     color:#aaa;
-    text-decoration:none;
     font-size:13px;
 }
 
@@ -375,7 +387,8 @@ footer{
 
 .copyright{
     font-size:12px;
-    margin-top:10px;
+    margin-top:12px;
+    color:#777;
 }
 
 /* MOBILE */
@@ -384,18 +397,22 @@ footer{
 
     .navbar{
         height:65px;
-        padding:0 10px;
+        padding:0 20px;
+    }
+
+    .logo-link{
+        height:65px;
     }
 
     .logo{
         height:63px;
-        max-width:500px;
+        max-width:180px;
     }
 
     .nav-links{
         display:none;
         position:absolute;
-        top:100%;
+        top:65px;
         left:0;
         width:100%;
         background:#fff;
@@ -410,7 +427,7 @@ footer{
 
     .nav-links a{
         width:100%;
-        padding:14px;
+        padding:15px;
         text-align:center;
         border-bottom:1px solid #eee;
     }
@@ -441,6 +458,7 @@ footer{
 
     .design-grid{
         grid-template-columns:1fr;
+        max-width:550px;
     }
 
     .design-image{
@@ -471,13 +489,14 @@ footer{
     }
 
     .footer-logo img{
-        height:150px;
-        max-width:500px;
+        height:63px;
+        max-width:180px;
         margin:auto;
     }
 
     .footer-links{
         justify-content:center;
+        gap:18px;
     }
 }
 
@@ -499,7 +518,12 @@ class="logo"
 >
 </a>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<button class="menu-btn"
+onclick="toggleMenu()"
+aria-label="Toggle navigation"
+aria-expanded="false">
+☰
+</button>
 
 <nav class="nav-links" id="navLinks">
 <a href="/index.html">Home</a>
@@ -541,60 +565,57 @@ built for the future.
 <section class="designs">
 <div class="design-grid">
 
-<div class="design-card">
-<div class="design-image">
-<img
-src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-alt="Single Storey House"
->
-</div>
-<div class="design-content">
-<h3>Single Storey</h3>
-<p>
-Practical and comfortable single-storey homes
-designed for modern family living.
-</p>
-<a href="single-storey.html" class="design-link">
-VIEW DESIGNS →
-</a>
-</div>
-</div>
+<!-- DOUBLE STOREY -->
 
 <div class="design-card">
+
 <div class="design-image">
 <img
 src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
 alt="Double Storey House"
 >
 </div>
+
 <div class="design-content">
+
 <h3>Double Storey</h3>
+
 <p>
 Modern double-storey homes that maximise space,
 functionality and street appeal.
 </p>
+
 <a href="double-storey.html" class="design-link">
 VIEW DESIGNS →
 </a>
+
 </div>
 </div>
 
+<!-- CUSTOM HOMES -->
+
 <div class="design-card">
+
 <div class="design-image">
 <img
 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
 alt="Custom Home"
 >
 </div>
+
 <div class="design-content">
+
 <h3>Custom Homes</h3>
+
 <p>
 Unique homes designed around your block,
 your lifestyle and your vision.
 </p>
+
 <a href="custom-homes.html" class="design-link">
 VIEW DESIGNS →
 </a>
+
 </div>
 </div>
 
@@ -615,6 +636,7 @@ alt="Modern Home"
 
 <div class="feature-content">
 <h2>Built Around You</h2>
+
 <p>
 Every family is different, which is why we focus
 on creating homes that work for the people who
@@ -625,9 +647,11 @@ we work closely with our clients to achieve a
 home that combines design, functionality and
 quality workmanship.
 </p>
+
 <a href="custom-homes.html" class="feature-button">
 EXPLORE CUSTOM HOMES
 </a>
+
 </div>
 
 </div>
@@ -637,15 +661,19 @@ EXPLORE CUSTOM HOMES
 
 <section class="commercial">
 <div class="commercial-inner">
+
 <h2>Commercial Construction</h2>
+
 <p>
 Cercobuilt also delivers commercial construction
 projects with a focus on quality, functionality
 and long-term performance.
 </p>
+
 <a href="/commercial.html" class="commercial-button">
 VIEW COMMERCIAL WORK
 </a>
+
 </div>
 </section>
 
@@ -653,10 +681,13 @@ VIEW COMMERCIAL WORK
 
 <section class="contact" id="contact">
 <div class="contact-inner">
+
 <h2>Contact Cercobuilt</h2>
+
 <p>Let's discuss your next project.</p>
 
 <div class="contact-details">
+
 <p>
 Email:
 <a href="mailto:info@cercobuilt.com.au">
@@ -670,6 +701,7 @@ Phone:
 0433 759 906
 </a>
 </p>
+
 </div>
 </div>
 </section>
@@ -680,6 +712,7 @@ Phone:
 <div class="footer-inner">
 
 <div>
+
 <div class="footer-logo">
 <a href="/index.html">
 <img
@@ -692,23 +725,37 @@ alt="Cercobuilt Logo"
 <div class="copyright">
 © 2026 Cercobuilt. All rights reserved.
 </div>
+
 </div>
 
 <div class="footer-links">
+
 <a href="/index.html">Home</a>
 <a href="/house-designs.html">House Designs</a>
 <a href="/commercial.html">Commercial</a>
 <a href="/index.html#contact">Contact</a>
+
 </div>
 
 </div>
 </footer>
 
 <script>
+
 function toggleMenu(){
+
     const nav = document.getElementById("navLinks");
+    const button = document.querySelector(".menu-btn");
+
     nav.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        nav.classList.contains("show")
+    );
+
 }
+
 </script>
 
 </body>
